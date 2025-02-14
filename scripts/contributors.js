@@ -1,5 +1,5 @@
 const contributorFiles = [
   "Six5pAdes.html",
-  "roshanjossey.html",
-  "gokultp.html",
+  "rakshit.html"
+  //add names of other contributers here 
 ];
