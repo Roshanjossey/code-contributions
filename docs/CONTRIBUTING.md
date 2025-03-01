@@ -37,12 +37,12 @@ Create a branch with `git switch` command
 git switch -c add-<your-github-id>
 ```
 
-
 ## Create your card
 
 You can add your card as an HTML file in contributors directory. Create a file with your username in contributors directory. You can copy the following template to get started.
 
 `contributors/<your-github-id>.html`
+
 ```html
 <article>
   <h3>Your username</h3>
@@ -86,13 +86,14 @@ You can add your card as an HTML file in contributors directory. Create a file w
     width: 2rem;
   }
 </style>
-
 ```
+
 ## Add your card to contributors list
 
 Add the name of the file you created to `scripts/contributors.js` file.
 
 `scripts/contributors.js`
+
 ```js
 const contributorFiles = [
   "<your-github-id>.html", // add your file name here
@@ -124,7 +125,7 @@ git commit -m "add <your-github-id>"
 ## Push your changes to GitHub
 
 ```bash
-git push -u origin add-<your-github-id>
+git push -u origin <your-branch-name>
 ```
 
 ## Submit your changes for review
