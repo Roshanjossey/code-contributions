@@ -1,0 +1,14 @@
+<article>
+    <h3>Sebastuan Russel</h3>
+    <p> College Studenr</p>
+    <h4>python,java.</h4>
+    <ul>
+        <li class = "a">java</li>
+        
+    </ul>
+    <style>
+        .a{
+            color:blueviolet;
+        }
+    </style>
+</article>
