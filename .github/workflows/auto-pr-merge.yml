@@ -21,9 +21,8 @@ jobs:
 
       - name: Get a list of files changed in the pull request
         run: |
-          PR_FILES=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files \
+          FILES_CHANGED=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files \
             --jq '.[].filename')
-          FILES_CHANGED=$(echo $PR_FILES | tr '\n' ' ')
           echo "FILES_CHANGED=$FILES_CHANGED" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,10 +33,8 @@ jobs:
         with:
           script: |
             const username = context.payload.pull_request.user.login;
-            const expected = `contributors/${username}.html`;
             const filesChanged = process.env.FILES_CHANGED.trim();
-            console.log(`Comparing "${filesChanged}" to "${expected}"`);
-            const onlyContributors = filesChanged === expected;
+            const onlyContributors = filesChanged === `contributors/${username}.html`;
             core.setOutput('only_contributors', onlyContributors);
 
       - name: Set up Python
@@ -65,11 +62,15 @@ jobs:
 
       - name: Create comment if flagged
         if: failure()
-        run: echo "🚩 Your PR was flagged. Please review and appropriately modify your PR; if this flag is in error, wait for the maintainer to review it." | tee comment.txt
+        run: |
+          echo "🚩 Your PR was flagged. Please review and appropriately modify your PR; if this flag is in error, \
+          wait for the maintainer to review it." | tee comment.txt
 
       - name: Create comment if something other than contributors/{username}.html was modified
         if: success() && steps.only_contributors_check.outputs.only_contributors != 'true'
-        run: echo "👏 You've successfully submitted a PR! It contains changes that require review by the maintainer before merging.\nFiles changed:\n$FILES_CHANGED" | tee comment.txt
+        run: |
+          echo -e "👏 You've successfully submitted a PR! It contains changes that require review by the maintainer \
+          before merging.\nFiles changed:\n$FILES_CHANGED" | tee comment.txt
 
       - name: Post comment on PR
         if: always()
