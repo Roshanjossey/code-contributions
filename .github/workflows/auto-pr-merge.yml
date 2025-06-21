@@ -21,8 +21,9 @@ jobs:
 
       - name: Get a list of files changed in the pull request
         run: |
-          FILES_CHANGED=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files \
+          PR_FILES=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files \
             --jq '.[].filename')
+          FILES_CHANGED=$(echo $PR_FILES | tr '\n' ' ')
           echo "FILES_CHANGED=$FILES_CHANGED" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -70,7 +71,7 @@ jobs:
         if: success() && steps.only_contributors_check.outputs.only_contributors != 'true'
         run: |
           echo -e "👏 You've successfully submitted a PR! It contains changes that require review by the maintainer \
-          before merging.\nFiles changed:\n$FILES_CHANGED" | tee comment.txt
+          before merging.\nFiles changed:\n$(echo $PR_FILES | tr ' ' '\n')" | tee comment.txt
 
       - name: Post comment on PR
         if: always()
