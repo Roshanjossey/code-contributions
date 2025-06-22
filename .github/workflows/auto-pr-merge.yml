@@ -49,7 +49,7 @@ jobs:
       - name: Check PR contents
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python scripts/check_pr.py
+        run: python scripts/check_pr.py ${{ github.base_ref }} ${{ github.head_ref }}
 
       - name: Auto-approve PR if not flagged
         if: success() && steps.only_contributors_check.outputs.only_contributors == 'true'
