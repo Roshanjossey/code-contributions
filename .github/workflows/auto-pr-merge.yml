@@ -46,10 +46,15 @@ jobs:
       - name: Install dependencies
         run: pip install bs4 groq
 
+      - name: Retrieve check_pr.py from base branch
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git show origin/${{ github.base_ref }}:scripts/check_pr.py > check_pr_original.py
+
       - name: Check PR contents
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python scripts/check_pr.py ${{ github.base_ref }} ${{ github.head_ref }}
+        run: python scripts/check_pr_original.py ${{ github.base_ref }} ${{ github.head_ref }}
 
       - name: Auto-approve PR if not flagged
         if: success() && steps.only_contributors_check.outputs.only_contributors == 'true'
