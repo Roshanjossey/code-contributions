@@ -57,7 +57,7 @@ if __name__ == "__main__":
     head = sys.argv[2]
     toxic = False
     for file_path in os.popen(
-        f"git diff --name-only origin/{base}...origin/{head}"
+        f"git diff --name-only {base}...{head}"
     ).read().split(): # For each file in the diff,
         if os.path.exists(file_path) and file_is_toxic(file_path): # Check it if it exists and is toxic
             print(f"🚩 Flagged {file_path}")
