@@ -55,7 +55,6 @@ def file_is_toxic(file_path: str) -> bool:
 if __name__ == "__main__":
     base = sys.argv[1]
     head = sys.argv[2]
-    os.system(f"git fetch origin {base} {head}")
     toxic = False
     for file_path in os.popen(
         f"git diff --name-only origin/{base}...origin/{head}"
