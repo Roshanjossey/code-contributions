@@ -71,7 +71,7 @@ jobs:
         if: success() && steps.only_contributors_check.outputs.only_contributors != 'true'
         run: |
           echo -e "👏 You've successfully submitted a PR! It contains changes that require review by the maintainer \
-          before merging.\nFiles changed:\n$(echo $PR_FILES | tr ' ' '\n')" | tee comment.txt
+          before merging.\nFiles changed:\n$(echo $FILES_CHANGED | tr ' ' '\n')" | tee comment.txt
 
       - name: Post comment on PR
         if: always()
