@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Get a list of files changed in the pull request
         run: |
@@ -34,10 +34,8 @@ jobs:
         with:
           script: |
             const username = context.payload.pull_request.user.login;
-            const expected = `contributors/${username}.html`;
             const filesChanged = process.env.FILES_CHANGED.trim();
-            console.log(`Comparing "${filesChanged}" to "${expected}"`);
-            const onlyContributors = filesChanged === expected;
+            const onlyContributors = filesChanged === `contributors/${username}.html`;
             core.setOutput('only_contributors', onlyContributors);
 
       - name: Set up Python
@@ -48,10 +46,15 @@ jobs:
       - name: Install dependencies
         run: pip install bs4 groq
 
-      - name: Check PR contents
+      - name: Retrieve check_pr.py from base branch
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git show origin/${{ github.base_ref }}:scripts/check_pr.py > check_pr.py
+
+      - name: Check PR contents using the check_pr.py from the base branch
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python scripts/check_pr.py
+        run: python check_pr.py ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
 
       - name: Auto-approve PR if not flagged
         if: success() && steps.only_contributors_check.outputs.only_contributors == 'true'
@@ -65,11 +68,15 @@ jobs:
 
       - name: Create comment if flagged
         if: failure()
-        run: echo "🚩 Your PR was flagged. Please review and appropriately modify your PR; if this flag is in error, wait for the maintainer to review it." | tee comment.txt
+        run: |
+          echo "🚩 Your PR was flagged. Please review and appropriately modify your PR; if this flag is in error, \
+          wait for the maintainer to review it." | tee comment.txt
 
       - name: Create comment if something other than contributors/{username}.html was modified
         if: success() && steps.only_contributors_check.outputs.only_contributors != 'true'
-        run: echo "👏 You've successfully submitted a PR! It contains changes that require review by the maintainer before merging.\nFiles changed:\n$FILES_CHANGED" | tee comment.txt
+        run: |
+          echo -e "👏 You've successfully submitted a PR! It contains changes that require review by the maintainer \
+          before merging.\nFiles changed:\n$(echo $FILES_CHANGED | tr ' ' '\n')" | tee comment.txt
 
       - name: Post comment on PR
         if: always()
