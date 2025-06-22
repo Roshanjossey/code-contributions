@@ -50,6 +50,7 @@ jobs:
         run: |
           git fetch origin ${{ github.base_ref }}
           git show origin/${{ github.base_ref }}:scripts/check_pr.py > check_pr_original.py
+          cat check_pr_original.py
 
       - name: Check PR contents
         env:
