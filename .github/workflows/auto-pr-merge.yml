@@ -54,7 +54,7 @@ jobs:
       - name: Check PR contents using the check_pr.py from the base branch
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python check_pr.py ${{ github.base_ref }} ${{ github.head_ref }}
+        run: python check_pr.py ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
 
       - name: Auto-approve PR if not flagged
         if: success() && steps.only_contributors_check.outputs.only_contributors == 'true'
