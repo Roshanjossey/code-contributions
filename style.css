@@ -1,8 +1,11 @@
 .card {
-    height: 32rem;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    width: fill-available;
+    height: auto;
+    width: auto;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -11,13 +14,21 @@ header {
     margin-top: -14px;
     padding: 4rem 2rem;
 }
+h2{
+    color: rgb(59, 59, 248);
+}
+body{
+    background-color: #f3e7bd;
+}
+.cards{
+    border: 1px dotted blue;
+}
 
 @media (min-width:961px)  {
     header {
         padding: 12rem 4rem;
     }
 }
-
 h1 {
     color: #fafafa;
     font-size: 4rem;
