@@ -1,0 +1,119 @@
+<article>
+  <header>
+    <h3>utkarsh884</h3>
+    <p>Passionate developer and open-source contributor. Always learning and sharing knowledge. 🚀</p>
+  </header>
+
+  <section>
+    <h4>Programming languages I use</h4>
+    <div class="container">
+      <span class="badge python">Python</span>
+      <span class="badge javascript">JavaScript</span>
+    </div>
+  </section>
+
+  <section>
+    <h4>Tools I use</h4>
+    <div class="container">
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
+        alt="Bash"
+        title="Bash"
+      />
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+        alt="Linux"
+        title="Linux"
+      />
+    </div>
+  </section>
+</article>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f6f8fa;
+    margin: 0;
+    padding: 0;
+  }
+  article {
+    background: #fff;
+    max-width: 420px;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  header h3 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 2rem;
+    color: #3874a4;
+  }
+  header p {
+    margin-top: 0;
+    color: #444;
+    font-size: 1.05rem;
+  }
+  h4 {
+    margin-bottom: 0.6rem;
+    color: #222;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+  }
+  .badge {
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px rgba(56,116,164,0.07);
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: default;
+    user-select: none;
+  }
+  .badge.python {
+    background: #3874a4;
+    color: #fff;
+  }
+  .badge.javascript {
+    background: #f7df1e;
+    color: #222;
+  }
+  .badge:hover {
+    transform: scale(1.07);
+    box-shadow: 0 2px 8px rgba(56,116,164,0.12);
+  }
+  .icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    transition: transform 0.13s;
+    border-radius: 5px;
+    background: #fafbfc;
+    box-shadow: 0 1px 3px rgba(56,116,164,0.06);
+  }
+  .icon:hover {
+    transform: scale(1.14) rotate(-6deg);
+    background: #eaf6fc;
+  }
+  @media (max-width: 500px) {
+    article {
+      padding: 1.1rem 0.6rem;
+    }
+    .container {
+      gap: 0.7rem;
+    }
+    .badge {
+      font-size: 0.97rem;
+      padding: 0.35rem 0.7rem;
+    }
+    .icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+</style>
