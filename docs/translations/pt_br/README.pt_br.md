@@ -2,5 +2,5 @@ Este é um projeto que permite que você pratique a contribuição de código pa
 
 Presumimos que você já tenha concluído o tutorial em [first contributions](https://github.com/firstcontributions/first-contributions/blob/main/docs/translations/README.id.md).
 
-Vá para [How to contribute](CONTRIBUTING.pt_br.md) para começar.
+Vá para [Etapas para contribuir](CONTRIBUTING.pt_br.md) para começar.
 
