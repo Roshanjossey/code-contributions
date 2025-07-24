@@ -1,4 +1,5 @@
 const contributorFiles = [
-  "roshanjossey.html",
-  "gokultp.html",
+  "guptaujjwal1128.html", // add your file name here
+  "ujjwalgupta.html",
+  "UjjwalGuptaProfileCard.html",
 ];
