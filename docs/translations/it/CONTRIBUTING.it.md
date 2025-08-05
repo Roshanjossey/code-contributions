@@ -6,7 +6,7 @@
 
 ## Scarica (`clone`) il fork di questo repository
 
-Nel tuo fork di questo repository, premi sul pulsante `code`. Premi su SSH e poi premi su `copia`.
+Nel tuo fork di questo repository, premi sul pulsante `Code`. Premi su SSH e poi premi su `copia`.
 
 <img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/clone.png" alt="clone this repository" />
 
