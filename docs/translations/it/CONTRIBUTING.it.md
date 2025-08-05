@@ -18,7 +18,7 @@ git clone "url che hai copiato"
 
 > [!IMPORTANT]
 > Nei passaggi seguenti, quando vedi `<il-tuo-id-github>` sostituiscilo con il tuo ID GitHub.
-> Ad esempio, se il tuo ID GitHub fosse `aaronsw`,
+> Ad esempio, se il tuo ID GitHub fosse `aaronsw`,  
 > `git switch -c add-<il-tuo-id-github>` diventa `git switch -c add-aaronsw`
 > `contributors/<it-tuo-id-github>.html` diventa `contributors/aaronsw.html`
 
