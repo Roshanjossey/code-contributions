@@ -12,8 +12,6 @@ Nel tuo fork di questo repository, premi sul pulsante `Code`. Premi su SSH e poi
 
 Apri un terminale ed esegui il comando `git clone`
 
-<img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/copy-to-clipboard.png" alt="copy url" />
-
 ```bash
 git clone "url che hai copiato"
 ```
@@ -24,6 +22,7 @@ git clone "url che hai copiato"
 > `git switch -c add-<il-tuo-id-github>` diventa `git switch -c add-aaronsw`
 > `contributors/<it-tuo-id-github>.html` diventa `contributors/aaronsw.html`
 
+<img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/copy-to-clipboard.png" alt="copy url" />
 
 ## Crea un ramo (`branch`)
 
