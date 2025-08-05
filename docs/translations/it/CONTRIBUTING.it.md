@@ -16,7 +16,7 @@ Apri un terminale ed esegui il comando `git clone`
 git clone "url che hai copiato"
 ```
 
-> [!IMPORTANT] IMPORTANTE
+> [!IMPORTANT]
 > Nei passaggi seguenti, quando vedi `<il-tuo-id-github>` sostituiscilo con il tuo ID GitHub.
 > Ad esempio, se il tuo ID GitHub fosse `aaronsw`,
 > `git switch -c add-<il-tuo-id-github>` diventa `git switch -c add-aaronsw`
