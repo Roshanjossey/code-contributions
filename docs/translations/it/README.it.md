@@ -4,5 +4,5 @@ Questo è un progetto per farti esercitare a contribuire a progetti open source 
 
 Stiamo supponendo che tu abbia già completato il tutorial in [primi contributi](https://github.com/firstcontributions/first-contributions)
 
-Vai nella [guida al contributo] per iniziare.
+Vai nella [guida al contributo](CONTRIBUTING.it.md) per iniziare.
 
