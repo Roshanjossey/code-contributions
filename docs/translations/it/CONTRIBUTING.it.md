@@ -10,9 +10,9 @@ Nel tuo fork di questo repository, premi sul pulsante `Code`. Premi su SSH e poi
 
 <img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/clone.png" alt="clone this repository" />
 
-<img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/copy-to-clipboard.png" alt="copiar URL al portapapeles" />
-
 Apri un terminale ed esegui il comando `git clone`
+
+<img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/copy-to-clipboard.png" alt="copy url" />
 
 ```bash
 git clone "url che hai copiato"
