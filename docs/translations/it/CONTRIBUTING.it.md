@@ -2,11 +2,11 @@
 
 <img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/fork.png" alt="fork this repository" />
 
-## Crea il fork di questo repository premendo sul pulsante `fork`
+## Crea il fork di questo repository cliccando sul pulsante `fork`
 
 ## Scarica (`clone`) il fork di questo repository
 
-Nel tuo fork di questo repository, premi sul pulsante `Code`. Premi su SSH e poi premi sul pulsante per copiare.
+Nel tuo fork di questo repository, premi sul pulsante `Code`. seleziona SSH e poi clicca sull'icona per copiare.
 
 <img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/clone.png" alt="clone this repository" />
 
@@ -24,7 +24,7 @@ git clone "url che hai copiato"
 
 <img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/copy-to-clipboard.png" alt="copy url" />
 
-## Crea un ramo (`branch`)
+## Crea un branch (ramo)
 
 Vai nella cartella del repository se non ci sei già
 
@@ -32,7 +32,7 @@ Vai nella cartella del repository se non ci sei già
 cd code-contributions
 ```
 
-Crea un ramo (`branch`) con il comando `git switch`
+Crea un branch (ramo) con il comando `git switch`
 
 ```bash
 git switch -c add-<il-tuo-id-github>
@@ -47,7 +47,7 @@ Puoi aggiungere la tua carta come file HTML nella cartella `contributors`. Crea 
 ```html
 <article>
   <h3>Il tuo username</h3>
-  <p>Una breve bio riguardo a te (opzionale)</p>
+  <p>Una breve bio su di te (opzionale)</p>
   <h4>I linguaggi di programmazione che uso</h4>
   <section class="container">
     <div class="badge" style="background-color: #3874a4; color: white">
@@ -92,7 +92,7 @@ Puoi aggiungere la tua carta come file HTML nella cartella `contributors`. Crea 
 
 ## Aggiungi la tua card nella lista dei contributori
 
-Aggiungi il nome del file che hai creato nel file `scripts/contributors.js`
+Aggiungi il nome del file che hai creato all'interno del file `scripts/contributors.js`
 
 `scripts/contributors.js`
 ```js
@@ -108,7 +108,7 @@ const contributorFiles = [
 
 Puoi vedere le tue modifiche aprendo `index.html` in un browser web. Dovresti essere in grado di vedere la nuova carta che hai aggiunto nei passaggi precedenti. 
 
-Puoi continuare a effettuare modifiche alla tua card e aggiornare la pagina per vedere le modifiche.
+Puoi continuare a modificare la tua card e aggiornare la pagina per vedere le modifiche.
 
 ## Crea un commit
 
