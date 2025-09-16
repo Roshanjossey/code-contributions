@@ -15,7 +15,7 @@
 git clone "복사한 URL"
 ```
 
-> [!중요]
+> [!important]
 > 아래 단계에서 `<your-github-id>`가 등장하면, 당신의 GitHub 사용자명으로 바꿔야 합니다.
 > 예: GitHub ID가 `aaronsw`인 경우,
 > `git switch -c add-<your-github-id>`는 `git switch -c add-aaronsw`이 됩니다.
