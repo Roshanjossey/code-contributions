@@ -1,10 +1,12 @@
 # code contributions
+🚀 Code Contributions — Start Your Open Source Journey! 🛠️
 
-This is a project for you to practice contributing to open source projects with code.
+Welcome to the Code Contributions project! 🎉
+This is the perfect place to practice contributing to open source and sharpen your skills.
 
-We're assuming that you've already finished the tutorial at [first contributions](https://github.com/firstcontributions/first-contributions)
+This project assumes you have completed the tutorial at[first contributions](https://github.com/firstcontributions/first-contributions)
 
-Head over to [contribution guide](https://github.com/Roshanjossey/code-contributions/blob/main/docs/CONTRIBUTING.md) to start.
+To start contributing to this project, please read the detailed[contribution guide](https://github.com/Roshanjossey/code-contributions/blob/main/docs/CONTRIBUTING.md)It contains everything you need to know about the processes, coding standards, and submission guidelines.
 
 #### _Read this in [other languages](docs/translations/Translations.md)._
 
