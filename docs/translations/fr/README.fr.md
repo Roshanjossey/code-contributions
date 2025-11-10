@@ -3,7 +3,7 @@
 C'est un projet pour vous entraîner à contribuer à des projets open source avec du code.
 Nous assumerons que vous avez déjà terminé le tutoriel sur [first contributions](https://github.com/firstcontributions/first-contributions)
 
-Allez sur [le guide de contribution](docs/translations/fr/CONTRIBUTING.fr.md) pour commencer.
+Allez sur [le guide de contribution](CONTRIBUTING.fr.md) pour commencer.
 
 #### _Read this in [other languages](docs/translations/Translations.md)._
 
