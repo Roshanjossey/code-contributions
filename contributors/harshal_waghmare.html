@@ -1,0 +1,79 @@
+<article class="card" style="
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  color: #111827;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+">
+  <h3 style="margin: 0 0 0.5rem 0; color: #1f2937;">✨ Harshal Waghmare</h3>
+  <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; line-height: 1.35rem; color: #4b5563;">
+    Passionate learner exploring software development, web technologies, and open-source. 🚀
+  </p>
+
+  <h4 style="margin: 0.5rem 0 0.3rem 0; color: #1f2937;">💻 Programming Languages I use</h4>
+  
+  <section class="container" style="margin-top: 0.3rem; gap: 0.5rem; flex-wrap: wrap;">
+    <div class="badge" style="background: #f7df1e; color: black;">JavaScript</div>
+    <div class="badge" style="background: #3178c6; color: white;">TypeScript</div>
+    <div class="badge" style="background: #3776ab; color: white;">C</div>
+  </section>
+
+  <h4 style="margin: 0.5rem 0 0.3rem 0; color: #1f2937;">🛠 Tools I use</h4>
+  <section class="container" style="margin-top: 0.3rem; gap: 0.5rem; flex-wrap: wrap;">
+    <img class="icon" 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+    
+    <img class="icon" 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+    
+    <img class="icon" 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" />
+    
+    <img class="icon" 
+        src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" />
+  </section>
+</article>
+
+<style>
+  .container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  .icon:hover {
+    transform: scale(1.2);
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  @media (max-width: 600px) {
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+</style>
