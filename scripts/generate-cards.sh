@@ -19,5 +19,5 @@ find "$CARDS_DIR" -type f -name "*.html" | sed "s|^$CARDS_DIR/|  \"|; s|$|\",|" 
 # Close the JavaScript array
 echo "];" >> "$OUTPUT_FILE"
 
-echo "$OUTPUT_FILE generated successfully with $(ls -1 $CARDS_DIR/*.html | wc -l | xargs) files."
+echo "$OUTPUT_FILE generated successfully with $(ls -1 $CARDS_DIR/*.html | wc -l) files."
 
