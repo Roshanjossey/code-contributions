@@ -1,0 +1,212 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        h4 {
+            color: #aaa;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .container img {
+            width: 32px;   
+            height: 32px;
+        }
+    </style>
+    <style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
+    <style id="pdf-hide-interactive">
+      .pdf-generation .interactive-mode,
+      .pdf-generation [class*="interactive"],
+      .pdf-generation [class*="Interactive"] {
+        display: none !important;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+      .image-loading-container {
+        display: inline-block;
+        position: relative;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      
+      .generated-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .video-loading-container {
+        display: inline-block;
+        position: relative;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      
+      .generated-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .podcast-loading-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 100%;
+        height: 120px;
+      }
+      
+      .generated-podcast {
+        width: 100%;
+        height: 40px;
+        display: block;
+      }
+      #creative-brain-artifact .image-loading-container {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #creative-brain-artifact .container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        height: 900px;
+        background-color: #000;
+        position: relative;
+      }
+      #creative-brain-artifact .left-panel {
+          flex: 0 0 50%; 
+          padding: 40px 0 40px 40px;
+          display: flex;
+          flex-direction: column;
+          box-sizing: border-box;
+          z-index: 1;
+          justify-content: flex-start;
+          gap: 30px;
+          background: transparent;
+          position: relative;
+          width: 50%;
+      }
+      #creative-brain-artifact .section {
+          margin-bottom: 0;
+          background: black;
+          padding: 15px;
+          opacity: 0.8;
+          border: 1px solid grey;
+          font-family: sans-serif;
+      }
+       
+      #creative-brain-artifact .section-title {
+          font-size: 1.25em;
+          color: #fff;
+          margin-bottom: 15px;
+      }
+      #creative-brain-artifact .section-content {
+          font-size: 1em;
+          line-height: 1.5;
+          color: #fff;
+      }
+      #creative-brain-artifact h1.section-content {
+          font-size: 2.25em;
+      }
+      #creative-brain-artifact button {
+          background-color: #ccc;
+          color: #000;
+          padding: 25px;
+          font-size: 20px;
+          margin: 15px;
+          display: inline-block;
+          text-transform: uppercase;
+          cursor: pointer;
+      }
+      #creative-brain-artifact button:hover {
+          background-color: #000;
+          color: #fff;
+          text-decoration: underline;
+      }
+      .save-edits-button {
+        cursor: pointer;
+        padding: 10px;
+        background: white;
+        border: 2px solid black;
+        margin: 0 0 20px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+      .save-edits-button:hover {
+        background-color: black;
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <article>
+        <h3>Mzkwcim</h3>
+        <p></p>
+        <h4>Programming languages I use</h4>
+        <section class="container">
+            <a href="https://www.python.org/" style="text-decoration: none;"><div class="badge" style="background-color: #3874a4; color: white">Python</div></a>
+            <a href="https://learn.microsoft.com/en-us/powershell/" style="text-decoration: none;"><div class="badge" style="background-color: #01adfd; color: white">PowerShell</div></a>
+            <a href="https://ecma-international.org/publications-and-standards/standards/ecma-262/" style="text-decoration: none;"><div class="badge" style="background-color: #ecfd01; color: black">JavaScript</div></a>
+        </section>
+        <h4>Tools I use</h4>
+        <section class="container">
+            <a href="https://www.gnu.org/software/bash/manual/bash.html" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/gnubash" alt="Bash"></a>
+            <a href="https://www.linux.org/" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/linux" alt="Linux"></a>
+            <a href="https://archlinux.org/" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/archlinux" alt="Arch"></a>
+            <a href="https://git-scm.com/docs" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/git" alt="Git"></a>
+            <a href="https://kubernetes.io/docs/home/" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes"></a>
+            <a href="https://confluence.atlassian.com/jira" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/jira" alt="Jira"></a>
+            <a href="https://confluence.atlassian.com/alldoc/confluence-documentation-directory-12877996.html" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/confluence" alt="Confluence"></a>
+            <a href="https://docs.slack.dev/reference/" style="text-decoration: none;"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack"></a>
+            <!-- <img src="https://cdn.simpleicons.org/jumpcloud" alt="JumpCloud"> -->
+            <a href="https://developers.cloudflare.com/" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/cloudflare" alt="Cloudflare"></a>  
+            <a href="https://aws.amazon.com/documentation-overview/" style="text-decoration: none;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></a>
+            <a href="https://docs.docker.com/" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/docker" alt="Docker"></a>
+            <a href="https://docs.github.com/en/actions" style="text-decoration: none;"><img src="https://cdn.simpleicons.org/githubactions" alt=""></a>
+            
+        </section>
+    </article>
+</body>
