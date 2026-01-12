@@ -7,7 +7,9 @@ from groq import Groq
 
 
 client = Groq()
-MODEL = "gemma2-9b-it"
+MODEL = os.environ.get("GROQ_MODEL_NAME")
+if not MODEL:
+    raise ValueError("GROQ_MODEL_NAME environment variable not set")
 SYSTEM_PROMPT = """\
 Determine whether or not the given string contains any offensive material. 
 Respond with true if the string contains any offensive material and false if it contains no offensive material.
