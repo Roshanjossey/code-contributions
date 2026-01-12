@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stevodevo1 - GitHub Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .profile-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .profile-header .subtitle {
+            font-size: 1.3rem;
+            color: #a0aec0;
+            margin-bottom: 1rem;
+        }
+
+        .github-link {
+            display: inline-block;
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .github-link:hover {
+            color: #63b3ed;
+        }
+
+        .profile-content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        .profile-about {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-about p {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .profile-about strong {
+            color: #2d3748;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .badge-python {
+            background-color: #3776ab;
+            color: white;
+        }
+
+        .badge-ml {
+            background-color: #ff6f00;
+            color: white;
+        }
+
+        .badge-labview {
+            background-color: #ffd600;
+            color: #1a1a1a;
+        }
+
+        .badge-plc {
+            background-color: #0072ce;
+            color: white;
+        }
+
+        .badge-electronics {
+            background-color: #34a853;
+            color: white;
+        }
+
+        .badge-signal {
+            background-color: #9c27b0;
+            color: white;
+        }
+
+        .badge-automation {
+            background-color: #ff5722;
+            color: white;
+        }
+
+        .badge-vision {
+            background-color: #00bcd4;
+            color: white;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            align-items: center;
+        }
+
+        .icon {
+            width: 3rem;
+            height: 3rem;
+            transition: transform 0.3s;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-card img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .education {
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .education strong {
+            color: #667eea;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .profile-header h1 {
+                font-size: 2rem;
+            }
+
+            .profile-header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .profile-content {
+                padding: 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <header class="profile-header">
+            <h1>Stephen Hiscock</h1>
+            <p class="subtitle">🔧 Electrical Engineer | 🤖 ML Specialist | ⚡ Industrial Automation Expert</p>
+            <a href="https://github.com/stevodevo1" class="github-link" target="_blank">
+                @stevodevo1 on GitHub
+            </a>
+        </header>
+
+        <div class="profile-content">
+            <!-- About Section -->
+            <section class="section">
+                <h2>👨‍💻 About Me</h2>
+                <div class="profile-about">
+                    <p>
+                        <strong>Machine learning</strong> specialist and <strong>Electrical, Electronic, & Software Architect</strong> with 
+                        <strong>25 years of experience</strong> in industrial control systems, specializing in 
+                        <strong>signal processing</strong>, <strong>X-ray systems</strong>, <strong>AI image detection</strong>, 
+                        and <strong>vision systems</strong> used for high-speed industrial grading and automation.
+                    </p>
+                </div>
+                <div class="education">
+                    <p>
+                        🎓 Holds a <strong>B.E. in Electrical and Electronic Engineering</strong> from the 
+                        University of Canterbury, New Zealand
+                    </p>
+                    <p style="margin-top: 0.5rem;">
+                        💡 Passionate about <strong>cutting-edge technologies</strong>, constantly exploring 
+                        innovations in reinforcement learning, computer vision, and industrial automation to 
+                        enhance system scalability and efficiency.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Specializations -->
+            <section class="section">
+                <h2>⚡ Core Specializations</h2>
+                <div class="badge-container">
+                    <div class="badge badge-labview">🔬 LabVIEW Development</div>
+                    <div class="badge badge-plc">🏭 Allen-Bradley PLCs</div>
+                    <div class="badge badge-automation">⚙️ Industrial Automation</div>
+                    <div class="badge badge-electronics">🔌 Electronics Design</div>
+                    <div class="badge badge-signal">📊 Signal Processing</div>
+                    <div class="badge badge-vision">👁️ Computer Vision</div>
+                    <div class="badge badge-ml">🤖 Machine Learning</div>
+                    <div class="badge badge-python">🐍 Python Development</div>
+                </div>
+            </section>
+
+            <!-- GitHub Stats -->
+            <section class="section">
+                <h2>📊 GitHub Statistics</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <img src="https://github-readme-stats.vercel.app/api?username=stevodevo1&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
+                    </div>
+                    <div class="stat-card">
+                        <img src="https://github-readme-streak-stats.herokuapp.com/?user=stevodevo1&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+                    </div>
+                </div>
+                <div class="stats-container" style="margin-top: 1rem;">
+                    <div class="stat-card">
+                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=stevodevo1&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools & Technologies -->
+            <section class="section">
+                <h2>🛠️ Tools & Technologies</h2>
+                <div class="icon-container">
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" title="Python" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" title="PyTorch" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" title="NumPy" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" title="Pandas" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" title="OpenCV" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" title="Linux" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" title="Bash" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" title="Git" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" title="GitHub" />
+                    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

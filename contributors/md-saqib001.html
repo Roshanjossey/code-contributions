@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Developer Profile</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            /* Added some centering for better presentation */
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: #f4f4f4;
+        }
+        
+        article {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #666;
+            margin-top: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center; /* Aligns icons nicely */
+        }
+
+        .badge {
+            padding: 0.5rem 0.8rem;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .icon {
+            width: 3rem; /* Slightly larger for visibility */
+            height: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<article>
+  <h3>Mohammed Saqib Rehaman Namazi</h3>
+  <p>Software Developer | Tech Enthusiast</p>
+  
+  <h4>Programming languages I use</h4>
+  <section class="container">
+    <div class="badge" style="background-color: #3874a4; color: white">
+      Python
+    </div>
+    <div class="badge" style="background-color: #00599C; color: white">
+      C++
+    </div>
+    <div class="badge" style="background-color: #f7df1e; color: black;">
+      JavaScript
+    </div>
+  </section>
+
+  <h4>Tools I use</h4>
+  <section class="container">
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+      alt="Git"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+      alt="Linux"
+    />
+  </section>
+</article>
+
+</body>
+</html>
