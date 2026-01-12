@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developer Profile Card</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #121a2b;
+      --surface-2: #0f1525;
+      --text: #e6ecff;
+      --muted: #a9b4ce;
+      --brand: #6ea8fe;
+      --ring: #2c7be5;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f9ff;
+        --surface: #ffffff;
+        --surface-2: #f3f6ff;
+        --text: #0e1222;
+        --muted: #4b587a;
+        --brand: #3b82f6;
+        --ring: #2563eb;
+        --shadow: 0 8px 24px rgba(15, 23, 42, .12);
+      }
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(1200px 800px at 10% 10%, var(--surface-2), transparent 60%),
+                  radial-gradient(1200px 800px at 90% 20%, rgba(80,120,255,.15), transparent 60%),
+                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    article.profile {
+      width: min(820px, 92vw);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)) padding-box,
+                  linear-gradient(135deg, rgba(110,168,254,.7), rgba(168,110,254,.35)) border-box;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* Decorative glow */
+    .glow {
+      position: absolute;
+      inset: -40px -40px auto auto;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle at center, rgba(110,168,254,.35), transparent 60%);
+      filter: blur(20px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header.hero {
+      padding: 28px 28px 10px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(180deg, rgba(59,130,246,.18), rgba(59,130,246,0));
+      backdrop-filter: blur(4px);
+    }
+
+    .avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6ea8fe, #a86efe);
+      display: grid; place-items: center;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: .5px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+      user-select: none;
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      margin: 0;
+    }
+
+    .sub {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.5;
+    }
+
+    .section {
+      padding: 18px 24px 10px;
+    }
+
+    h4 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      letter-spacing: .3px;
+      color: var(--text);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem .75rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .9rem;
+      background: #121e33;
+      color: #e7f0ff;
+      border: 1px solid rgba(110,168,254,.35);
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 6px 18px rgba(110,168,254,.08);
+    }
+
+    .badge .dot {
+      width: .55rem; height: .55rem;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 4px rgba(255,255,255,.06) inset;
+    }
+
+    .badge:is(:hover, :focus-visible) {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(110,168,254,.18);
+    }
+
+    /* Icons row */
+    .tool-icon {
+      width: 2.2rem; height: 2.2rem;
+      padding: .35rem;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid rgba(110,168,254,.25);
+      box-shadow: 0 6px 16px rgba(0,0,0,.15);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .tool-icon:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.25); border-color: var(--ring); }
+
+    /* Footer links */
+    .links {
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 10px;
+    }
+    .chip {
+      padding: .4rem .7rem; border-radius: 999px; font-size: .85rem; border: 1px dashed rgba(110,168,254,.45); color: var(--muted);
+    }
+
+    /* Accessibility */
+    a { color: var(--brand); text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <article class="profile" aria-label="Developer profile card">
+    <span class="glow" aria-hidden="true"></span>
+
+    <header class="hero">
+      <div class="avatar" aria-hidden="true">VK</div>
+      <div>
+        <h3>Vinay Kumar</h3>
+        <p class="sub">B.Tech AI & Data Engineering • Web & Game Dev enthusiast • Open-source contributor</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <p class="sub" style="margin-top:0">I’m a B.Tech student in Artificial Intelligence and Data Engineering, passionate about web development, AI, and data structures & algorithms. I enjoy building modern web projects and exploring how AI can make technology smarter and more efficient. Currently exploring real-world projects and open-source.
+      </p>
+    </section>
+
+    <section class="section">
+      <h4>Programming languages I use</h4>
+      <div class="container" role="list">
+        <div class="badge" role="listitem" style="--accent:#3874a4; color: #e7f0ff">
+          <span class="dot" style="color:#3874a4"></span>Python
+        </div>
+        <div class="badge" role="listitem" style="--accent:#f7df1e; color:#111">
+          <span class="dot" style="color:#f7df1e"></span>JavaScript
+        </div>
+        <!-- Add more like below -->
+        <div class="badge" role="listitem" style="--accent:#c22d2d; color:#fff">
+          <span class="dot" style="color:#c22d2d"></span>C++
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h4>Tools I use</h4>
+      <div class="container">
+        <img class="tool-icon" title="Bash" alt="Bash logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"/>
+        <img class="tool-icon" title="Linux" alt="Linux logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"/>
+        <img class="tool-icon" title="Git" alt="Git logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"/>
+        <img class="tool-icon" title="VS Code" alt="VS Code logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"/>
+        <img class="tool-icon" title="Node.js" alt="Node.js logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"/>
+        <img class="tool-icon" title="MongoDB" alt="MongoDB logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"/>
+      </div>
+      <div class="links">
+        <span class="chip">Open to collaborations</span>
+        <a class="chip" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a class="chip" href="#" aria-label="Portfolio link">Portfolio</a>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
