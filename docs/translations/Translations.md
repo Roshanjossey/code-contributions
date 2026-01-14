@@ -7,6 +7,7 @@
 | <img alt="Português (Brasil)" title="Português (Brasil)" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/br.svg" width="22"> | [Português (Brasil)](pt_br/README.pt_br.md) |
 | <img alt="Bahasa Indonesia" title="Bahasa Indonesia" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/id.svg" width="22"> | [Bahasa Indonesia](id/README.id.md)         |
 | <img alt="中文" title="中文" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/cn.svg" width="22"> | [中文](cn/README.cn.md)                     |
+| <img alt="中文（繁體）" title="中文（繁體）" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/hk.svg" width="22"> | [中文（繁體）](cn_hk/README.cn_hk.md)                     |
 | <img alt="Türkiye" title="Türkiye" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/tr.svg" width="22"> | [Türkiye](tr/README.tr.md)  |
 | <img alt="Italiano" title="Italiano" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/it.svg" width="22"> | [Italiano](it/README.it.md)  |
 | <img alt="Spain" title="Spain" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/es.svg" width="22"> | [Spain](es/README.es.md)                    |
