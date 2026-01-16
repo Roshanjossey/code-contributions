@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Jaanvi!</title>
+    <style>
+        :root {
+            --cake-deep: #3d2b1f;
+            --cake-main: #5d4037;
+            --frosting: #ff80ab; 
+            --blush: rgba(255, 105, 180, 0.6);
+            --bg-start: #fff9c4;
+            --bg-party: #d537f8c9; /* Darker background to match your cool reference */
+        }
+
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; 
+            overflow: hidden; background: var(--bg-start); 
+            display: flex; justify-content: center; align-items: center;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            transition: background 1.5s ease;
+        }
+
+        /* --- STYLES FOR REVEAL & CURTAINS --- */
+        #overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1000; display: flex; justify-content: center; align-items: center;
+            pointer-events: none;
+        }
+        .curtain {
+            position: absolute; width: 50%; height: 100%; background: #b71c1c;
+            transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1100;
+            pointer-events: all;
+        }
+        .left { left: 0; border-right: 4px solid #550000; } 
+        .right { right: 0; border-left: 4px solid #550000; }
+        #countdown { font-size: 160px; color: gold; z-index: 1200; text-shadow: 0 5px 15px #000; }
+
+        /* --- THE CAKE --- */
+        .stage { position: relative; display: flex; flex-direction: column; align-items: center; z-index: 100; cursor: pointer; margin-top: 100px;}
+        
+        .layer {
+            position: relative; transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(-1200px); display: flex; flex-direction: column; align-items: center;
+            box-shadow: inset -15px -10px 30px rgba(0,0,0,0.4), 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .layer-bottom { width: 280px; height: 120px; background: var(--cake-main); border-radius: 25px; }
+        .layer-middle { width: 200px; height: 90px; background: #4e342e; border-radius: 20px; margin-bottom: -5px; }
+        .layer-top { width: 130px; height: 70px; background: var(--cake-main); border-radius: 15px; margin-bottom: -5px; }
+        
+        .frosting { 
+            width: 100%; height: 35px; background: var(--frosting); 
+            border-radius: 20px 20px 30px 30px; position: absolute; top: 0;
+            border-bottom: 4px solid rgba(0,0,0,0.1);
+        }
+
+        /* --- TRACKING EYES --- */
+        .face { position: absolute; top: 55px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .eyes-container { display: flex; gap: 45px; }
+        .eye {
+            width: 38px; height: 38px; background: #fff; border-radius: 50%; 
+            position: relative; border: 4px solid #222; overflow: hidden;
+            animation: blink 4s infinite;
+        }
+        .pupil {
+            width: 20px; height: 20px; background: #000; border-radius: 50%;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        .pupil::before { content: ''; position: absolute; top: 3px; left: 3px; width: 8px; height: 8px; background: white; border-radius: 50%; }
+        @keyframes blink { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+
+        .blush-container { display: flex; gap: 120px; position: absolute; top: 20px; }
+        .blush-circle { width: 45px; height: 25px; background: var(--blush); border-radius: 50%; filter: blur(6px); }
+        .mouth { width: 24px; height: 12px; border-bottom: 4px solid #222; border-radius: 0 0 20px 20px; margin-top: 5px; }
+
+        /* --- CANDLE --- */
+        .candle { width: 16px; height: 50px; background: repeating-linear-gradient(45deg, #fff, #fff 7px, #ff5252 7px, #ff5252 14px); border-radius: 4px; }
+        .flare {
+            width: 20px; height: 30px; background: radial-gradient(circle, #fff, orange, red);
+            border-radius: 50% 50% 20% 20%; position: absolute; top: -35px; left: -2px;
+            animation: flicker 0.1s infinite alternate; box-shadow: 0 0 35px gold;
+        }
+        @keyframes flicker { from { transform: scale(1); } to { transform: scale(1.3); } }
+
+        /* --- TEXT --- */
+        #bday-container { 
+            position: absolute; 
+            top: -240px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 10px; 
+            opacity: 0; 
+            transition: opacity 1s; 
+        }
+        .text-line { display: flex; gap: 12px; }
+        .letter { 
+            font-size: 70px; 
+            color: #fff; 
+            text-shadow: 4px 4px 0px #ff4081; 
+            display: inline-block; 
+            animation: jump 0.6s infinite alternate ease-in-out; 
+        }
+        @keyframes jump { from { transform: translateY(0); } to { transform: translateY(-30px); } }
+
+        /* --- SURPRISE SCREEN --- */
+        #surprise-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 2000;
+            display: none; flex-direction: column; justify-content: center; align-items: center;
+            color: #fff; text-align: center;
+        }
+        .glow-text {
+            font-size: 80px; text-transform: uppercase;
+            background: linear-gradient(to right, #f06, #9f6, #06f, #f06);
+            background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .shape { position: absolute; bottom: -100px; animation: flyUp 5s linear forwards; z-index: 1; }
+        @keyframes flyUp { to { transform: translateY(-120vh) rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <div id="overlay">
+        <div class="curtain left" id="cL"></div>
+        <div id="countdown">5</div>
+        <div class="curtain right" id="cR"></div>
+    </div>
+
+    <div id="surprise-overlay">
+        <h1 class="glow-text">You are Special!</h1>
+        <p style="font-size: 24px;">Click anywhere to return</p>
+    </div>
+
+    <div class="stage" onclick="blowCandle()">
+        <div id="bday-container">
+            <div class="text-line" id="line1"></div>
+            <div class="text-line" id="line2"></div>
+        </div>
+
+        <div id="l4" class="layer candle"><div id="flame" class="flare"></div></div>
+        <div id="l3" class="layer-top layer"><div class="frosting"></div></div>
+        <div id="l2" class="layer-middle layer"><div class="frosting"></div></div>
+        <div id="l1" class="layer-bottom layer">
+            <div class="frosting"></div>
+            <div class="face">
+                <div class="blush-container"><div class="blush-circle"></div><div class="blush-circle"></div></div>
+                <div class="eyes-container">
+                    <div class="eye"><div class="pupil"></div></div>
+                    <div class="eye"><div class="pupil"></div></div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const pupils = document.querySelectorAll('.pupil');
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+        
+        const bdayStr = "HAPPY BIRTHDAY!";
+        const nameStr = "JAANVI";
+        
+        // Generate letters for Line 1
+        bdayStr.split('').forEach((char, i) => {
+            const span = document.createElement('span');
+            span.className = 'letter';
+            span.innerHTML = char === ' ' ? '&nbsp;' : char;
+            span.style.animationDelay = (i * 0.1) + 's';
+            line1.appendChild(span);
+        });
+
+        // Generate letters for Line 2
+        nameStr.split('').forEach((char, i) => {
+            const span = document.createElement('span');
+            span.className = 'letter';
+            span.innerHTML = char === ' ' ? '&nbsp;' : char;
+            span.style.animationDelay = ((i + bdayStr.length) * 0.1) + 's';
+            line2.appendChild(span);
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            pupils.forEach(pupil => {
+                const rect = pupil.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+                const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+                const moveX = Math.cos(angle) * 8;
+                const moveY = Math.sin(angle) * 8;
+                pupil.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+            });
+        });
+
+        let timeLeft = 5;
+        const timer = setInterval(() => {
+            timeLeft--;
+            document.getElementById('countdown').innerText = timeLeft || "GO!";
+            if (timeLeft < 0) {
+                clearInterval(timer);
+                reveal();
+            }
+        }, 1000);
+
+        function reveal() {
+            document.getElementById('countdown').style.display = 'none';
+            document.getElementById('cL').style.transform = 'translateX(-100%)';
+            document.getElementById('cR').style.transform = 'translateX(100%)';
+
+            setTimeout(() => { document.getElementById('l1').style.transform = 'translateY(0)'; }, 500);
+            setTimeout(() => { document.getElementById('l2').style.transform = 'translateY(0)'; }, 1300);
+            setTimeout(() => { document.getElementById('l3').style.transform = 'translateY(0)'; }, 2100);
+            setTimeout(() => { 
+                document.getElementById('l4').style.transform = 'translateY(0)'; 
+                document.getElementById('flame').style.opacity = '1';
+                document.getElementById('bday-container').style.opacity = '1';
+                document.body.style.background = "var(--bg-party)";
+                setInterval(createShape, 300);
+            }, 2900);
+        }
+
+        function blowCandle() {
+            if (document.getElementById('flame').style.opacity === '1') {
+                document.getElementById('flame').style.opacity = '0';
+                document.getElementById('surprise-overlay').style.display = 'flex';
+                for(let i=0; i<60; i++) setTimeout(createShape, i * 40);
+            }
+        }
+
+        document.getElementById('surprise-overlay').onclick = () => {
+            document.getElementById('surprise-overlay').style.display = 'none';
+            document.getElementById('flame').style.opacity = '1';
+        };
+
+        function createShape() {
+            const s = document.createElement('div');
+            const size = Math.random() * 30 + 10;
+            const colors = ['#FFF', '#FFD700', '#FF80AB', '#00E5FF', '#FF1493'];
+            s.className = 'shape';
+            s.style.left = Math.random() * 100 + 'vw';
+            s.style.width = size + 'px';
+            s.style.height = size + 'px';
+            s.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            s.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            document.body.appendChild(s);
+            setTimeout(() => s.remove(), 5000);
+        }
+    </script>
+</body>
+</html>
