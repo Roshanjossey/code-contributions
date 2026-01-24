@@ -1,0 +1,166 @@
+<article class="card-container">
+  <div class="sidebar">
+    <div class="status-dot"></div>
+    <div class="nav-icons">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+  </div>
+
+  <main class="content">
+    <header>
+      <h3 class="name">Subin Kumar</h3>
+      <p class="role">Full-Stack Engineer & Problem Solver</p>
+      <div class="bio">
+        "I write code for bread and butter <span class="accent-text">and occasionally for the soul.</span>"
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="stack">
+        <span class="label">Primary Stack</span>
+        <div class="badge-group">
+          <span class="pills ts">TypeScript</span>
+          <span class="pills rust">Rust</span>
+          <span class="pills cpp">C++</span>
+          <span class="pills sol">Solidity</span>
+        </div>
+      </section>
+
+      <section class="tools">
+        <span class="label">Infrastructure</span>
+        <div class="icon-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="K8s" class="tint" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" />
+        </div>
+      </section>
+    </div>
+    
+    <a href="https://github.com/Subinkumar077/" target="_blank" class="cta">View GitHub Repository</a>
+  </main>
+</article>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;800&display=swap');
+
+  :root {
+    --bg-dark: #0a0a0c;
+    --accent: #64ffda;
+    --text-main: #e6edf3;
+    --text-dim: #8b949e;
+    --glass: rgba(255, 255, 255, 0.03);
+  }
+
+  body {
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .card-container {
+    display: flex;
+    background: #111114;
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    width: 450px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  }
+
+  /* Designer Sidebar */
+  .sidebar {
+    width: 50px;
+    background: var(--glass);
+    border-right: 1px solid #30363d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .nav-icons { display: flex; flex-direction: column; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+  /* Main Content */
+  .content { padding: 30px; flex: 1; }
+
+  .name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+    color: white;
+  }
+
+  .role {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    margin: 5px 0 20px;
+    text-transform: uppercase;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    border-left: 2px solid var(--accent);
+    padding-left: 15px;
+  }
+
+  .accent-text { color: white; font-weight: 600; }
+
+  /* Grid Layout */
+  .label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #484f58;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .badge-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+  .pills {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: var(--text-main);
+  }
+
+  .ts { border-left: 3px solid #3178c6; }
+  .rust { border-left: 3px solid #ce412b; }
+  .sol { border-left: 3px solid #64ffda; }
+
+  .icon-group { display: flex; gap: 15px; align-items: center; }
+  .icon-group img { width: 22px; filter: grayscale(1) brightness(0.8); transition: 0.3s; }
+  .icon-group img:hover { filter: grayscale(0) brightness(1); transform: scale(1.2); }
+  .tint { filter: invert(70%) sepia(50%) !important; }
+
+  .cta {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: 0.3s;
+  }
+
+  .cta:hover { color: var(--accent); }
+</style>
