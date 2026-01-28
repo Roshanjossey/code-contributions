@@ -88,9 +88,9 @@ Sie können Ihre Karte als HTML-Datei im Contributors-Verzeichnis hinzufügen. E
 </style>
 
 ```
-## Add your card to contributors list
+## Füge Sie ihre Karte zur Liste der mitwirkenden hinzu
 
-Add the name of the file you created to `scripts/contributors.js` file.
+Füge den Namen der Datei die Sie erstellt haben hinzu `scripts/contributors.js` Datei.
 
 `scripts/contributors.js`
 ```js
