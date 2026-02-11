@@ -1,0 +1,217 @@
+<article>
+  <h3>Rokaya Othman</h3>
+  <p>Frontend developer</p>
+  <button id="loveBtn">Click Me :) </button>
+  <h4>Programming languages I use</h4>
+  <section class="container">
+    <div class="badge" style="background-color: rgb(99, 34, 34); color: white">
+      Python
+    </div>
+    <div class="badge" style="background-color: #f7df1e; color: black;">
+      JavaScript
+    </div>
+     <div class="badge" style="background-color: rgb(56, 116, 164); color: black;">
+      C++
+    </div>
+  </section>
+
+  <canvas id="canvas"></canvas>
+</article>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f4dce4, #ffe4ec);
+    color: hwb(342 11% 71%);
+  }
+
+  article {
+    position: relative;
+    padding: 3rem;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #cb2760;
+    text-shadow: 37px -10px 8px rgba(230, 134, 201, 0.6);
+     -webkit-text-stroke: 0.50px rgb(255, 255, 255);
+}
+
+  p {
+    font-weight: 400;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+
+  h4 {
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color:  hwb(342 29% 48%);
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .badge {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 500;
+    background: #f8b4c6;
+    color: #4a1c2a;
+    box-shadow: 0 4px 10px rgba(177, 18, 74, 0.15);
+    transition: transform 0.2s ease;
+  }
+
+  .badge:hover {
+    transform: translateY(-3px);
+  }
+
+  .icon {
+    width: 2.2rem;
+    filter: drop-shadow(0 4px 6px rgba(177, 18, 74, 0.2));
+  }
+
+  #loveBtn {
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff4d88, #b1124a);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 6px 20px rgba(177, 18, 74, 0.35);
+    transition: all 0.25s ease;
+  }
+
+  #loveBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(177, 18, 74, 0.45);
+  }
+
+  #canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+</style>
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const button = document.getElementById("loveBtn");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let hearts = [];
+
+// pink/red palette
+const palette = [
+  "#ff4d88",
+  "#ff6fa3",
+  "#ff2e63",
+  "#e6005c",
+  "#b1124a",
+  "#ff85a2"
+];
+
+function randomColor() {
+  return palette[Math.floor(Math.random() * palette.length)];
+}
+
+function createHeart(x, y) {
+  const angle = Math.random() * Math.PI * 2; // full 360°
+  const speed = Math.random() * 4 + 2;       // stronger burst
+
+  hearts.push({
+    x,
+    y,
+    vx: Math.cos(angle) * speed,
+    vy: Math.sin(angle) * speed,
+    size: Math.random() * 12 + 10,
+    alpha: 1,
+    color: randomColor(),
+    rotation: Math.random() * Math.PI * 2
+  });
+}
+
+function drawHeart(x, y, size, alpha, color, rotation) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(rotation);
+  ctx.scale(size / 20, size / 20);
+  ctx.globalAlpha = alpha;
+
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.bezierCurveTo(0, -10, -15, -10, -15, 0);
+  ctx.bezierCurveTo(-15, 10, 0, 15, 0, 20);
+  ctx.bezierCurveTo(0, 15, 15, 10, 15, 0);
+  ctx.bezierCurveTo(15, -10, 0, -10, 0, 0);
+  ctx.fillStyle = color;
+  ctx.fill();
+
+  ctx.restore();
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = hearts.length - 1; i >= 0; i--) {
+    const h = hearts[i];
+
+    h.x += h.vx;
+    h.y += h.vy;
+
+    // slight gravity
+    h.vy += 0.03;
+
+    // slow rotation
+    h.rotation += 0.02;
+
+    // fade out
+    h.alpha -= 0.01;
+
+    if (h.alpha <= 0) {
+      hearts.splice(i, 1);
+      continue;
+    }
+
+    drawHeart(h.x, h.y, h.size, h.alpha, h.color, h.rotation);
+  }
+
+  requestAnimationFrame(animate);
+}
+
+button.addEventListener("click", () => {
+  const rect = button.getBoundingClientRect();
+  const x = rect.left + rect.width / 2;
+  const y = rect.top + rect.height / 2;
+
+  for (let i = 0; i < 60; i++) {
+    createHeart(x, y);
+  }
+});
+
+animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
