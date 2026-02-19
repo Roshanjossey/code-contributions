@@ -1,0 +1,96 @@
+<div class="profile-card">
+  <div class="badge">NFSU CSE</div>
+  <img src="https://github.com/0xSRS.png" alt="Profile Picture" class="profile-pic">
+  
+  <h1>0xSRS</h1>
+  <p class="subtitle">Full Stack Developer | Cyber Security Aspirant</p>
+  
+  <div class="tags">
+    <span>MERN Stack</span>
+    <span>Digital Forensics</span>
+    <span>Python</span>
+  </div>
+
+  <div class="links">
+    <a href="https://github.com/0xSRS" class="btn gh">GitHub</a>
+  </div>
+</div>
+
+<style>
+  body {
+    background: #0f172a; /* Dark sleek background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .profile-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 320px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-10px);
+    border-color: #38bdf8; /* Highlight on hover */
+  }
+
+  .badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #38bdf8;
+    color: #0f172a;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #38bdf8;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .tags span {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
