@@ -1,0 +1,161 @@
+<article>
+  <h1>Olga Torok</h1>
+  <p>
+    I'm a Front-End Developer from Ireland who loves crafting intuitive user
+    interfaces. I'm currently exploring React, TailwindCSS and creative coding.
+  </p>
+  <h3>Programming languages I use</h3>
+  <section class="container">
+    <div class="badge" style="background-color: #f06527; color: white">
+      HTML5
+    </div>
+    <div class="badge" style="background-color: #1971b7; color: white">
+      CSS3
+    </div>
+    <div class="badge" style="background-color: #eed91b; color: black">
+      JavaScript
+    </div>
+    <div class="badge" style="background-color: #1873bf; color: white">
+      TypeScript
+    </div>
+  </section>
+
+  <h3>Tools I use</h3>
+  <section class="container">
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+      alt="GitHub"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+      alt="Git"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+      alt="VS Code"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+      alt="Angular"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+      alt="React"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      alt="TailwindCSS"
+    />
+  </section>
+</article>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top left, #1a002b, #0d001a 60%);
+    font-family: 'Segoe UI', sans-serif;
+    color: #f5f5ff;
+  }
+
+  article {
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(20, 0, 35, 0.85);
+    border: 1px solid rgba(180, 0, 255, 0.4);
+    box-shadow:
+      0 0 15px rgba(180, 0, 255, 0.4),
+      0 0 40px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  article:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 0 25px rgba(180, 0, 255, 0.7),
+      0 0 60px rgba(0, 255, 255, 0.3);
+  }
+
+  h1 {
+    margin-top: 0;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #2892c7;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff00cc, #00f7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: #d2d2dd;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #2892c7;
+    background: linear-gradient(90deg, #ff00cc, #00f7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .badge {
+    padding: 0.5rem 0.9rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .badge:hover {
+    transform: scale(1.1);
+    box-shadow:
+      0 0 15px rgba(255, 0, 204, 1),
+      0 0 25px rgba(0, 247, 255, 0.8);
+  }
+
+  .icon {
+    width: 3rem;
+    padding: 0.5rem;
+    background: #272737;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 247, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    transition: all 0.2s ease;
+  }
+
+  .icon:hover {
+    transform: scale(1.15) rotate(3deg);
+    box-shadow:
+      0 0 20px rgba(0, 247, 255, 1),
+      0 0 35px rgba(255, 0, 204, 0.8);
+  }
+</style>
