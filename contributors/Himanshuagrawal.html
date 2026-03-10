@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Himanshu Developer Card</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family: "Segoe UI", sans-serif;
+  background:#0f172a;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  color:white;
+}
+
+/* particles background */
+
+#particles-js{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+/* card */
+
+.card{
+  width:360px;
+  padding:28px;
+  background:#1e293b;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  text-align:center;
+}
+
+.name{
+  font-size:24px;
+  font-weight:600;
+}
+
+.role{
+  margin-top:5px;
+  font-size:14px;
+  color:#94a3b8;
+}
+
+/* badges */
+
+.badges{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
+
+.badge{
+  padding:6px 12px;
+  border-radius:6px;
+  font-size:13px;
+}
+
+/* MERN badges */
+
+.mongo{background:#13aa52;}
+.express{background:#444;}
+.react{background:#61dafb;color:black;}
+.node{background:#3c873a;}
+
+/* icons */
+
+.tools{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:10px;
+}
+
+.tools img{
+  width:34px;
+  transition:0.2s;
+}
+
+.tools img:hover{
+  transform:scale(1.15);
+}
+
+/* section */
+
+h4{
+  margin-top:18px;
+  font-size:14px;
+  color:#cbd5f5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="card">
+
+<h2 class="name">Himanshu Agrawal</h2>
+<p class="role">MERN Stack Developer 🚀</p>
+
+<h4>MERN Stack</h4>
+
+<div class="badges">
+<span class="badge mongo">MongoDB</span>
+<span class="badge express">Express</span>
+<span class="badge react">React</span>
+<span class="badge node">Node.js</span>
+</div>
+
+<div class="tools">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+</div>
+
+<h4>Languages</h4>
+
+<div class="badges">
+<span class="badge" style="background:#f7df1e;color:black;">JavaScript</span>
+<span class="badge" style="background:#3776ab;">Python</span>
+<span class="badge" style="background:#00599c;">C++</span>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+particlesJS("particles-js",{
+  particles:{
+    number:{value:60},
+    size:{value:3},
+    move:{speed:1},
+    line_linked:{enable:true,color:"#475569"}
+  }
+});
+</script>
+
+</body>
+</html>
