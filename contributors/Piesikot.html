@@ -2,16 +2,16 @@
   <nav>
   <div class="intro-div">
     <h1 class="intro-div__name">
-      <a href="https://github.com/Piesikot" class="github-link intro-div__name-button" type="button">
+      <a href="https://github.com/Piesikot" class="github-link intro-div__name-button">
         <!-- 🔗 -->
-         <img width="60em" height="auto" src="https://www.svgrepo.com/show/528356/link.svg" alt="link icon">
+         <img width="80" height="80" src="https://www.svgrepo.com/show/528356/link.svg" alt="" aria-hidden="true">
         <span class="intro-div__text">Piesikot</span>
         <span class="intro-div__avatar"></span>
       </a>
     </h1>
   </div>
   </nav>
-  <h2>I design and develop with vegan values at the core, guided by compassion and a commitment to reducing suffering in the world.</h2> 
+  <h2>I design and develop with     vegan values at the core, guided by compassion and a commitment to reducing suffering in the world.</h2> 
   <h3>Languages I use:</h3>
   <section class="container">
     <div class="badge badge-html">HTML</div>
@@ -59,6 +59,8 @@
     display: block;
     border: 3px solid black;
     flex-shrink: 0;
+    transform: scaleX(-1);
+
   }
   h1 {
     font-size: 2.5rem;
@@ -93,6 +95,7 @@
   .intro-div__name-button:hover .intro-div__text::after {
     transform: scaleX(1);
   }
+  .intro-div__name-button:focus-visible .intro-div__text::after { transform: scaleX(1); }
   .link-icon {
     font-size: 2rem;
   }
