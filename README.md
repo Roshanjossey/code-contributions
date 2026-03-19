@@ -17,7 +17,7 @@ Head over to [contribution guide](https://github.com/Roshanjossey/code-contribut
 <kbd>[<img title="Türkiye" alt="Türkiye" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="22">](docs/translations/tr/README.tr.md)</kbd>
 <kbd>[<img title="Farsi" alt="Farsi" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Naval_flag_of_Iran_1933-1980.svg" width="22">](docs/translations/fa/README.fa.md)</kbd> 
 <kbd>[<img title="Italiano" alt="Italiano" src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" width="22">](docs/translations/it/README.it.md)</kbd>
-<kbd>[<img title="العربية" alt="العربية" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" width="22">](docs/translations/sa/README.sa.md)</kbd>
+<kbd>[<img title="العربية" alt="العربية" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" width="22">](docs/translations/ar/README.ar.md)</kbd>
 <kbd>[<img title="한국어" alt="한국어" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" width="22">](docs/translations/kr/README.kr.md)</kbd>
 <kbd>[<img title="Vietnam" alt="Vietnam" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" width="22">](docs/translations/vn/README.vn.md)</kbd>
 <kbd>[<img title="Polish" alt="Polish" src="https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg" width="22">](docs/translations/pl/README.pl.md)</kbd>
