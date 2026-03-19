@@ -19,6 +19,6 @@ Head over to [contribution guide](https://github.com/Roshanjossey/code-contribut
 <kbd>[<img title="Italiano" alt="Italiano" src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" width="22">](docs/translations/it/README.it.md)</kbd>
 <kbd>[<img title="العربية" alt="العربية" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" width="22">](docs/translations/sa/README.sa.md)</kbd>
 <kbd>[<img title="한국어" alt="한국어" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" width="22">](docs/translations/kr/README.kr.md)</kbd>
-<kbd>[<img title="Vietnam" alt="Vietnam" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" width="22">](docs/translations/vn/README.es.md)</kbd>
+<kbd>[<img title="Vietnam" alt="Vietnam" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" width="22">](docs/translations/vn/README.vn.md)</kbd>
 <kbd>[<img title="Polish" alt="Polish" src="https://upload.wikimedia.org/wikipedia/en/1/12/Flag_of_Poland.svg" width="22">](docs/translations/pl/README.pl.md)</kbd>
 <kbd>[<img title="Russian" alt="Russian" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg" width="22">](docs/translations/ru/README.ru.md)</kbd>
