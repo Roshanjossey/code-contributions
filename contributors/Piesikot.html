@@ -1,0 +1,138 @@
+<article>
+  <nav>
+  <div class="intro-div">
+    <h1 class="intro-div__name">
+      <a href="https://github.com/Piesikot" class="github-link intro-div__name-button" type="button">
+        <!-- 🔗 -->
+         <img width="60em" height="auto" src="https://www.svgrepo.com/show/528356/link.svg" alt="link icon">
+        <span class="intro-div__text">Piesikot</span>
+        <span class="intro-div__avatar"></span>
+      </a>
+    </h1>
+  </div>
+  </nav>
+  <h2>I design and develop with vegan values at the core, guided by compassion and a commitment to reducing suffering in the world.</h2> 
+  <h3>Languages I use:</h3>
+  <section class="container">
+    <div class="badge badge-html">HTML</div>
+    <div class="badge badge-css">CSS</div>
+    <div class="badge badge-js">JavaScript</div>
+  </section>
+  <h3>Tools I use:</h3>
+  <section class="container">
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
+  </section>
+</article>
+
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .intro-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 100px;
+  }
+  .intro-div__avatar {
+    background-image: url(https://avatars.githubusercontent.com/u/91406146?s=64&v=4);
+    background-size: cover;
+    background-position: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: block;
+    border: 3px solid black;
+    flex-shrink: 0;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  .intro-div__name-button{
+    text-decoration: none;
+    color: #333;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+   }
+  .intro-div__text {
+    position: relative;
+    display: inline-block;
+  }
+  .intro-div__text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .intro-div__name-button:hover .intro-div__text::after {
+    transform: scaleX(1);
+  }
+  .link-icon {
+    font-size: 2rem;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .badge {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .badge-html {
+    background-color: #e34c26;
+    color: white;
+  }
+  .badge-css {
+    background-color: #1572b6;
+    color: white;
+  }
+  .badge-js {
+    background-color: #f7df1e;
+    color: black;
+  }
+  .icon {
+    width: 2rem;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+</style>
