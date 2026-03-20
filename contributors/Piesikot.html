@@ -1,37 +1,36 @@
 <article>
   <nav>
   <div class="intro-div">
-    <h1 class="intro-div__name">
+    <h3 class="intro-div__name">
       <a href="https://github.com/Piesikot" class="github-link intro-div__name-button">
-        <!-- 🔗 -->
-         <img width="80" height="80" src="https://www.svgrepo.com/show/528356/link.svg" alt="" aria-hidden="true">
+        <img class="link-icon-svg" src="https://www.svgrepo.com/show/528356/link.svg" alt="Profile link icon">
         <span class="intro-div__text">Piesikot</span>
         <span class="intro-div__avatar"></span>
       </a>
-    </h1>
+    </h3>
   </div>
   </nav>
-  <h2>I design and develop with vegan values at the core, guided by compassion and a commitment to reducing suffering in the world.</h2> 
-  <h3>Languages I use:</h3>
+  <p>I design and develop with vegan values at the core, guided by compassion and a commitment to reducing suffering in the world.</p>
+  <h4>Languages I use:</h4>
   <section class="container">
     <div class="badge badge-html">HTML</div>
     <div class="badge badge-css">CSS</div>
     <div class="badge badge-js">JavaScript</div>
   </section>
-  <h3>Tools I use:</h3>
+  <h4>Tools I use:</h4>
   <section class="container">
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" />
-    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="Visual Studio Code" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" alt="Markdown" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" />
   </section>
 </article>
 
@@ -39,40 +38,28 @@
   body {
     font-family: sans-serif;
     display: flex;
-    align-items: center;
-    min-height: 100vh;
   }
   .intro-div {
     display: flex;
-    align-items: center;
-    justify-content: center;
     border: 2px solid black;
     border-radius: 100px;
+    width: fit-content;
   }
-  .intro-div__avatar {
-    background-image: url(https://avatars.githubusercontent.com/u/91406146?s=64&v=4);
-    background-size: cover;
-    background-position: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: block;
-    border: 2px solid black;
-    flex-shrink: 0;
-    transform: scaleX(-1);
-
-  }
-  h1 {
-    font-size: 2.5rem;
+  .intro-div__name {
+    font-size: clamp(1.2rem, 5vw, 2.2rem);
+    margin: 0;
   }
   .intro-div__name-button{
     text-decoration: none;
     color: #333;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1rem;
     border-radius: 50px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
     gap: 0.75rem;
     cursor: pointer;
    }
@@ -96,8 +83,22 @@
     transform: scaleX(1);
   }
   .intro-div__name-button:focus-visible .intro-div__text::after { transform: scaleX(1); }
-  .link-icon {
-    font-size: 2rem;
+  .link-icon-svg {
+    width: clamp(1.5rem, 5vw, 2.5rem);
+    height: auto;
+    flex-shrink: 0;
+  }
+    .intro-div__avatar {
+    background-image: url(https://avatars.githubusercontent.com/u/91406146?s=64&v=4);
+    background-size: cover;
+    background-position: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid black;
+    flex-shrink: 0;
+    transform: scaleX(-1);
   }
   .container {
     display: flex;
@@ -105,16 +106,9 @@
     gap: 1rem;
   }
   article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 50px;
-    padding: 2rem;
-    max-width: 600px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    text-align: center;
   }
   .badge {
     padding: 0.5rem;
@@ -134,8 +128,5 @@
   }
   .icon {
     width: 2rem;
-  }
-  section {
-    margin-bottom: 2rem;
   }
 </style>
