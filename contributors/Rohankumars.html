@@ -1,0 +1,120 @@
+<body>
+  <div class="wrapper">
+    <article class="card">
+      <h3>Rohan Kumar S <span>(irohankumars)</span></h3>
+      <p class="subtitle">
+        Information Science Undergraduate • MERN Stack Developer
+      </p>
+
+      <h4>Tech Stack</h4>
+      <section class="container">
+        <div class="badge mongodb">MongoDB</div>
+        <div class="badge express">Express.js</div>
+        <div class="badge react">React</div>
+        <div class="badge node">Node.js</div>
+      </section>
+
+      <h4>Tools I Use</h4>
+      <section class="container">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" />
+      </section>
+    </article>
+  </div>
+</body>
+
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 350px;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  h3 span {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .subtitle {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h4 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  }
+
+  .mongodb { background:#47A248; }
+  .express { background:#000000; }
+  .react { background:#61DAFB; color:black; }
+  .node { background:#339933; }
+
+  .icon {
+    width: 35px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .icon:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+  }
+</style>
