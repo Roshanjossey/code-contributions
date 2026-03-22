@@ -1,0 +1,350 @@
+<!--Contributor Card: manojkumar -->
+<article class="contributor-card">
+    <div class="card-glow"></div>
+
+    <div class="card-header">
+        <div class="avatar-ring">
+            <div class="avatar">M</div>
+        </div>
+        <div class="header-info">
+            <h3 class="contributor-name">manojkumar</h3>
+            <span class="gsoc-badge">
+                <img src="https://summerofcode.withgoogle.com/favicon.ico" width="14" height="14" alt="GSoC" />
+                Contributor
+            </span>
+        </div>
+    </div>
+
+    <p class="bio">
+        I build intelligent machines that learn and interact with the physical world,
+        focusing on <strong>reinforcement learning</strong> and <strong>embedded AI systems</strong>.
+        Currently developing a vision-based pick-and-place robot and creating
+        PyBullet-based Gym environments for robotic control.
+    </p>
+
+    <div class="section">
+        <h4 class="section-title">
+            <span class="dot"></span> Languages
+        </h4>
+        <div class="badges">
+            <span class="skill-badge python">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                    width="16" alt="Python" />
+                Python
+            </span>
+            <span class="skill-badge javascript">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    width="16" alt="JavaScript" />
+                JavaScript
+            </span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h4 class="section-title">
+            <span class="dot"></span> Tools
+        </h4>
+        <div class="tools">
+            <div class="tool-icon" title="Bash">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
+                    alt="Bash" />
+                <span>Bash</span>
+            </div>
+            <div class="tool-icon" title="Linux">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                    alt="Linux" />
+                <span>Linux</span>
+            </div>
+            <div class="tool-icon" title="PyBullet">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-original.svg"
+                    alt="PyBullet" />
+                <span>PyBullet</span>
+            </div>
+            <div class="tool-icon" title="Git">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+                <span>Git</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="interests">
+        <span class="tag">🤖 Robotics</span>
+        <span class="tag">🧠 Reinforcement Learning</span>
+        <span class="tag">⚡ Embedded AI</span>
+        <span class="tag">👁️ Computer Vision</span>
+    </div>
+</article>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    /* ── Root variables ── */
+    :root {
+        --gsoc-blue: #4285f4;
+        --gsoc-green: #34a853;
+        --gsoc-yellow: #fbbc04;
+        --gsoc-red: #ea4335;
+        --bg-dark: #0d1117;
+        --card-bg: rgba(22, 27, 34, 0.85);
+        --border: rgba(48, 54, 61, 0.8);
+        --text-primary: #e6edf3;
+        --text-secondary: #8b949e;
+        --glass-blur: blur(16px);
+    }
+
+    /* ── Body reset – scoped to not break the parent page ── */
+    .contributor-card *,
+    .contributor-card *::before,
+    .contributor-card *::after {
+        box-sizing: border-box;
+    }
+
+    /* ── The card itself ── */
+    .contributor-card {
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        background: var(--card-bg);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.75rem;
+        max-width: 480px;
+        margin: 2rem auto;
+        color: var(--text-primary);
+        overflow: hidden;
+        box-shadow:
+            0 0 0 1px rgba(66, 133, 244, 0.08),
+            0 8px 32px rgba(0, 0, 0, 0.4),
+            0 1px 0 rgba(255, 255, 255, 0.04) inset;
+        animation: fadeSlideIn 0.5s ease both;
+    }
+
+    /* ── Subtle animated top-border glow ── */
+    .card-glow {
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        pointer-events: none;
+        background: linear-gradient(135deg,
+                rgba(66, 133, 244, 0.15) 0%,
+                rgba(52, 168, 83, 0.08) 40%,
+                rgba(251, 188, 4, 0.06) 70%,
+                rgba(234, 67, 53, 0.08) 100%);
+        z-index: 0;
+    }
+
+    .contributor-card>*:not(.card-glow) {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ── Header ── */
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .avatar-ring {
+        padding: 3px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gsoc-blue), var(--gsoc-green), var(--gsoc-yellow));
+        animation: rotate 6s linear infinite;
+        flex-shrink: 0;
+    }
+
+    .avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #161b22;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--gsoc-blue);
+        letter-spacing: -1px;
+    }
+
+    .contributor-name {
+        margin: 0 0 0.3rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -0.3px;
+    }
+
+    .gsoc-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 20px;
+        background: linear-gradient(90deg, rgba(66, 133, 244, 0.2), rgba(52, 168, 83, 0.2));
+        border: 1px solid rgba(66, 133, 244, 0.35);
+        color: #79b8ff;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+    }
+
+    /* ── Bio ── */
+    .bio {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin: 0 0 1.4rem;
+    }
+
+    .bio strong {
+        color: #79b8ff;
+        font-weight: 600;
+    }
+
+    /* ── Sections ── */
+    .section {
+        margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--text-secondary);
+        margin: 0 0 0.75rem;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gsoc-blue), var(--gsoc-green));
+        display: inline-block;
+    }
+
+    /* ── Skill badges ── */
+    .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .skill-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 12px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        border: 1px solid transparent;
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: default;
+    }
+
+    .skill-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .skill-badge.python {
+        background: rgba(56, 116, 164, 0.2);
+        border-color: rgba(56, 116, 164, 0.5);
+        color: #79b8ff;
+    }
+
+    .skill-badge.javascript {
+        background: rgba(247, 223, 30, 0.12);
+        border-color: rgba(247, 223, 30, 0.35);
+        color: #e3be64;
+    }
+
+    /* ── Tool icons ── */
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .tool-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+        transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        cursor: default;
+    }
+
+    .tool-icon:hover {
+        background: rgba(66, 133, 244, 0.1);
+        border-color: rgba(66, 133, 244, 0.4);
+        transform: translateY(-3px);
+        color: #79b8ff;
+    }
+
+    .tool-icon img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* ── Interest tags ── */
+    .interests {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+        padding-top: 1.1rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-secondary);
+        font-weight: 500;
+        transition: color 0.2s, border-color 0.2s;
+        cursor: default;
+    }
+
+    .tag:hover {
+        color: var(--text-primary);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes rotate {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
