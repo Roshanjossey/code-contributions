@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vinay Kumar | AI & Data Engineer</title>
+  <style>
+    :root {
+      --bg: #030712;
+      --surface: #0f172a;
+      --surface-2: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --brand: #38bdf8;
+      --accent-purple: #818cf8;
+      --shadow: 0 20px 50px rgba(0,0,0,.5);
+      --radius: 20px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f1f5f9;
+        --surface: #ffffff;
+        --surface-2: #f8fafc;
+        --text: #0f172a;
+        --muted: #64748b;
+        --brand: #0284c7;
+        --accent-purple: #4f46e5;
+        --shadow: 0 10px 25px rgba(0, 0, 0, .05);
+      }
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.15) 0px, transparent 50%);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    article.profile {
+      width: min(550px, 100%);
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    article.profile:hover {
+      transform: translateY(-5px);
+    }
+
+    header.hero {
+      padding: 40px 32px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(56, 189, 248, 0.1), transparent);
+    }
+
+    .avatar {
+      width: 80px; height: 80px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--brand), var(--accent-purple));
+      display: grid; place-items: center;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+
+    .sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 20px 32px;
+    }
+
+    h4 {
+      margin: 0 0 16px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Modern Pill Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      background: var(--surface-2);
+      border: 1px solid rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+
+    .badge .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    /* Tool Icons Grid */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      gap: 16px;
+    }
+
+    .tool-icon {
+      width: 40px; height: 40px;
+      padding: 8px;
+      border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.2s ease;
+      filter: grayscale(0.2);
+    }
+    
+    .tool-icon:hover {
+      filter: grayscale(0);
+      transform: scale(1.1);
+      border-color: var(--brand);
+      background: rgba(56, 189, 248, 0.05);
+    }
+
+    .footer-actions {
+      padding: 24px 32px 32px;
+      display: flex;
+      gap: 12px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--muted);
+      color: var(--muted);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <article class="profile">
+    <header class="hero">
+      <div class="avatar">NC</div>
+      <h3>Nischal Chaudhary</h3>
+      <p class="sub">AI & Data Engineering Student • Specialized in Intelligent Systems & Large Scale Data</p>
+    </header>
+
+    <section class="section">
+      <h4>Stack</h4>
+      <div class="container">
+        <div class="badge"><span class="dot" style="background:#3776ab"></span> Python</div>
+        <div class="badge"><span class="dot" style="background:#00599c"></span> C++</div>
+        <div class="badge"><span class="dot" style="background:#00549d"></span> C</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h4>AI / ML & Data Science Tools</h4>
+      <div class="tool-grid">
+        <img class="tool-icon" title="PyTorch" alt="PyTorch" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"/>
+        <img class="tool-icon" title="TensorFlow" alt="TensorFlow" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"/>
+        <img class="tool-icon" title="Pandas" alt="Pandas" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"/>
+        <img class="tool-icon" title="NumPy" alt="NumPy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"/>
+        <img class="tool-icon" title="Scikit-learn" alt="Scikit-learn" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"/>
+        <img class="tool-icon" title="Jupyter" alt="Jupyter" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"/>
+        <img class="tool-icon" title="Docker" alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"/>
+      </div>
+    </section>
+
+    <div class="footer-actions">
+      <a href="https://github.com/ronnin796" class="btn btn-primary">View GitHub</a>
+      <a href="#" class="btn btn-outline">Portfolio</a>
+    </div>
+  </article>
+
+</body>
+</html>
