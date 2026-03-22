@@ -1,0 +1,176 @@
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>tallay23 — Biglietto da visita</title>
+  <style>
+    /* ===== Reset & base ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    img, svg { display: block; max-width: 100%; height: auto; }
+
+    /* ===== Palette & tokens (FOREST TECH) ===== */
+    :root{
+      --bg: #0b1210;            /* forest charcoal */
+      --bg-grad1:#0e1a16;       /* lieve gradiente */
+      --card-bg:#101a16;        /* carta scura */
+      --text:#eaf3ef;           /* testo principale */
+      --text-dim:#cfe0d9;       /* testo secondario */
+      --accent:#34d399;         /* emerald */
+      --accent-2:#2dd4bf;       /* teal */
+      --border:rgba(255,255,255,0.10);
+      --glass:rgba(255,255,255,0.04);
+
+      --r-lg:16px; --r-md:10px; --r-sm:8px;
+      --shadow:0 10px 30px rgba(0,0,0,0.35);
+      --focus:0 0 0 3px rgba(52,211,153,0.35);
+
+      --card-w: 680px;
+    }
+
+    /* ===== Layout full-screen ===== */
+    html, body {
+      height: 100%;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 1200px at 20% 20%, var(--bg-grad1) 0%, var(--bg) 60%),
+        var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      width: min(92vw, var(--card-w));
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 3.5vw, 28px);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .avatar {
+      width: 72px; height: 72px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      font-weight: 700; font-size: 20px; letter-spacing: 0.3px;
+      color: var(--text);
+      user-select: none;
+    }
+
+    h1 { margin: 0; font-size: clamp(20px, 3.5vw, 26px); line-height: 1.2; color: var(--text); }
+    .subtitle { margin-top: 4px; color: var(--text-dim); font-size: 14px; }
+
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .pill {
+      font-size: 11px; padding: 6px 10px; border-radius: 999px;
+      background: rgba(52,211,153,0.12); border: 1px solid rgba(52,211,153,0.35);
+      color: var(--text); letter-spacing: 0.2px;
+    }
+
+    .content { margin-top: 14px; color: var(--text-dim); font-size: 14px; line-height: 1.5; }
+
+    .section-title {
+      margin: 18px 0 8px 0; color: var(--text); font-size: 15px; font-weight: 600;
+    }
+
+    .badges, .tools {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    }
+    .badge {
+      padding: 6px 10px; border-radius: var(--r-sm);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: var(--text); font-size: 12px; font-weight: 600; letter-spacing: 0.2px;
+    }
+
+    /* Icone inline controllate localmente */
+    .tool-icon { width: 26px; height: 26px; opacity: 0.95; transition: transform .16s ease, opacity .16s ease; }
+    .tool-icon:hover { transform: translateY(-2px); opacity: 1; }
+
+    .actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .btn {
+      padding: 9px 12px; border-radius: var(--r-md); border: 1px solid transparent;
+      cursor: pointer; font-weight: 600; font-size: 14px; color: #0b1310;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+    .btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.12); }
+    .btn:focus-visible { outline: none; box-shadow: var(--focus); }
+
+    footer { margin-top: 14px; display: flex; justify-content: space-between; align-items: center; color: var(--text-dim); font-size: 12px; }
+
+    @media (max-width: 420px) {
+      header { grid-template-columns: 60px 1fr; gap: 12px; }
+      .avatar { width: 60px; height: 60px; border-radius: 12px; }
+      .card { border-radius: 12px; padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="article" aria-label="Biglietto da visita di tallay23">
+    <header>
+      <div class="avatar" aria-hidden="true">T23</div>
+      <div>
+        <h1>tallay23</h1>
+        <p class="subtitle">Ingegnere meccanico → open‑source. Scripto, automatizzo, rompo (poi aggiusto).</p>
+        <div class="meta" aria-label="Tag e ruolo">
+          <span class="pill">Manufacturing Engineer</span>
+          <span class="pill">Processo &amp; Automazione</span>
+          <span class="pill">Open‑source lover</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="content">
+      <p>Forko per vivere (magari), pull request per passione. Per lavoro ingegnerizzo processi litigando con la gestione schematizzata.</p>
+
+      <h2 class="section-title">Linguaggi</h2>
+      <div class="badges" aria-label="Linguaggi di programmazione">
+        <span class="badge">Python</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">C++</span>
+        <span class="badge">HTML</span>
+      </div>
+
+      <h2 class="section-title">Strumenti</h2>
+      <div class="tools" aria-label="Strumenti">
+        <!-- SVG inline leggeri (Bash, Linux style minimal) -->
+        <svg class="tool-icon" viewBox="0 0 24 24" aria-label="Bash" role="img">
+          <path fill="#2dd4bf" d="M4 4h16a2 2 0 0 1 2 2v8.5a2 2 0 0 1-.8 1.6l-8 5.5a2 2 0 0 1-2.4 0l-8-5.5A2 2 0 0 1 2 14.5V6a2 2 0 0 1 2-2z"/>
+          <circle cx="8" cy="9" r="1.2" fill="#0b1210"/>
+          <circle cx="11" cy="9" r="1.2" fill="#0b1210"/>
+          <rect x="7" y="12" width="10" height="1.8" rx="0.9" fill="#0b1210"/>
+        </svg>
+        <svg class="tool-icon" viewBox="0 0 24 24" aria-label="Linux" role="img">
+          <path fill="#34d399" d="M12 2c2 0 3 1.5 3.5 3l.6 1.7c.4 1 1.1 1.8 2 2.3A5.5 5.5 0 0 1 20 14c0 4-3.6 6.5-8 6.5S4 18 4 14a5.5 5.5 0 0 1 1.9-4c.9-.5 1.6-1.3 2-2.3L8.6 5C9 3.5 10 2 12 2z"/>
+          <circle cx="10" cy="8.2" r="0.7" fill="#0b1210"/>
+          <circle cx="14" cy="8.2" r="0.7" fill="#0b1210"/>
+          <rect x="9.2" y="10.8" width="5.6" height="1.8" rx="0.9" fill="#0b1210"/>
+        </svg>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="#" aria-label="Contattamiy" href="#" aria-label="
+
+    <footer>
+      <span>© 2026 • tallay23</span>
+      <span>Florence, IT</span>
+    </footer>
+  </main>
+</body>
+</html>
+``
