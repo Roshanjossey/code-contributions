@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DERRRRRRR</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(330deg, #18053f, #350e4e, #561755, #782155, #9a2e4c, #b74238, #ce5c06);
+        }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            width: fit-content;
+            background: linear-gradient(90deg, #00e6c7, #00b8e6, #7a5cff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card p {
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #7ae0ff;
+        }
+
+        .card h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            width: fit-content;
+            color: #7ae0ff;
+        }
+
+        .card .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .card .badge {
+            padding:0.5rem 1rem;
+            border-radius:0.5rem;
+            font-weight:500;
+            font-size:0.9rem;
+            color: rgba(255,255,255,0.8);
+            background: rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .card .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            background: none;
+            color: inherit;
+        }
+
+
+        .card .icon {
+            width:2.5rem;
+            height:2.5rem;
+            padding:0.25rem;
+            background: rgba(255,255,255,0.05);
+            border-radius:0.5rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .card .icon:hover {
+            transform: scale(1.1);
+            background: rgba(255,255,255,0.1);
+        }
+
+
+        canvas {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -100;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+
+<body>
+   <div class="card">
+    <h3>Derderderr</h3>
+    <p>Helllllllooooo, I just graduated from high school, passionate in web design, cybersecurity, and AI</p>
+
+    <h4>Languages I Use:</h4>
+        <div class="container">
+            <div class="badge" data-color="#f0db4f" >JavaScript</div>
+            <div class="badge" data-color="#306998">Python</div>
+            <div class="badge" data-color="#264de4">CSS</div>
+            <div class="badge" data-color="#3c873a">Node.js</div>
+            <div class="badge" data-color="#00599C">C++</div>
+            <div class="badge" data-color="#68217a">C#</div>
+            <div class="badge" data-color="#a8b9cc">C</div>
+        </div>
+
+
+        <h4>Tools I Use:</h4>
+        <div class="container">
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash"/>
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"/>
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"/>
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"/>
+        </div>
+    </div>
+
+    
+    <!-- star -->
+    <canvas></canvas>
+</body>
+
+<script>
+    // badge hover
+    document.querySelectorAll('.card .badge').forEach(badge => {
+        const defaultColor = badge.style.background;
+        const hoverColor = badge.dataset.color;
+
+        badge.addEventListener('mouseenter', () => {
+            badge.style.background = hoverColor;
+        });
+
+        badge.addEventListener('mouseleave', () => {
+            badge.style.background = defaultColor;
+        });
+    });
+
+
+    // color
+    const STAR_COLOR = '#13afb4'; // for mono
+    const STAR_MIN_R = 50;
+    const STAR_MAX_R = 150;
+    const STAR_MIN_G = 60;
+    const STAR_MAX_G = 220;
+    const STAR_MIN_B = 70;
+    const STAR_MAX_B = 255;
+    // glow effect
+    const STAR_MIN_GLOW = 0.8;
+    const STAR_MAX_GLOW = 1.2;
+    const GLOW_EXTEND_MULT = 1.5;
+    // size
+    const STAR_MIN_SIZE = 0.5;
+    const STAR_MAX_SIZE = 4;
+    // tail length
+    const STAR_TAIL_LENGTH = 1.25; //not used
+    const STAR_TRAIL_LENGTH = 8;
+    // scale
+    const STAR_INSCREEN_MIN_SCALE = 0.05;
+    const STAR_INSCREEN_MAX_SCALE = 0.1;
+    const STAR_OVERFLOW_MIN_SCALE = 0.07;
+    const STAR_OVERFLOW_MAX_SCALE = 3; //overflow collide realistic
+    // outscreen overflow
+    const OVERFLOW_THRESHOLD = 170;
+    const OVERFLOW_SPAWN = OVERFLOW_THRESHOLD / 10 * 9;
+    // number
+    const STAR_COUNT = (window.innerWidth * window.innerHeight) / 3600;
+
+    // damping
+    const VELOCITY_DAMPING = 0.95;
+    const VELOCITY_APPROACHING_RATE = 1;
+
+    // element
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // forward speed
+    const MIN_FORWARD_VELOCITY = 0.0025
+    const MAX_FORWARD_VELOCITY = 0.8;
+    const FORWARD_VELOCITY_ACCELERATION_RATE = 0.0004;
+    const FORWARD_VELOCITY_DECELERATION_RATE = 0.003;
+
+    // canvas
+    const CANVAS_FADE_RATE = 0;
+
+    let CLOCK_RUN_TIME = 0;
+
+    // scale
+    let scale = 1; // device pixel ratio
+    let width, height;
+    let stars = [];
+    let pointerX, pointerY;
+    let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: MIN_FORWARD_VELOCITY};
+
+    let isMouseDown = false;
+
+    // init
+    resize(); //
+    generate(); // initial stars set
+    step(); // loop
+
+    // event listener
+    window.onresize = resize;
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mouseup', onMouseUp);
+
+    function onMouseMove(event) { movePointer(event.clientX, event.clientY); }
+    function onTouchMove(event) { movePointer(event.touches[0].clientX, event.touches[0].clientY); event.preventDefault(); }
+    function onMouseDown(event) {
+        if (!event.target.closest("#login-container")) {
+            isMouseDown = true;
+            event.preventDefault();
+        }
+    }
+    function onMouseUp(event) { isMouseDown = false; event.preventDefault(); }
+
+
+    // generate
+    function generate() {
+        for (let i = 0; i < STAR_COUNT; i++) {
+            stars.push({
+                x: getRandomFromRange(-OVERFLOW_SPAWN, width + OVERFLOW_SPAWN),
+                y: getRandomFromRange(-OVERFLOW_SPAWN, height + OVERFLOW_SPAWN),
+                z: getRandomFromRange(STAR_INSCREEN_MIN_SCALE, STAR_INSCREEN_MAX_SCALE),
+                color_r: getRandomFromRange(STAR_MIN_R, STAR_MAX_R),
+                color_g: getRandomFromRange(STAR_MIN_G, STAR_MAX_G),
+                color_b: getRandomFromRange(STAR_MIN_B, STAR_MAX_B),
+                size: getRandomFromRange(STAR_MIN_SIZE, STAR_MAX_SIZE),
+                glow: getRandomFromRange(STAR_MIN_GLOW, STAR_MAX_GLOW),
+                trail: [], // Stores past positions
+            });
+        }
+    }
+
+    // Canvas
+    function resize() {
+        scale = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        canvas.width = width * scale;
+        canvas.height = height * scale;
+
+        // IMPORTANT: reset transform before scaling
+        ctx.setTransform(scale, 0, 0, scale, 0, 0);
+    }
+
+
+
+    // UPDATES
+    function step() {
+        CLOCK_RUN_TIME += 1;
+
+        ctx.clearRect(0, 0, width, height);
+        //ctx.fillStyle = "rgba(0, 0, 0, 0.1)"; // for transparent
+        //ctx.fillRect(0, 0, width, height); 
+        update();
+        render();
+        requestAnimationFrame(step); // repeat for next frame
+    }
+
+    // Star Postion
+    function update() {
+        velocity.tx *= VELOCITY_DAMPING; // target speed, with damping
+        velocity.ty *= VELOCITY_DAMPING;
+        velocity.x += (velocity.tx - velocity.x) * VELOCITY_APPROACHING_RATE; // actual speed, for smooth transition
+        velocity.y += (velocity.ty - velocity.y) * VELOCITY_APPROACHING_RATE;
+
+        if (isMouseDown) {
+            velocity.z += (MAX_FORWARD_VELOCITY - velocity.z) * FORWARD_VELOCITY_ACCELERATION_RATE;
+        } else {
+            velocity.z += (MIN_FORWARD_VELOCITY - velocity.z) * FORWARD_VELOCITY_DECELERATION_RATE;
+        } 
+
+
+        stars.forEach((star) => {
+            if (CLOCK_RUN_TIME % 1 == 0) {
+                star.trail.push({ x: star.x, y: star.y }); 
+                if (star.trail.length > STAR_TRAIL_LENGTH) star.trail.shift(); // kepp last STAR_TRAIL_LENGTH positions
+            }
+
+            star.z += velocity.z;
+            // relative to user input
+            let speedFactor = Math.pow(star.z, 1.2); // distance exaggerated z < 1: slower, z > 1: faster
+            star.x += velocity.x * speedFactor;
+            star.y += velocity.y * speedFactor;
+
+            let expansionFactor = 1 + velocity.z * star.z * 0.5;
+            //star.x += velocity.x * expansionFactor; // perspective rotation
+            //star.y += velocity.y * expansionFactor;
+            star.x = (star.x - width / 2) * expansionFactor + width / 2;
+            star.y = (star.y - height / 2) * expansionFactor + height / 2;
+            
+            if (Math.hypot(velocity.x, velocity.y) < 1) { // when slow, stars are saved by overflow threshold
+                if (star.x < -OVERFLOW_THRESHOLD || star.x > width + OVERFLOW_THRESHOLD ||
+                    star.y < -OVERFLOW_THRESHOLD || star.y > height + OVERFLOW_THRESHOLD) {
+                    recycleStar(star);
+                }
+            } else { // when moving fast, check threshold only for opposite velocity direction, saving incoming stars
+                if (velocity.x < 0) {
+                    if (star.x < -OVERFLOW_THRESHOLD) recycleStar(star);
+                } else {
+                    if (star.x > width + OVERFLOW_THRESHOLD) recycleStar(star);
+                } 
+                if (velocity.y < 0) {
+                    if (star.y < -OVERFLOW_THRESHOLD) recycleStar(star);
+                } else {
+                    if (star.y > height + OVERFLOW_THRESHOLD) recycleStar(star);
+                }
+            }
+            });
+        }
+
+    // reallocate outside screen stars
+    function recycleStar(star) {
+        let offsetX = -velocity.x * (1 / (1 - VELOCITY_DAMPING)) * Math.random() * 1; // opposite, final pos, spreading
+        let offsetY = -velocity.y * (1 / (1 - VELOCITY_DAMPING)) * Math.random() * 1;
+        let px = getRandomFromRange(offsetX - OVERFLOW_SPAWN, width + offsetX + OVERFLOW_SPAWN) + Math.random() * width / 60;
+        let py = getRandomFromRange(offsetY - OVERFLOW_SPAWN, height + offsetY + OVERFLOW_SPAWN) + Math.random() * height / 60;
+        //console.log(Math.floor(px));
+        star.x = px;
+        star.y = py;
+
+        if (star.x < 0 || star.x > width || star.y < 0 || star.y > height) { // out of screen, can set larger z for consistency
+            star.z = getRandomFromRange(STAR_OVERFLOW_MIN_SCALE, STAR_OVERFLOW_MAX_SCALE);
+        } else {
+            star.z = getRandomFromRange(STAR_INSCREEN_MIN_SCALE, STAR_INSCREEN_MAX_SCALE);
+        }
+
+        star.trail = [];
+    }
+
+    // Draw Star
+    function render() {
+        stars.forEach((star) => {
+            //self
+            ctx.beginPath();
+            ctx.lineCap = 'round';
+            ctx.lineWidth = star.size * star.z * scale;
+            ctx.stroke();
+
+            // tails
+            //using trail path
+            for (let i = 0; i < star.trail.length - 1; i++) {
+                const t = i / (star.trail.length - 1); // 0 → 1
+                const fade = t ** 1.6;                 // smooth tail fade
+                const widthFade = t ** 0.85;      // thicker near head
+
+                const p1 = star.trail[i];
+                const p2 = star.trail[i + 1];
+
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(
+                    ${star.color_r},
+                    ${star.color_g},
+                    ${star.color_b},
+                    ${fade * 0.6}
+                )`;
+
+                ctx.lineWidth = star.size * star.z * scale * widthFade;
+                ctx.lineCap = 'round';
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.stroke();
+            }
+
+
+            // glows
+            ctx.beginPath();
+            const speedFactor = Math.min(star.z * 1.5, 1.5);
+            const ringRadius = star.size * star.z * scale * GLOW_EXTEND_MULT * speedFactor;
+
+            const glowR = star.color_r * star.glow;
+            const glowG = star.color_g * star.glow;
+            const glowB = star.color_b * star.glow;
+
+            const gradient = ctx.createRadialGradient(
+                star.x, star.y, 0,
+                star.x, star.y, ringRadius
+            );
+
+            gradient.addColorStop(0,   `rgba(${glowR}, ${glowG}, ${glowB}, 0.25)`); // Core
+            gradient.addColorStop(0.2, `rgba(${glowR}, ${glowG}, ${glowB}, 0.10)`); // Bloom
+            gradient.addColorStop(0.5, `rgba(${glowR}, ${glowG}, ${glowB}, 0.01)`); // Haze
+            gradient.addColorStop(1,   `rgba(${glowR}, ${glowG}, ${glowB}, 0)`); // fadeout
+
+            ctx.fillStyle = gradient;
+            ctx.arc(star.x, star.y, ringRadius, 0, Math.PI * 2);
+            ctx.fill();
+
+        });
+    }
+
+    // Get a random number between min and max
+    function getRandomFromRange(min, max) {
+        return min + Math.random() * (max - min);
+    }
+
+    // Mouse functions
+    function movePointer(x, y) {
+        if (pointerX !== undefined && pointerY !== undefined) {
+            let ox = x - pointerX;
+            let oy = y - pointerY;
+            velocity.tx += (ox / 100) * scale;
+            velocity.ty += (oy / 100) * scale;
+        }
+        pointerX = x;
+        pointerY = y;
+    }
+
+
+</script>
+</html>
