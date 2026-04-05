@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Creative Profile Card</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:#f6f8fa;
+    padding:2rem;
+    display:grid;place-items:center;
+    min-height:100vh;
+  }
+  .card{
+    background:white;
+    width:100%;max-width:620px;
+    border-radius:16px;
+    box-shadow:0 6px 24px rgba(0,0,0,0.06);
+    overflow:hidden;
+  }
+  .header{
+    background:#24292f;
+    color:white;
+    padding:1.6rem 2rem;
+  }
+  .header h3{font-size:1.5rem}
+  .header p{opacity:.8;margin-top:.4rem}
+  .content{padding:2rem}
+  .section{margin-bottom:1.8rem}
+  .section h4{
+    font-size:1rem;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    color:#666;
+    margin-bottom:1rem;
+  }
+  .grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.8rem;
+    align-items:center;
+  }
+  .badge{
+    padding:.5rem 1rem;
+    border-radius:999px;
+    font-weight:500;
+    font-size:.9rem;
+  }
+  .tool-icons{
+    display:flex;
+    gap:1.2rem;
+  }
+  .tool-icons img{
+    width:32px;
+    height:32px;
+    transition:.2s;
+  }
+  .tool-icons img:hover{transform:scale(1.15)}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <h3>SingularWind979</h3>
+    <p>
+        Sophomore Software Engineering student, learning CS fundamentals through top overseas open courses.
+    </p>
+  </div>
+
+  <div class="content">
+    <div class="section">
+      <h4>Programming Languages</h4>
+      <div class="grid">
+        <div class="badge" style="background:#f7df1e;color:#000">Java</div>
+        <div class="badge" style="background:#3178c6;color:#fff">TypeScript</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Tools & Environment</h4>
+      <div class="tool-icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux">
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
