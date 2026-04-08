@@ -13,7 +13,7 @@ Head over to [contribution guide](https://github.com/Roshanjossey/code-contribut
 <kbd>[<img title="日本語" alt="日本語" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/jp.svg" width="22">](docs/translations/ja/README.ja.md)</kbd>
 <kbd>[<img title="Bahasa Indonesia" alt="Bahasa Indonesia" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/id.svg" width="22">](docs/translations/id/README.id.md)</kbd>
 <kbd>[<img title="簡體中文" alt="簡體中文" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/cn.svg" width="22">](docs/translations/cn/README.cn.md)</kbd>
-<kbd>[<img title="繁體中文" alt="繁體中文" src="https://flagcdn.com/w40/tw.png" width="22">](docs/translations/cn/README.cn.md)</kbd>
+<kbd>[<img title="繁體中文" alt="繁體中文" src="https://flagcdn.com/w40/tw.png" width="22">](docs/translations/cn/README.tw.md)</kbd>
 <kbd>[<img title="Spain" alt="Spain" src="https://flagcdn.com/w40/es.png" width="22">](docs/translations/es/README.es.md)</kbd>
 <kbd>[<img title="Türkiye" alt="Türkiye" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/tr.svg" width="22">](docs/translations/tr/README.tr.md)</kbd>
 <kbd>[<img title="Farsi" alt="Farsi" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/ir.svg" width="22">](docs/translations/fa/README.fa.md)</kbd>
