@@ -1,185 +1,61 @@
-<article class="profile-card">
-    <div class="card-inner">
-        <div class="header">
-            <div class="avatar"><img src="https://ik.imagekit.io/xrrsiofbq/images/home.webp?updatedAt=1774793007331"
-                    alt=""></div>
-            <h3 class="username">soumensen411</h3>
-            <p class="bio">
-                Hi, I'm Soumen, a Computer Science student at IIUC with a deep passion for competitive programming, web
-                design, and development.
-            </p>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-            <h4 class="section-title">Programming languages</h4>
-            <div class="badges">
-                <div class="badge">React</div>
-                <div class="badge">JavaScript</div>
-                <div class="badge">Python</div>
-                <div class="badge">C++</div>
-            </div>
-        </div>
-        <div class="section">
-            <h4 class="section-title">Tools</h4>
-            <div class="icons">
-                <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
-                    alt="Bash" />
-                <img class="icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                    alt="Linux" />
-
-                <img class="icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-
-                <img class="icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-                    alt="React" />
-                <img class="icon"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
-                    alt="GitHub" />
-            </div>
-        </div>
-    </div>
+<article>
+  <h3>soumensen411</h3>
+  <p>Hi, I'm Soumen, a Computer Science student at IIUC with a deep passion for competitive programming, web design, and development.</p>
+  <h4>Programming languages I use</h4>
+  <section class="container">
+    <div class="badge" style="background-color: #3874a4; color: white">Python</div>
+    <div class="badge" style="background-color: #f7df1e; color: black;">JavaScript</div>
+    <div class="badge" style="background-color: #61dafb; color: black;">React</div>
+    <div class="badge" style="background-color: #00599c; color: white;">C++</div>
+  </section>
+  <h4>Tools I use</h4>
+  <section class="container">
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" />
+  </section>
 </article>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-    body {
-        background: #111111;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 2rem;
-        font-family: 'Inter', system-ui, sans-serif;
-    }
-
-    .profile-card {
-        width: 380px;
-        border-radius: 20px;
-        background: #1a1a1a;
-        border: 1px solid #2e2e2e;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-        overflow: hidden;
-        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-            box-shadow 0.35s ease;
-    }
-
-    .profile-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7);
-    }
-
-    .card-inner {
-        padding: 2.2rem 2rem;
-    }
-
-    .header {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .avatar {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        background: #2a2a2a;
-        border: 1px solid #3a3a3a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0 auto 1rem;
-        letter-spacing: 1px;
-    }
-
-    .avatar img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .username {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0 0 0.5rem;
-    }
-
-    .bio {
-        color: #888888;
-        font-size: 0.88rem;
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    .divider {
-        height: 1px;
-        background: #2e2e2e;
-        margin: 0 0 1.8rem;
-    }
-
-    .section {
-        margin-bottom: 1.8rem;
-    }
-
-    .section:last-child {
-        margin-bottom: 0;
-    }
-
-    .section-title {
-        font-size: 0.72rem;
-        font-weight: 600;
-        color: #555555;
-        text-transform: uppercase;
-        letter-spacing: 1.2px;
-        margin-bottom: 1rem;
-    }
-
-    .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-    }
-
-    .badge {
-        padding: 0.45rem 1rem;
-        border-radius: 9999px;
-        font-weight: 600;
-        font-size: 0.83rem;
-        background: #222222;
-        border: 1px solid #333333;
-        color: #cccccc;
-        transition: all 0.2s ease;
-    }
-
-    .badge:hover {
-        background: #2a2a2a;
-        border-color: #555555;
-        color: #ffffff;
-        transform: translateY(-2px);
-    }
-
-    .icons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.1rem;
-    }
-
-    .icon {
-        width: 2.6rem;
-        height: 2.6rem;
-        transition: transform 0.25s ease;
-        filter: grayscale(20%) brightness(0.9);
-    }
-
-    .icon:hover {
-        transform: scale(1.2) rotate(6deg);
-        filter: grayscale(0%) brightness(1.1);
-    }
+  body {
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+  article {
+    background-color: #111111;
+    color: #fafafa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+  }
+  article h3 {
+    font-size: 1rem;
+    margin: 0 0 0.3rem;
+  }
+  article p {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    margin: 0 0 0.6rem;
+    line-height: 1.4;
+  }
+  article h4 {
+    font-size: 0.75rem;
+    margin: 0.6rem 0 0.4rem;
+    color: #888888;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.25rem;
+    font-size: 0.72rem;
+  }
+  .icon {
+    width: 1.5rem;
+  }
 </style>
