@@ -30,7 +30,8 @@
     transform-origin: left;
     transition: transform 0.3s ease;
   }
-  .name:hover .name-text::after {
+  .name:hover .name-text::after,
+  .name:focus-visible .name-text::after {
     transform: scaleX(1);
   }
  .name-avatar {
