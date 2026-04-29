@@ -1,3 +1,5 @@
+const featuredContributors = ['roshanjossey.html', 'gokultp.html'];
+
 let currentLetter = '';
 const usedLetters = [];
 
@@ -7,10 +9,11 @@ function getLetterKey(contributor) {
 }
 
 function buildNavs() {
-    const links = usedLetters.map(l =>
+    const featuredLink = `<a href="#section-featured">FEATURED</a>`;
+    const alphaLinks = usedLetters.map(l =>
         `<a href="#section-${l}">${l === '0' ? '#' : l.toUpperCase()}</a>`
     ).join('');
-    document.querySelectorAll('.alpha-nav').forEach(nav => nav.innerHTML = links);
+    document.querySelectorAll('.alpha-nav').forEach(nav => nav.innerHTML = featuredLink + alphaLinks);
 }
 
 function makeIframe(contributor) {
@@ -44,7 +47,15 @@ function createCard(contributor) {
     document.getElementById('contributor-cards').appendChild(makeIframe(contributor));
 }
 
-// Pin latest contributor at top
+// Featured section — always pinned at top
+const featuredSection = document.createElement('div');
+featuredSection.id = 'section-featured';
+featuredSection.className = 'alpha-anchor';
+featuredSection.innerHTML = `FEATURED <span class="anchor-jump"><a href="#top">TOP</a> | <a href="#alpha-nav-bottom">BOTTOM</a></span>`;
+document.getElementById('contributor-cards').appendChild(featuredSection);
+featuredContributors.forEach(f => document.getElementById('contributor-cards').appendChild(makeIframe(f)));
+
+// Pin latest contributor below featured
 if (typeof latestContributor !== 'undefined' && latestContributor) {
     const newSection = document.createElement('div');
     newSection.className = 'alpha-anchor';
@@ -53,9 +64,10 @@ if (typeof latestContributor !== 'undefined' && latestContributor) {
     document.getElementById('contributor-cards').appendChild(makeIframe(latestContributor));
 }
 
-// Dedup, exclude latest, sort A-Z
+// Dedup, exclude featured and latest, sort A-Z
+const excluded = new Set([...featuredContributors, latestContributor]);
 [...new Set(contributorFiles)]
-    .filter(f => f !== latestContributor)
+    .filter(f => !excluded.has(f))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
     .forEach(contributor => createCard(contributor));
 
