@@ -297,5 +297,4 @@ const contributorFiles = [
     "zarfishan20.html",
     "zsylllike-sketch.html",
     "zulkiflidev.html"
-)
 ];
