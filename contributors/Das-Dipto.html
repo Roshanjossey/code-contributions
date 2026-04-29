@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dipto Das – Full Stack Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --surface2: #1a1e29;
+      --border: rgba(255,255,255,0.07);
+      --accent: #6ee7b7;
+      --accent2: #38bdf8;
+      --accent3: #a78bfa;
+      --text: #e8eaf0;
+      --muted: #6b7280;
+      --card-radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* ── Animated background orbs ── */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(110,231,183,0.08) 0%, transparent 70%);
+      top: -120px; left: -100px;
+      animation: drift1 14s ease-in-out infinite alternate;
+    }
+    body::after {
+      width: 440px; height: 440px;
+      background: radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%);
+      bottom: -100px; right: -80px;
+      animation: drift2 18s ease-in-out infinite alternate;
+    }
+    @keyframes drift1 { to { transform: translate(40px, 60px); } }
+    @keyframes drift2 { to { transform: translate(-40px, -50px); } }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Hero header ── */
+    .hero {
+      padding: 3.5rem 2.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(110,231,183,0.1);
+      border: 1px solid rgba(110,231,183,0.2);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.1rem;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+    .hero p {
+      max-width: 620px;
+      color: #9ca3b0;
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    /* ── Section cards ── */
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 2rem 2.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .section-card:nth-child(2) { animation-delay: 0.07s; }
+    .section-card:nth-child(3) { animation-delay: 0.14s; }
+    .section-card:nth-child(4) { animation-delay: 0.21s; }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Language badges ── */
+    .lang-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .lang-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+    .lang-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .lang-badge .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ── Tech groups ── */
+    .tech-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+    .tech-group-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+    .icon-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+    .icon-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.82rem;
+      color: #c4c9d8;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .icon-chip:hover {
+      border-color: rgba(180,231,183,0.3);
+      background: rgba(255,255,255,0.12);
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+    .icon-chip img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    /* ── Footer accent ── */
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 2.5rem;
+      letter-spacing: 0.03em;
+    }
+    .footer-note span {
+      color: var(--accent);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 560px) {
+      .hero, .section-card { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-tag">Available for Opportunities</div>
+    <h1>Dipto <span>Das</span></h1>
+    <div class="hero-sub">Full Stack Software Engineer &amp; AI Enthusiast</div>
+    <p>3+ years designing and building scalable, high-performance web applications and mobile apps. Passionate about robust backend systems, delightful user experiences, and cutting-edge AI-native products.</p>
+  </div>
+
+  <!-- Languages -->
+  <div class="section-card">
+    <div class="section-title">Languages</div>
+    <div class="lang-grid">
+      <div class="lang-badge" style="background:rgba(49,120,198,0.12);color:#6aabe8;">
+        <span class="dot" style="background:#3178c6;"></span>TypeScript
+      </div>
+      <div class="lang-badge" style="background:rgba(56,116,164,0.12);color:#69aacf;">
+        <span class="dot" style="background:#3874a4;"></span>Python
+      </div>
+      <div class="lang-badge" style="background:rgba(0,173,216,0.12);color:#4ec9e8;">
+        <span class="dot" style="background:#00add8;"></span>Golang
+      </div>
+      <div class="lang-badge" style="background:rgba(127,82,255,0.12);color:#b49aff;">
+        <span class="dot" style="background:#7f52ff;"></span>Kotlin
+      </div>
+      <div class="lang-badge" style="background:rgba(35,145,32,0.12);color:#6cba6a;">
+        <span class="dot" style="background:#239120;"></span>C#
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools & Technologies -->
+  <div class="section-card">
+    <div class="section-title">Tools &amp; Technologies</div>
+    <div class="tech-groups">
+
+      <div>
+        <div class="tech-group-label">Frontend</div>
+        <div class="icon-row">
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt=""/>React</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt=""/>Next.js</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg" alt=""/>Angular</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt=""/>Vue.js</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt=""/>Astro</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg" alt=""/>Svelte</div>
+          		<div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt=""/>Tailwind CSS</div>
+        </div>
+
+      </div>
+
+      <div>
+        <div class="tech-group-label">Backend</div>
+        <div class="icon-row">
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt=""/>Node.js</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" alt=""/>NestJS</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt=""/>ExpressJS</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt=""/>Go</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt=""/>Django</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-plain.svg" alt=""/>FastAPI</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt=""/>ASP.NET</div>
+
+
+        </div>
+      </div>
+
+      <div>
+        <div class="tech-group-label">Database &amp; ORM</div>
+        <div class="icon-row">
+           <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt=""/>MySQL</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt=""/>PostgreSQL</div>
+                    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt=""/>Microsoft SQL Server</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt=""/>MongoDB</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt=""/>Redis</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sequelize/sequelize-original.svg" alt=""/>Sequelize</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg" alt=""/>SqlAlchemy</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original.svg" alt=""/>Mongoose</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt=""/>Prisma</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/entityframeworkcore/entityframeworkcore-original.svg" alt=""/>Entity Framework</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tech-group-label">Mobile</div>
+        <div class="icon-row">
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt=""/>Flutter</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt=""/>React Native</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt=""/>Kotlin</div>
+        </div>
+      </div>
+      
+      <div>
+  <div class="tech-group-label">Message Broker</div>
+  <div class="icon-row">
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt=""/>Apache Kafka</div>
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg" alt=""/>RabbitMQ</div>
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt=""/>Redis Pub/Sub</div>
+  </div>
+</div>
+
+<div>
+  <div class="tech-group-label">Testing</div>
+  <div class="icon-row">
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" alt=""/>Jest</div>
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg" alt=""/>Vitest</div>
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg" alt=""/>Cypress</div>
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" alt=""/>Playwright</div>
+    <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original.svg" alt=""/>Pytest</div>
+  </div>
+</div>
+
+      <div>
+        <div class="tech-group-label">Cloud Platforms</div>
+        <div class="icon-row">
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt=""/>AWS</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt=""/>Azure</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt=""/>Google Cloud</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tech-group-label">DevOps</div>
+        <div class="icon-row">
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt=""/>Docker</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt=""/>Kubernetes</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt=""/>Nginx</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt=""/>Ansible</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt=""/>Git</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt=""/>GitHub</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tech-group-label">AI / ML</div>
+        <div class="icon-row">
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt=""/>TensorFlow</div>
+          <div class="icon-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt=""/>PyTorch</div>
+          <div class="icon-chip"><img src="https://avatars.githubusercontent.com/u/126733545" alt=""/>LangChain</div>
+          <div class="icon-chip">
+  <img src="https://avatars.githubusercontent.com/u/76263028" alt=""/>Claude Code
+</div>
+<div class="icon-chip">
+  <img src="https://avatars.githubusercontent.com/u/45487711" alt=""/>n8n
+</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="footer-note">Crafted with <span>♥</span> · Open to new opportunities</p>
+
+</div>
+</body>
+</html>
