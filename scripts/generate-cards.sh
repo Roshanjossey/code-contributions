@@ -13,9 +13,11 @@ fi
 # Detect most recently added contributor HTML via git log
 LATEST=$(git log --diff-filter=A --name-only --pretty=format: -- "$CARDS_DIR/*.html" | grep -m1 "\.html$" | sed "s|$CARDS_DIR/||")
 
-# Write latest contributor variable then the full array
-echo "const latestContributor = \"$LATEST\";" > "$OUTPUT_FILE"
-echo "const contributorFiles = [" >> "$OUTPUT_FILE"
+# Write latest contributor to its own file
+echo "const latestContributor = \"$LATEST\";" > "scripts/latest.js"
+
+# Write the contributor array (clean — no latestContributor variable)
+echo "const contributorFiles = [" > "$OUTPUT_FILE"
 find "$CARDS_DIR" -type f -name "*.html" | sed "s|^$CARDS_DIR/|  \"|; s|$|\",|" >> "$OUTPUT_FILE"
 echo "];" >> "$OUTPUT_FILE"
 
