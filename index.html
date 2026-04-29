@@ -5,20 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>code contributions</title>
     <meta name="description" content="Learn how to contribute to open source projects with code">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="https://unpkg.com/chota@0.9.2/dist/chota.min.css">
+    <!-- Prefetch top 20 most-used devicon SVGs so iframe requests hit cache -->
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" as="image">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" as="image">
     <link rel="stylesheet" href="style.css">
-    <script src="scripts/contributors.js"> </script>
+    <script defer src="scripts/contributors.js"></script>
 </head>
 <body>
-    <header>
+    <header id="top">
         <h1>Contribute to open source projects with <span> &lt;code&gt; </span></h1>
         <a href="https://github.com/roshanjossey/code-contributions" class="button primary text-uppercase">Let's go! </a>
     </header>
 
     <main id="contributor-cards" class="container">
         <h2>Contributors</h2>
+        <nav class="alpha-nav" id="alpha-nav-top"></nav>
     </main>
+    <nav class="alpha-nav" id="alpha-nav-bottom"></nav>
 
-    <script async src="scripts/load-cards.js"> </script>
+    <script defer src="scripts/load-cards.js"></script>
 </body>
 </html>
