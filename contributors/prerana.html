@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1f1c2c, #928dab);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff7eb3;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff4e88;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>✨ Prerana Iyengar</h1>
+        <p>Open Source Contribution</p>
+
+        <h2>Leap Year Checker</h2>
+
+        <input type="number" id="yearInput" placeholder="Enter a year">
+        <br>
+        <button onclick="checkLeapYear()">Check</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkLeapYear() {
+            let year = document.getElementById("yearInput").value;
+            let result = document.getElementById("result");
+
+            if (year === "") {
+                result.innerHTML = "Please enter a year!";
+                return;
+            }
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                result.innerHTML = year + " is a Leap Year";
+            } else {
+                result.innerHTML = year + " is not a Leap Year";
+            }
+        }
+    </script>
+
+</body>
+</html>
