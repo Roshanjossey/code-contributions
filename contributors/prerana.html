@@ -1,81 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leap Year Checker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1f1c2c, #928dab);
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prerana Iyengar</title>
 
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            max-width: 500px;
-            margin: auto;
-        }
+<style>
+body {
+    background-color: #0f172a;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        input {
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            margin-top: 10px;
-        }
+.dev-card {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    width: 420px;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    text-align: center;
+}
 
-        button {
-            padding: 10px 15px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff7eb3;
-            color: white;
-            cursor: pointer;
-        }
+.dev-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
 
-        button:hover {
-            background-color: #ff4e88;
-        }
-    </style>
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #38bdf8;
+    margin-bottom: 1rem;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.section {
+    margin-top: 1.2rem;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.badge {
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.python {background:#3776AB;}
+.sql {background:#F29111;}
+.powerbi {background:#F2C811;color:#000;}
+.excel {background:#217346;}
+.pandas {background:#150458;}
+.numpy {background:#013243;}
+.ml {background:#FF6F00;}
+
+ul {
+    text-align: left;
+    font-size: 0.85rem;
+    padding-left: 15px;
+    line-height: 1.5;
+}
+
+.links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.links a {
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.links a:hover {
+    background:#0ea5e9;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>✨ Prerana Iyengar</h1>
-        <p>Open Source Contribution</p>
+<div class="dev-card">
 
-        <h2>Leap Year Checker</h2>
+<img src="https://github.com/Prer26.png" class="profile-pic">
 
-        <input type="number" id="yearInput" placeholder="Enter a year">
-        <br>
-        <button onclick="checkLeapYear()">Check</button>
+<h2>✨ Prerana Iyengar ✨</h2>
 
-        <p id="result"></p>
-    </div>
+<p class="bio">
+💻 Data Science Enthusiast <br>
+📊 Passionate about analytics, visualization & solving real-world problems <br>
+🚀 Open Source Contributor
+</p>
 
-    <script>
-        function checkLeapYear() {
-            let year = document.getElementById("yearInput").value;
-            let result = document.getElementById("result");
+<div class="section">
+<h4>🛠️ Skills</h4>
+<div class="badges">
+    <div class="badge python">Python</div>
+    <div class="badge sql">SQL</div>
+    <div class="badge powerbi">Power BI</div>
+    <div class="badge excel">Excel</div>
+    <div class="badge pandas">Pandas</div>
+    <div class="badge numpy">NumPy</div>
+    <div class="badge ml">Machine Learning</div>
+</div>
+</div>
 
-            if (year === "") {
-                result.innerHTML = "Please enter a year!";
-                return;
-            }
+<div class="section">
+<h4>📂 Projects</h4>
+<ul>
+<li>
+<b>PharmaGuard AI</b> – AI-powered system designed to improve medication safety by detecting drug interactions and providing intelligent insights.
+</li>
+<li>
+<b>Crop Production Analysis</b> – Data-driven project analyzing agricultural trends to optimize yield and support decision-making using visualization tools.
+</li>
+<li>
+<b>SQL Problem Solving</b> – Solved multiple LeetCode SQL problems including complex joins, ranking, and optimization queries.
+</li>
+</ul>
+</div>
 
-            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
-                result.innerHTML = year + " is a Leap Year";
-            } else {
-                result.innerHTML = year + " is not a Leap Year";
-            }
-        }
-    </script>
+<div class="section">
+<h4>🏆 Achievements</h4>
+<ul>
+<li>🚀 Active Open Source Contributor</li>
+<li>📊 Built multiple data analysis dashboards</li>
+<li>💡 Strong problem-solving in SQL & analytics</li>
+</ul>
+</div>
+
+<div class="section">
+<h4>🌐 Portfolio</h4>
+<p>
+<a href="https://prerana-portfolio-six.vercel.app" target="_blank">
+View My Portfolio 🚀
+</a>
+</p>
+</div>
+
+<div class="links">
+<a href="https://github.com/Prer26" target="_blank">GitHub</a>
+</div>
+
+</div>
 
 </body>
 </html>
