@@ -29,6 +29,7 @@ h1 span {
     -webkit-text-fill-color: #0000;
     background: linear-gradient(90deg, #60faa3, #1dd829);
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .success.button {
