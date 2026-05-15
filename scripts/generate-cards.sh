@@ -10,14 +10,15 @@ if [ ! -d "$CARDS_DIR" ]; then
   exit 1
 fi
 
-# Start generating the JavaScript array
-echo "const contributorFiles = [" > "$OUTPUT_FILE"
+# Detect most recently added contributor HTML via git log
+LATEST=$(git log --diff-filter=A --name-only --pretty=format: -- "$CARDS_DIR/*.html" | grep -m1 "\.html$" | sed "s|$CARDS_DIR/||")
 
-# List all HTML files in the cards directory
+# Write latest contributor variable then the full array
+echo "const latestContributor = \"$LATEST\";" > "$OUTPUT_FILE"
+echo "const contributorFiles = [" >> "$OUTPUT_FILE"
 find "$CARDS_DIR" -type f -name "*.html" | sed "s|^$CARDS_DIR/|  \"|; s|$|\",|" >> "$OUTPUT_FILE"
-
-# Close the JavaScript array
 echo "];" >> "$OUTPUT_FILE"
 
 echo "$OUTPUT_FILE generated successfully with $(ls -1 $CARDS_DIR/*.html | wc -l | xargs) files."
+echo "Latest contributor: $LATEST"
 
