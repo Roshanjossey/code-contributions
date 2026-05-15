@@ -1,0 +1,169 @@
+<article class="card">
+  <h1>🍓 Strawberry</h1>
+
+  <p class="intro">
+    Engineering student exploring technology, coding, and building cool
+    projects 🚀
+  </p>
+
+  <h3>💻 Programming Languages</h3>
+  <section class="container">
+    <div class="badge java">Java</div>
+    <div class="badge js">JavaScript</div>
+    <div class="badge sql">SQL</div>
+  </section>
+
+  <h3>🚀 Skills</h3>
+  <section class="container">
+    <div class="badge mern">MERN Stack</div>
+    <div class="badge aws">AWS</div>
+    <div class="badge web">Web Development</div>
+  </section>
+
+  <h3>🛠 Tools I Use</h3>
+  <section class="container">
+
+    <div class="tool-card">
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+      />
+      <span>Git</span>
+    </div>
+
+    <div class="tool-card">
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+      />
+      <span>GitHub</span>
+    </div>
+
+    <div class="tool-card">
+      <img
+        class="icon"
+        src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+      />
+      <span>Postman</span>
+    </div>
+
+    <div class="tool-card">
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+      />
+      <span>Linux</span>
+    </div>
+
+  </section>
+</article>
+
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #f3e8ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 22px;
+    width: 380px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+    color: #ff4f81;
+    font-size: 2rem;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #444;
+  }
+
+  .intro {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .badge {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+
+  .badge:hover {
+    transform: scale(1.06);
+  }
+
+  .java {
+    background: #3874a4;
+    color: white;
+  }
+
+  .js {
+    background: #f7df1e;
+    color: black;
+  }
+
+  .sql {
+    background: #00758f;
+    color: white;
+  }
+
+  .mern {
+    background: #3fa037;
+    color: white;
+  }
+
+  .aws {
+    background: #ff9900;
+    color: black;
+  }
+
+  .web {
+    background: #8e44ad;
+    color: white;
+  }
+
+  .tool-card {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #f7f7f7;
+    padding: 0.7rem 1rem;
+    border-radius: 14px;
+    transition: 0.3s;
+  }
+
+  .tool-card:hover {
+    background: #ececec;
+    transform: scale(1.04);
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+</style>
