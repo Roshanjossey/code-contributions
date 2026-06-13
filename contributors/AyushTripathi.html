@@ -1,0 +1,211 @@
+<div class="profile-wrapper">
+  <article class="glass-card">
+    <div class="card-glow"></div>
+    <div class="profile-header">
+      <h3 class="profile-name">Ayush Tripathi</h3>
+      <p class="profile-bio">Passionate developer building premium web experiences.</p>
+    </div>
+
+    <div class="profile-section">
+      <h4 class="section-title">Programming Languages</h4>
+      <section class="container">
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"/> HTML</div>
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"/> CSS</div>
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS"/> JS</div>
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"/> React</div>
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="NodeJS"/> Node.js</div>
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"/> Python</div>
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C"/> C</div>
+        <div class="glass-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"/> C++</div>
+      </section>
+    </div>
+
+    <div class="profile-section">
+      <h4 class="section-title">Tools I Use</h4>
+      <section class="container">
+        <div class="tool-icon" title="Git"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"/></div>
+        <div class="tool-icon" title="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="invert-icon"/></div>
+        <div class="tool-icon" title="Firebase"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" alt="Firebase"/></div>
+        <div class="tool-icon" title="Vercel"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel" class="invert-icon"/></div>
+        <div class="tool-icon" title="Supabase"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase"/></div>
+        <div class="tool-icon" title="Figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma"/></div>
+      </section>
+    </div>
+  </article>
+</div>
+
+<style>
+  .profile-wrapper {
+    /* Create the polished black background and center the card */
+    background: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 100%);
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    border-radius: 16px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .glass-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .glass-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.7), 0 0 50px rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  /* Subtle glow effect behind the card content */
+  .card-glow {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    opacity: 0.5;
+  }
+  
+  .glass-card:hover .card-glow {
+    opacity: 1;
+  }
+
+  .profile-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .profile-name {
+    margin: 0 0 8px 0;
+    font-size: 1.75rem;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .profile-bio {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .profile-section {
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .profile-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-title {
+    margin: 0 0 16px 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #cbd5e1;
+    font-weight: 600;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Premium Glass Badges */
+  .glass-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    color: #f8fafc;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: default;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255,255,255,0.05);
+  }
+
+  .glass-badge img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  /* Glass Tool Icons */
+  .tool-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .tool-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.05);
+  }
+
+  .tool-icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .tool-icon:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Some logos like Github and Vercel are black by default, we invert them for dark mode */
+  .invert-icon {
+    filter: invert(1) brightness(100%);
+  }
+</style>
