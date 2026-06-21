@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>woesel-dev</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: sans-serif;
+      background: #f5f5f3;
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e4e2d9;
+      padding: 2rem;
+      width: 100%;
+      max-width: 520px;
+      height: fit-content;
+    }
+
+    /* Header */
+    .header { display: flex; align-items: center; gap: 14px; }
+    .avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #E6F1FB; border: 1px solid #B5D4F4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 500; color: #0C447C;
+      flex-shrink: 0;
+    }
+    .name { font-size: 18px; font-weight: 500; color: #1a1a18; }
+    .handle { font-size: 13px; color: #888780; margin-top: 2px; }
+    .bio { font-size: 14px; color: #5f5e5a; margin-top: 5px; }
+
+    /* Divider */
+    .divider { border: none; border-top: 1px solid #e4e2d9; margin: 1.5rem 0; }
+
+    /* Section labels */
+    .section-label {
+      font-size: 11px; font-weight: 500; color: #b4b2a9;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      margin-bottom: 0.6rem;
+    }
+
+    /* Social buttons */
+    .social-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 14px; border-radius: 999px;
+      border: 1px solid #e4e2d9; background: #ffffff;
+      font-size: 13px; font-weight: 500; color: #1a1a18;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .social-btn:hover { background: #f5f5f3; }
+
+    /* Language chips */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 999px;
+      border: 1px solid #e4e2d9; background: #f5f5f3;
+      font-size: 13px; font-weight: 500; color: #1a1a18;
+    }
+    .chip img { width: 15px; height: 15px; }
+    .chip-py  { background: #E8F0FB; border-color: #B5D4F4; color: #0C447C; }
+    .chip-cpp { background: #EEF5E5; border-color: #C0DD97; color: #27500A; }
+    .chip-java { background: #FAEEDA; border-color: #FAC775; color: #633806; }
+    .chip-js  { background: #FFFAE6; border-color: #EFD88A; color: #854F0B; }
+    .chip-c   { background: #F1EFE8; border-color: #D3D1C7; color: #444441; }
+
+    /* Tool cards */
+    .tool-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tool-card {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 12px 16px; border-radius: 8px;
+      border: 1px solid #e4e2d9; background: #ffffff;
+      min-width: 72px;
+    }
+    .tool-card img { width: 28px; height: 28px; }
+    .tool-name { font-size: 11px; color: #888780; }
+  </style>
+</head>
+<body>
+  <article class="card">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="avatar">W</div>
+      <div>
+        <p class="name">Tenzin Woesel Kunsang Lama</p>
+        <p class="handle">woesel-dev</p>
+        <p class="bio">To become a goated Tibetan programmer</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Social links -->
+    <p class="section-label">Connect</p>
+    <div class="social-row">
+      <a class="social-btn" href="https://github.com/woesel-dev" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        GitHub
+      </a>
+      <a class="social-btn" href="https://linkedin.com/in/tenzinwoeselkunsanglama" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <!-- Languages -->
+    <p class="section-label">Languages</p>
+    <div class="chips">
+      <span class="chip chip-py">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+        Python
+      </span>
+      <span class="chip chip-cpp">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++">
+        C++
+      </span>
+      <span class="chip chip-java">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java">
+        Java
+      </span>
+      <span class="chip chip-js">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+        JavaScript
+      </span>
+      <span class="chip chip-c">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C">
+        C
+      </span>
+    </div>
+
+    <!-- Tools -->
+    <p class="section-label">Tools</p>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash">
+        <span class="tool-name">Bash</span>
+      </div>
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux">
+        <span class="tool-name">Linux</span>
+      </div>
+    </div>
+
+  </article>
+</body>
+</html>
