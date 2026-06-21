@@ -6,7 +6,7 @@
 }
 
 header {
-    background-color: #070707;
+    background: linear-gradient(to right, green, black);
     text-align: center;
     margin-top: -14px;
     padding: 4rem 2rem;
@@ -33,4 +33,13 @@ h1 span {
 
 .success.button {
     font-weight: 700;
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: green;
+    background-color: black;
+    padding: 12px 0;
 }
