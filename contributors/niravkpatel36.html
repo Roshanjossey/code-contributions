@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nirav Patel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07090f;
+      --card: rgba(12, 14, 20, 0.88);
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.72);
+      --muted2: rgba(255, 255, 255, 0.55);
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(1200px circle at top, rgba(99, 102, 241, 0.10), transparent 55%),
+                  radial-gradient(900px circle at bottom, rgba(14, 165, 233, 0.08), transparent 60%),
+                  var(--bg);
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1.2rem;
+    }
+
+    .np-card {
+      width: 100%;
+      max-width: 980px;
+      padding: 2.25rem;
+      border-radius: 22px;
+
+      background: radial-gradient(
+          1200px circle at top left,
+          rgba(99, 102, 241, 0.16),
+          transparent 55%
+        ),
+        radial-gradient(
+          900px circle at bottom right,
+          rgba(14, 165, 233, 0.12),
+          transparent 60%
+        ),
+        var(--card);
+
+      border: 1px solid var(--border);
+
+      box-shadow:
+        0px 30px 80px rgba(0, 0, 0, 0.65),
+        0px 0px 0px 1px rgba(255, 255, 255, 0.02) inset;
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .np-card__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .np-card__name {
+      font-size: 2.3rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+
+      background: linear-gradient(90deg, #ffffff, #a5b4fc, #7dd3fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .np-card__role {
+      margin-top: 0.4rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+    }
+
+    .np-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      margin-top: 0.3rem;
+    }
+
+    .np-pill {
+      font-size: 0.88rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .np-pill--accent {
+      background: rgba(99, 102, 241, 0.14);
+      border: 1px solid rgba(99, 102, 241, 0.28);
+      color: rgba(199, 210, 254, 0.92);
+    }
+
+    .np-dot {
+      opacity: 0.5;
+    }
+
+    .np-card__headline {
+      margin-top: 1.8rem;
+      font-size: 1.3rem;
+      font-weight: 650;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .np-card__summary {
+      margin-top: 0.85rem;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .np-divider {
+      margin: 2.2rem 0 1.6rem;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.12),
+        transparent
+      );
+      opacity: 0.85;
+    }
+
+    .np-card__sectionTitle {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      color: var(--muted2);
+    }
+
+    .np-card__subTitle {
+      margin-top: 0.6rem;
+      margin-bottom: 0.6rem;
+      font-size: 1.15rem;
+      font-weight: 750;
+      letter-spacing: -0.01em;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .np-card__aboutText {
+      max-width: 85ch;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .np-metrics {
+      margin-top: 1.6rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .np-metric {
+      padding: 1.15rem 1.1rem;
+      border-radius: 18px;
+
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      box-shadow:
+        0px 10px 26px rgba(0, 0, 0, 0.35),
+        0px 0px 0px 1px rgba(255, 255, 255, 0.02) inset;
+
+      transition: transform 180ms ease, border 180ms ease, background 180ms ease;
+    }
+
+    .np-metric:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(165, 180, 252, 0.25);
+    }
+
+    .np-metric__label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--muted2);
+      text-transform: uppercase;
+    }
+
+    .np-metric__value {
+      margin: 0.45rem 0 0.45rem;
+      font-size: 2rem;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+
+      background: linear-gradient(90deg, #ffffff, #a5b4fc, #7dd3fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .np-metric__desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .np-footer {
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.55);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .np-footer span:last-child {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    @media (max-width: 880px) {
+      body {
+        padding: 2rem 1rem;
+      }
+
+      .np-card {
+        padding: 1.7rem;
+      }
+
+      .np-card__name {
+        font-size: 2rem;
+      }
+
+      .np-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="np-card">
+    <div class="np-card__header">
+      <div class="np-card__identity">
+        <h1 class="np-card__name">Nirav Patel</h1>
+        <p class="np-card__role">Software Engineer</p>
+      </div>
+
+      <div class="np-card__meta">
+        <span class="np-pill">Toronto, Canada</span>
+        <span class="np-dot">•</span>
+        <span class="np-pill np-pill--accent">Open to internships & co-ops</span>
+      </div>
+    </div>
+
+    <p class="np-card__headline">
+      Building production-ready systems across APIs, data pipelines, and user-facing products.
+    </p>
+
+    <p class="np-card__summary">
+      I design, build, and operate software used by thousands of users — spanning backend APIs,
+      data infrastructure, and user-facing applications. My work focuses on performance,
+      reliability, and measurable business impact.
+    </p>
+
+    <div class="np-divider"></div>
+
+    <div class="np-card__about">
+      <h2 class="np-card__sectionTitle">ABOUT ME</h2>
+
+      <h3 class="np-card__subTitle">How I Build</h3>
+      <p class="np-card__aboutText">
+        I focus on building systems that are clear in structure, observable and operable,
+        reliable in production, and able to evolve. I prioritize clarity in code and communication
+        because it enables systems and teams to scale — as reflected in the metrics below.
+      </p>
+    </div>
+
+    <div class="np-metrics">
+      <div class="np-metric">
+        <p class="np-metric__label">Users</p>
+        <p class="np-metric__value">5,000+</p>
+        <p class="np-metric__desc">
+          Learners supported across production systems.
+        </p>
+      </div>
+
+      <div class="np-metric">
+        <p class="np-metric__label">Performance</p>
+        <p class="np-metric__value">30%</p>
+        <p class="np-metric__desc">
+          Faster dashboards via optimized BigQuery pipelines.
+        </p>
+      </div>
+
+      <div class="np-metric">
+        <p class="np-metric__label">Product Impact</p>
+        <p class="np-metric__value">50%+</p>
+        <p class="np-metric__desc">
+          Retention improvement driven by data-backed changes.
+        </p>
+      </div>
+    </div>
+
+    <div class="np-divider"></div>
+
+    <div class="np-footer">
+      <span>© 2026 Nirav Patel</span>
+      <span>niravkpatel36@gmail.com</span>
+    </div>
+  </section>
+</body>
+</html>
