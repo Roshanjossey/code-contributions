@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Irfan Alkhotiri - GitHub Profile Card</title>
+    <!-- Font Awesome untuk icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        padding: 3rem 1rem;
+        min-height: 100vh;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 16px;
+        border: 1px solid #e1e4e8;
+        padding: 2rem;
+        width: 100%;
+        max-width: 560px;
+        height: fit-content;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Header */
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: 2px solid #667eea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        font-weight: 600;
+        color: #ffffff;
+        flex-shrink: 0;
+      }
+      .name {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a18;
+      }
+      .handle {
+        font-size: 13px;
+        color: #57606a;
+        margin-top: 2px;
+        font-family: "SF Mono", "Courier New", monospace;
+      }
+      .bio {
+        font-size: 14px;
+        color: #24292f;
+        margin-top: 6px;
+        line-height: 1.5;
+      }
+      .bio span {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 500;
+      }
+
+      /* Divider */
+      .divider {
+        border: none;
+        border-top: 1px solid #e1e4e8;
+        margin: 1.5rem 0;
+      }
+
+      /* Section labels */
+      .section-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #57606a;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.75rem;
+      }
+
+      /* Social buttons */
+      .social-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 1.5rem;
+      }
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 7px 16px;
+        border-radius: 999px;
+        border: 1px solid #e1e4e8;
+        background: #ffffff;
+        font-size: 13px;
+        font-weight: 500;
+        color: #24292f;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .social-btn:hover {
+        background: #f6f8fa;
+        border-color: #d0d7de;
+        transform: scale(1.02);
+      }
+      .social-btn.github:hover {
+        background: #24292f;
+        color: #ffffff;
+        border-color: #24292f;
+      }
+      .social-btn.linkedin:hover {
+        background: #0a66c2;
+        color: #ffffff;
+        border-color: #0a66c2;
+      }
+      .social-btn.indeed:hover {
+        background: #0033a0;
+        color: #ffffff;
+        border-color: #0033a0;
+      }
+      .social-btn.portfolio:hover {
+        background: #667eea;
+        color: #ffffff;
+        border-color: #667eea;
+      }
+      .social-btn.email:hover {
+        background: #ea4335;
+        color: #ffffff;
+        border-color: #ea4335;
+      }
+
+      /* Indeed icon style */
+      .indeed-icon {
+        width: 16px;
+        height: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #0033a0;
+        border-radius: 50%;
+        color: white;
+        font-weight: 700;
+        font-size: 11px;
+        font-family: "Arial", sans-serif;
+        flex-shrink: 0;
+      }
+
+      /* Tech Stack */
+      .tech-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 1.5rem;
+      }
+      .tech-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 14px;
+        border-radius: 999px;
+        border: 1px solid #e1e4e8;
+        background: #f6f8fa;
+        font-size: 12px;
+        font-weight: 500;
+        color: #24292f;
+        transition: all 0.2s ease;
+      }
+      .tech-chip:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+      .tech-chip .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot-php {
+        background: #777bb4;
+      }
+      .dot-js {
+        background: #f7df1e;
+      }
+      .dot-ts {
+        background: #3178c6;
+      }
+      .dot-html {
+        background: #e34f26;
+      }
+      .dot-css {
+        background: #1572b6;
+      }
+      .dot-vue {
+        background: #4fc08d;
+      }
+      .dot-svelte {
+        background: #ff3e00;
+      }
+      .dot-laravel {
+        background: #ff2d20;
+      }
+      .dot-wp {
+        background: #21759b;
+      }
+      .dot-mysql {
+        background: #4479a1;
+      }
+      .dot-drizzle {
+        background: #c5f74f;
+      }
+      .dot-jwt {
+        background: #000000;
+      }
+      .dot-rest {
+        background: #009688;
+      }
+
+      /* Tools with Font Awesome icons */
+      .tool-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 14px;
+        border-radius: 999px;
+        border: 1px solid #e1e4e8;
+        background: #f6f8fa;
+        font-size: 12px;
+        font-weight: 500;
+        color: #24292f;
+        transition: all 0.2s ease;
+      }
+      .tool-chip:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+      .tool-chip i {
+        font-size: 16px;
+        width: 20px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .tool-chip .fa-git-alt {
+        color: #f05032;
+      }
+      .tool-chip .fa-github {
+        color: #181717;
+      }
+      .tool-chip .fa-code {
+        color: #007acc;
+      }
+      .tool-chip .fa-docker {
+        color: #2496ed;
+      }
+      .tool-chip .fa-linux {
+        color: #fcc624;
+      }
+      .tool-chip .fa-figma {
+        color: #f24e1e;
+      }
+      .tool-chip .fa-postman {
+        color: #ff6c37;
+      }
+      .tool-chip .fa-bolt {
+        color: #e36002;
+      }
+      .tool-chip .fa-server {
+        color: #009639;
+      }
+
+      /* Stats Grid */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 1.5rem;
+      }
+      .stat-item {
+        text-align: center;
+        padding: 12px 8px;
+        background: #f6f8fa;
+        border-radius: 8px;
+        border: 1px solid #e1e4e8;
+        transition: all 0.2s ease;
+      }
+      .stat-item:hover {
+        background: #edf0f4;
+      }
+      .stat-number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #24292f;
+        display: block;
+      }
+      .stat-label {
+        font-size: 11px;
+        color: #57606a;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      /* Contribution Graph */
+      .contribution-graph {
+        background: #f6f8fa;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e1e4e8;
+        text-align: center;
+      }
+      .graph-placeholder {
+        display: flex;
+        justify-content: center;
+        gap: 2px;
+        flex-wrap: wrap;
+      }
+      .graph-cell {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+        background: #ebedf0;
+      }
+      .graph-cell.level-1 {
+        background: #9be9a8;
+      }
+      .graph-cell.level-2 {
+        background: #40c463;
+      }
+      .graph-cell.level-3 {
+        background: #30a14e;
+      }
+      .graph-cell.level-4 {
+        background: #216e39;
+      }
+
+      /* Featured Projects */
+      .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 1.5rem;
+      }
+      .project-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        background: #f6f8fa;
+        border-radius: 8px;
+        border: 1px solid #e1e4e8;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        color: #24292f;
+      }
+      .project-item:hover {
+        background: #edf0f4;
+        transform: translateX(4px);
+      }
+      .project-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .project-name {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .project-desc {
+        font-size: 12px;
+        color: #57606a;
+        margin-left: auto;
+      }
+
+      /* Badges */
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 1.5rem;
+      }
+      .badge {
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+      .badge-oss {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+      .badge-gh {
+        background: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+      }
+      .badge-remote {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffc107;
+      }
+      .badge-doc {
+        background: #cce5ff;
+        color: #004085;
+        border: 1px solid #b8daff;
+      }
+      .badge-community {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding-top: 0.5rem;
+        border-top: 1px solid #e1e4e8;
+      }
+      .footer p {
+        font-size: 13px;
+        color: #57606a;
+        font-weight: 500;
+      }
+      .footer .highlight {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="card">
+      <!-- Header -->
+      <div class="header">
+        <div class="avatar">IA</div>
+        <div>
+          <p class="name">Irfan Alkhotiri</p>
+          <p class="handle">@irfanal-khotiri</p>
+          <p class="bio">
+            <span>Full Stack Web Developer</span> &bull; Open Source Contributor
+            &bull; Building modern web applications with PHP, TypeScript, Hono,
+            Vue, Svelte, Laravel and Bun.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Social links -->
+      <p class="section-label">Connect</p>
+      <div class="social-row">
+        <a class="social-btn github" href="#" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+        <a class="social-btn linkedin" href="#" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin-in"></i>
+          LinkedIn
+        </a>
+        <a
+          class="social-btn indeed"
+          href="https://profile.indeed.com/p/irfana-c9zclbt"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="indeed-icon">i</span>
+          Indeed
+        </a>
+      </div>
+
+      <!-- Tech Stack -->
+      <p class="section-label">Tech Stack</p>
+      <div class="tech-grid">
+        <span class="tech-chip"><span class="dot dot-php"></span>PHP</span>
+        <span class="tech-chip"
+          ><span class="dot dot-js"></span>JavaScript</span
+        >
+        <span class="tech-chip"
+          ><span class="dot dot-ts"></span>TypeScript</span
+        >
+        <span class="tech-chip"><span class="dot dot-html"></span>HTML5</span>
+        <span class="tech-chip"><span class="dot dot-css"></span>CSS3</span>
+        <span class="tech-chip"><span class="dot dot-vue"></span>Vue</span>
+        <span class="tech-chip"
+          ><span class="dot dot-svelte"></span>Svelte</span
+        >
+        <span class="tech-chip"
+          ><span class="dot" style="background: #e36002"></span>Hono</span
+        >
+        <span class="tech-chip"
+          ><span class="dot dot-laravel"></span>Laravel</span
+        >
+        <span class="tech-chip"><span class="dot dot-wp"></span>WordPress</span>
+        <span class="tech-chip"><span class="dot dot-mysql"></span>MySQL</span>
+        <span class="tech-chip"
+          ><span class="dot dot-drizzle"></span>Drizzle ORM</span
+        >
+        <span class="tech-chip"><span class="dot dot-jwt"></span>JWT Auth</span>
+        <span class="tech-chip"
+          ><span class="dot dot-rest"></span>REST API</span
+        >
+      </div>
+
+      <!-- Tools -->
+      <p class="section-label">Tools</p>
+      <div class="tech-grid" style="margin-bottom: 1.5rem">
+        <span class="tool-chip">
+          <i class="fab fa-git-alt"></i>
+          Git
+        </span>
+        <span class="tool-chip">
+          <i class="fab fa-github"></i>
+          GitHub
+        </span>
+        <span class="tool-chip">
+          <i class="fas fa-code"></i>
+          VS Code
+        </span>
+        <span class="tool-chip">
+          <i class="fab fa-docker"></i>
+          Docker
+        </span>
+        <span class="tool-chip">
+          <i class="fab fa-linux"></i>
+          Linux
+        </span>
+        <span class="tool-chip">
+          <i class="fab fa-figma"></i>
+          Figma
+        </span>
+        <span class="tool-chip">
+          <i class="fas fa-paper-plane"></i>
+          Postman
+        </span>
+        <span class="tool-chip">
+          <i class="fas fa-bolt"></i>
+          Bun
+        </span>
+        <span class="tool-chip">
+          <i class="fas fa-server"></i>
+          Nginx
+        </span>
+      </div>
+
+      <!-- GitHub Stats -->
+      <p class="section-label">GitHub Stats</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">48</span>
+          <span class="stat-label">Repositories</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">★ 126</span>
+          <span class="stat-label">Stars</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1.2k</span>
+          <span class="stat-label">Commits</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">34</span>
+          <span class="stat-label">Pull Requests</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">89</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Following</span>
+        </div>
+      </div>
+
+      <!-- Contribution Graph -->
+      <p class="section-label">Contribution Graph</p>
+      <div class="contribution-graph">
+        <div class="graph-placeholder">
+          <!-- Simulasi contribution graph 7x7 -->
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-2"></span>
+          <span class="graph-cell level-1"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-4"></span>
+          <span class="graph-cell level-3"></span>
+          <span class="graph-cell level-2"></span>
+        </div>
+      </div>
+
+      <!-- Featured Projects -->
+      <p class="section-label">Featured Projects</p>
+      <div class="project-list">
+        <a href="#" class="project-item">
+          <span class="project-icon">📄</span>
+          <span class="project-name">PDF Digital Signature</span>
+          <span class="project-desc">Laravel &bull; 12★</span>
+        </a>
+        <a href="#" class="project-item">
+          <span class="project-icon">🏫</span>
+          <span class="project-name">School Information System</span>
+          <span class="project-desc">PHP &bull; 8★</span>
+        </a>
+        <a href="#" class="project-item">
+          <span class="project-icon">👨‍🎓</span>
+          <span class="project-name">Student Management</span>
+          <span class="project-desc">Vue &bull; 6★</span>
+        </a>
+        <a href="#" class="project-item">
+          <span class="project-icon">💬</span>
+          <span class="project-name">WhatsApp Gateway</span>
+          <span class="project-desc">Node.js &bull; 15★</span>
+        </a>
+        <a href="#" class="project-item">
+          <span class="project-icon">🎨</span>
+          <span class="project-name">WordPress Themes</span>
+          <span class="project-desc">PHP &bull; 5★</span>
+        </a>
+      </div>
+
+      <!-- Badges -->
+      <p class="section-label">Badges</p>
+      <div class="badges">
+        <span class="badge badge-oss">🌟 Open Source Contributor</span>
+        <span class="badge badge-gh">🎯 Good First Issue Hunter</span>
+        <span class="badge badge-remote">🌍 Remote Ready</span>
+        <span class="badge badge-doc">📚 Documentation Helper</span>
+        <span class="badge badge-community">🤝 Community Builder</span>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>
+          🚀 Let's build something
+          <span class="highlight">awesome</span> together.
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
