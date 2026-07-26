@@ -1,0 +1,104 @@
+<article class="back">
+  <h3>Gabriel 'dotxav' Xavier</h3>
+  <p>I'm from Brazil. <br>FullStack, Rust Engineer, Writter and Game Developer with Roblox Studio</p>
+  <h4>Programming languages I use</h4>
+  <section class="container">
+    <img
+    class="icon"
+    src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/rust/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/javascript/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/typescript/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/python/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/csharp/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/lua/default.svg"
+    />
+  </section>
+
+  <h4>Tools I use</h4>
+  <section class="container">
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tauri/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/nextdotjs/default.svg"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/git/default.svg"
+    />
+  </section>
+  
+  <h4>Contacts</h4>
+  <section class="container">
+    <img
+      class="icon-int"
+      src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/dark.svg"
+      onclick="GoToLink('https://github.com/G4brielXavier')"
+    />
+  </section>
+</article>
+<style>
+  body {
+    font-family: sans-serif;
+  }
+  .back {
+    background-color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+    font-family: monospace;
+  }
+  .back h3 {
+    font-weight: 100;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.8em;
+    border-radius: 0.3rem;
+  }
+  .badge {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .icon {
+    width: 2rem;
+  }
+  .icon-int {
+    width: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .icon-int:hover {
+    opacity: 0.5;
+  }
+</style>
+<script>
+    function GoToLink(url) {
+        window.open(url)
+    }
+</script>
