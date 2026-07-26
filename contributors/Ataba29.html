@@ -1,0 +1,117 @@
+<article class="card">
+  <h2>👋 Ataba29</h2>
+  <p class="subtitle">Learning the secrets of open source.</p>
+
+  <h3>Programming Languages</h3>
+  <section class="container">
+    <span class="badge python">🐍 Python</span>
+    <span class="badge js">🟨 JavaScript</span>
+    <span class="badge c">⚙️ C</span>
+  </section>
+
+  <h3>Tools I Use</h3>
+  <section class="container">
+    <div class="tool">
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
+        alt="Bash"
+      />
+      <span>Bash</span>
+    </div>
+
+    <div class="tool">
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+        alt="Linux"
+      />
+      <span>Linux</span>
+    </div>
+  </section>
+</article>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #0f172a;
+    font-family: Inter, system-ui, sans-serif;
+    color: #f8fafc;
+  }
+
+  .card {
+    width: min(500px, 90vw);
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    margin: 0.5rem 0 1.8rem;
+    color: #94a3b8;
+  }
+
+  h3 {
+    margin: 1.5rem 0 0.8rem;
+    color: #e2e8f0;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .badge {
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .python {
+    background: #3776ab;
+    color: white;
+  }
+
+  .js {
+    background: #f7df1e;
+    color: #111827;
+  }
+
+  .c {
+    background: #00599c;
+    
+    color: white;
+  }
+
+  .tool {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #334155;
+    padding: 0.65rem 1rem;
+    border-radius: 12px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+</style>
