@@ -22,3 +22,13 @@ Head over to [contribution guide](https://github.com/Roshanjossey/code-contribut
 <kbd>[<img title="Vietnam" alt="Vietnam" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/vn.svg" width="22">](docs/translations/vn/README.es.md)</kbd>
 <kbd>[<img title="Polish" alt="Polish" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/pl.svg" width="22">](docs/translations/pl/README.pl.md)</kbd>
 <kbd>[<img title="Russian" alt="Russian" src="https://cdn.statically.io/gh/hjnilsson/country-flags/master/svg/ru.svg" width="22">](docs/translations/ru/README.ru.md)</kbd>
+## Recent Updates
+
+### Homepage Improvements
+
+* Added a "Why Contribute?" section.
+* Added a "How It Works" section to explain the contribution process.
+* Improved the introduction text for new contributors.
+* Updated the call-to-action button text for better clarity.
+
+These changes help new contributors understand the project and the open-source contribution workflow more easily.
