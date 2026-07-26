@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tawh666 - GitHub Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        article {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        h3 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .bio {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        .bio a {
+            color: #60a5fa;
+            text-decoration: none;
+            border-bottom: 1px dashed #60a5fa;
+            transition: color 0.2s, border-bottom 0.2s;
+        }
+
+        .bio a:hover {
+            color: #93c5fd;
+            border-bottom: 1px solid #93c5fd;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            padding-left: 0;
+        }
+
+        h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
+            cursor: default;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge i {
+            font-size: 1.2rem;
+        }
+
+        .cpp {
+            background: linear-gradient(135deg, #00599c 0%, #004482 100%);
+            color: white;
+        }
+
+        .python {
+            background: linear-gradient(135deg, #3776ab 0%, #2a5d8a 100%);
+            color: white;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon img {
+            width: 2rem;
+            height: 2rem;
+            filter: invert(1) brightness(1.5);
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            article {
+                padding: 2rem;
+            }
+            h3 {
+                font-size: 2.2rem;
+            }
+            .bio {
+                font-size: 1.1rem;
+            }
+            .badge {
+                padding: 0.7rem 1.2rem;
+            }
+            .icon {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h3>tawh666</h3>
+        <p class="bio">
+            A passionate developer focused on systems programming and data science.
+            Enjoy building efficient software with C++ and Python.
+            Open to collaboration on interesting projects.
+            Check out my <a href="https://github.com/tawh666" target="_blank">GitHub</a> for more.
+        </p>
+
+        <h4>Programming languages I use</h4>
+        <section class="container">
+            <div class="badge cpp">
+                <i class="fab fa-cuttlefish"></i>
+                C++
+            </div>
+            <div class="badge python">
+                <i class="fab fa-python"></i>
+                Python
+            </div>
+        </section>
+
+        <h4>Tools & Technologies I use</h4>
+        <section class="icon-container">
+            <!-- Git -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+            </div>
+            <!-- Docker -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker">
+            </div>
+            <!-- VS Code -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code">
+            </div>
+            <!-- Linux -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux">
+            </div>
+            <!-- Bash -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash">
+            </div>
+            <!-- CMake -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg" alt="CMake">
+            </div>
+            <!-- GCC -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gcc/gcc-original.svg" alt="GCC">
+            </div>
+            <!-- GitHub -->
+            <div class="icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
+            </div>
+        </section>
+
+        <div class="footer">
+            Made with <i class="fas fa-heart" style="color: #f87171;"></i> by tawh666 •
+            <a href="https://github.com/tawh666" target="_blank"><i class="fab fa-github"></i> GitHub</a> •
+            <a href="mailto:example@example.com" target="_blank"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </article>
+
+    <script>
+        // Add subtle animation to badges on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach((badge, index) => {
+                badge.style.opacity = '0';
+                badge.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    badge.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    badge.style.opacity = '1';
+                    badge.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            const icons = document.querySelectorAll('.icon');
+            icons.forEach((icon, index) => {
+                icon.style.opacity = '0';
+                icon.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    icon.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    icon.style.opacity = '1';
+                    icon.style.transform = 'scale(1)';
+                }, badges.length * 100 + index * 80);
+            });
+        });
+    </script>
+</body>
+</html>
