@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Card</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1e3c72,#2a5298,#6dd5fa);
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#ffffff25;
+    border-radius:50%;
+    top:10%;
+    left:15%;
+    filter:blur(20px);
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:#ffffff20;
+    border-radius:50%;
+    bottom:5%;
+    right:10%;
+    filter:blur(30px);
+}
+
+.card{
+    width:360px;
+    padding:30px;
+    text-align:center;
+    border-radius:25px;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+}
+
+.profile{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    margin:auto;
+    background:linear-gradient(135deg,#00dbde,#fc00ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    color:white;
+    font-weight:bold;
+    border:5px solid rgba(255,255,255,.25);
+}
+
+h2{
+    margin-top:20px;
+    color:white;
+    font-size:28px;
+}
+
+p{
+    color:#ececec;
+    margin-top:10px;
+    line-height:1.6;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin:30px 0;
+}
+
+.stat h3{
+    color:white;
+    font-size:22px;
+}
+
+.stat span{
+    color:#ddd;
+    font-size:14px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+button{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.follow{
+    background:#ffffff;
+    color:#2a5298;
+}
+
+.follow:hover{
+    background:#f0f0f0;
+}
+
+.message{
+    background:transparent;
+    border:2px solid white;
+    color:white;
+}
+
+.message:hover{
+    background:white;
+    color:#2a5298;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+    <div class="profile">
+        A
+    </div>
+
+    <h2>Ansh Choudhary</h2>
+
+    <p>
+        Full Stack Developer • AI Enthusiast <br>
+        Building modern web apps and exploring Generative AI.
+    </p>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>32</h3>
+            <span>Projects</span>
+        </div>
+
+        <div class="stat">
+            <h3>5K</h3>
+            <span>Followers</span>
+        </div>
+
+        <div class="stat">
+            <h3>98%</h3>
+            <span>Success</span>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <button class="follow">Follow</button>
+        <button class="message">Message</button>
+    </div>
+
+</div>
+
+</body>
+</html>
