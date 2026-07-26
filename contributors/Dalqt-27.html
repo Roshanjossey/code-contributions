@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalqt-27 - Profile Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            /* Fondo sólido oscuro con un ligero degradado radial interno para dar profundidad */
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #f8fafc;
+        }
+
+        /* Tarjeta contenedora principal */
+        .card {
+            width: 400px;
+            padding: 32px 24px;
+            background: #314463;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Encabezados y Perfil */
+        .username {
+            font-size: 17px;
+            font-family: Roboto;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .bio {
+            margin-top: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #c1cad6;
+        }
+
+        /* Secciones secundarias */
+        h4 {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #c1cad6;
+            font-weight: 600;
+        }
+
+        /* Contenedores de Tecnologías (Badges) */
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        /* Colores de los Lenguajes y Tecnologías */
+        .csharp { background: #6040d6; color: #fff; }
+        .js { background: #f7df1e; color: #000; }
+        .python { background: #3776ab; color: #fff; }
+        .sql { background: #0072c6; color: #fff; }
+        .react { background: #22d3ee; color: #0f172a; }
+        .cpp { background: #b81731; color: #fff; }
+        .html { background: #e34f26; color: #fff; }
+        .css { background: #1572b6; color: #fff; }
+        .selenium { background: #43b02a; color: #fff; }
+
+        /* Colores de la sección de Frameworks y APIs */
+        .dotnet { background: #512bd4; color: #fff; }
+        .django { background: #092e20; color: #fff; }
+
+        /* Contenedor de herramientas (Iconos) */
+        .tools-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 4px;
+        }
+
+        .icon {
+            width: 36px;
+            height: 36px;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .icon:hover {
+            transform: scale(1.2) translateY(-4px);
+            filter: drop-shadow(0 4px 8px rgba(56, 189, 248, 0.3));
+        }
+    </style>
+</head>
+<body>
+
+    <article class="card">
+        <span class="username">@Dalqt-27</span>
+        <h2 class="name">Diego Aquino</h2>
+        <p class="bio">Systems Engineering student interested in software development, programming, coding, open source and databases.</p>
+
+        <h4>Languages & Technologies</h4>
+        <section class="badges-container">
+            <div class="badge csharp">C#</div>
+            <div class="badge js">JavaScript</div>
+            <div class="badge python">Python</div>
+            <div class="badge sql">SQL</div>
+            <div class="badge react">React</div>
+            <div class="badge cpp">C++</div>
+            <div class="badge html">HTML</div>
+            <div class="badge css">CSS</div>
+            <div class="badge selenium">Selenium</div>
+        </section>
+
+        <h4>Frameworks & APIs</h4>
+        <section class="badges-container">
+            <div class="badge dotnet">.NET (Entity Framework)</div>
+            <div class="badge django">Django</div>
+        </section>
+
+        <h4>Tools I Use</h4>
+        <section class="tools-container">
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" title="Git" />
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" title="GitHub" />
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" alt="Visual Studio" title="Visual Studio" />
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code" />
+            <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" title="Bash" />
+        </section>
+    </article>
+
+</body>
+</html>
