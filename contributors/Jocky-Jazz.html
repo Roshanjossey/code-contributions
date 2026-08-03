@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jocky Jazz's card</title>
+</head>
+
+<style>
+    .card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 3vmin;
+        width: 75vmin;
+        height: 75vmin;
+        background: radial-gradient(rgb(179, 226, 148) 5%, rgb(0, 0, 145));
+        border-radius: 30%;
+        box-shadow: -2vmin 2vmin 4vmin rgba(0, 0, 0, 0.4);
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5vw;
+    }
+
+    .badges {
+        display: grid;
+        justify-self: center;
+        grid-template-columns: 1fr 10% 1fr;
+        /* justify-self: center; */
+        width: 60%;
+        margin-top: 3.5vh;
+    }
+
+    .badgeleft {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1.9vh;
+        grid-column: 1;
+    }
+
+    .badgeright {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1.9vh;
+        grid-column: 3;
+    }
+
+    .badge {
+        border-radius: 12px;
+        text-align: center;
+        padding: 1vmin;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: 0.2s;
+        box-shadow: 0px 0px 5vmin rgba(0, 0, 0, 0.3);
+        font-size: 4vmin;
+        font-weight: 100px;
+    }
+
+    .badge:hover {
+        transform: scale(1.15);
+    }
+
+    .python {
+        background-color: rgb(147, 221, 86);
+    }
+
+    .java {
+        background-color: rgb(252, 60, 53);
+    }
+
+    .C {
+        background-color: rgb(53, 106, 252);
+    }
+
+    .Cpp {
+        background-color: rgb(156, 155, 238);
+    }
+
+    .html {
+        background-color: rgba(202, 196, 199, 0.973);
+    }
+
+    .js {
+        background-color: rgb(238, 255, 82);
+    }
+
+    .css {
+        background-color: rgb(94, 253, 192);
+    }
+
+    .react {
+        background-color: rgb(252, 106, 48);
+    }
+</style>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0/dist/bubbly-bg.min.js"></script>
+    <script>
+        const vh = window.innerHeight * 1 / 100;
+        const vw = window.innerWidth * 1 / 100;
+        const vmin = Math.min(vw, vh)
+        bubbly({
+            colorStart: "#D9FF5C",
+            colorStop: "#043E15",
+            blur: 20,
+            compose: "source-over",
+            radiusFunc: () => 7 * vmin + Math.random() * 5 * vmin,
+            bubbleFunc: () => `hsla(${Math.random() * 240}, 100%, 60%, 0.9)`
+        });
+    </script>
+    <div class="card">
+        <h1 style="color: rgb(1, 1, 43); font-size:12vmin; margin:0"> Jocky Jazz </h1>
+        <h4 style="color: rgb(9, 39, 3); font-size:6vmin; margin:1.2vh;"> Passionate coder </h4>
+        <div class="badges">
+            <div class="badgeleft">
+                <span class="badge python">Python</span>
+                <span class="badge java">Java</span>
+                <span class="badge C">C</span>
+                <span class="badge Cpp">C++</span>
+            </div>
+            <div class="badgeright">
+                <span class="badge html">HTML</span>
+                <span class="badge css">CSS</span>
+                <span class="badge js">JS</span>
+                <span class="badge react">React</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
