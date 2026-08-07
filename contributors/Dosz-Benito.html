@@ -1,0 +1,173 @@
+<article>
+    <h3>Dosz-Benito</h3>
+    <p>Hello! I'm <a href="https://github.com/Dosz-Benito">Bénito</a>, a student and passionate programmer. I enjoy
+        building complex systems and writing code that is clear, modular and scalable.</p>
+    <h4>Programming languages I speak fluently, in order</h4>
+    <section class="container">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" title="Python" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" title="C#" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" title="CSS3" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" title="C" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" title="HTML5" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL" title="SQL" />
+    </section>
+    <h4>Programming languages I just have some fun with</h4>
+    <section class="container">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg" alt="Powershell" title="Powershell" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg" alt="Bash" title="Bash" />
+    </section>
+    
+    <h4>Tools I use</h4>
+    <section class="container">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" title="Git" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" title="GitHub" />
+        <img class="icon" src="https://www.pygame.org/docs/_static/pygame_logo.svg" alt="Pygame" title="Pygame" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-plain.svg" alt="Unity" title="Unity" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg" alt="Vite" title="Vite" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original.svg" alt="npm" title="npm" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code" />
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg" alt="Powershell" title="Powershell" />
+    </section>
+</article>
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(1200px 600px at 15% 10%, #123b2b 0%, transparent 60%),
+            radial-gradient(1000px 500px at 85% 90%, #0e2a4a 0%, transparent 60%),
+            #060d18;
+    }
+
+    article {
+        max-width: 22rem;
+        width: calc(100% - 2rem);
+        margin: 1rem;
+        padding: 1.75rem 1.5rem;
+        border-radius: 1.5rem;
+        background: linear-gradient(135deg, #0f172a 0%, #16233f 100%);
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
+            0 0 25px rgba(34, 211, 238, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        color: #e2e8f0;
+        animation: card-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+        transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
+
+    article:hover {
+        transform: scale(1.03);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65),
+            0 0 35px rgba(34, 211, 238, 0.18);
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        background: linear-gradient(90deg, #34d399, #22d3ee);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    p {
+        margin: 0.6rem 0 1.25rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #94a3b8;
+    }
+
+    p a {
+        color: #22d3ee;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease;
+    }
+
+    p a:hover {
+        color: #34d399;
+    }
+
+    h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 1.1rem 0 0.7rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #22d3ee;
+    }
+
+    h4::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(34, 211, 238, 0.5), transparent);
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+    }
+
+    .icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 0.4rem;
+        border-radius: 0.75rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        cursor: pointer;
+        animation: icon-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .icon:hover {
+        transform: scale(1.25) translateY(-2px);
+        box-shadow: 0 0 16px rgba(34, 211, 238, 0.35);
+        border-color: rgba(34, 211, 238, 0.6);
+        background: rgba(34, 211, 238, 0.1);
+    }
+
+    @keyframes card-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.97);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes icon-in {
+        from {
+            opacity: 0;
+            transform: scale(0.6);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .icon {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        article {
+            padding: 1.5rem 1.25rem;
+        }
+    }
+</style>
