@@ -1,0 +1,55 @@
+name: Check for Toxic Content
+#hi
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  moderate-content:
+    runs-on: ubuntu-latest  
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"  
+
+      - name: Cache Hugging Face models
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/huggingface  
+          key: huggingface-toxicity-model
+
+      - name: Install dependencies
+        run: pip install transformers torch beautifulsoup4 python-magic
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35  
+        with:
+          files: "**/*"
+
+      - name: Run toxicity check
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
+            python scripts/check_toxicity.py "$file"
+          done
+
+      - name: Auto-approve PR if no offensive content is found
+        if: success()
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PR if offensive content is detected
+        if: failure()
+        run: echo "🚨 Offensive content detected. Please review your PR." | tee comment.txt
+
+      - name: Post comment on PR
+        if: failure()
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: file://comment.txt
