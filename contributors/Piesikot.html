@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piesikot</title>
+  <style>
+  body {
+    font-family: sans-serif;
+  }
+  .name {
+    text-decoration: none;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+   }
+  .name-text {
+    position: relative;
+    display: inline-block;
+  }
+  .name-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .name:hover .name-text::after,
+  .name:focus-visible .name-text::after {
+    transform: scaleX(1);
+  }
+ .name-avatar {
+    background-image: url(https://avatars.githubusercontent.com/u/91406146?s=64&v=4);
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid black;
+    flex-shrink: 0;
+    transform: scaleX(-1);
+}
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .badge {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+    .badge-html {
+    background-color: #e34c26;
+    color: white;
+  }
+  .badge-css {
+    background-color: #1572b6;
+    color: white;
+  }
+  .badge-js {
+    background-color: #f7df1e;
+    color: black;
+  }
+  .badge-md {
+    background-color: #000000;
+    color: white;
+  }
+  .icon {
+    width: 2rem;
+  }
+
+</style>
+</head>
+<body>
+<article>
+    <h3>
+      <a href="https://github.com/Piesikot" class="name"><img width="30" height="30" src="https://www.svgrepo.com/show/528356/link.svg" alt="" aria-hidden="true">
+        <span class="name-text">Piesikot</span>
+        <span class="name-avatar"></span>
+      </a>
+    </h3>
+    <p>I design and develop with vegan values at the core, guided by compassion and a commitment to reduce suffering in the world.</p>
+    <h4>
+        Languages I use:
+    </h4>
+    <section class="container">
+        <div class="badge badge-html">HTML</div>
+        <div class="badge badge-css">CSS</div>
+        <div class="badge badge-md">Markdown</div>
+        <div class="badge badge-js">JavaScript</div>
+    </section>
+   <h4>
+    Tools I use:
+    </h4>
+  <section class="container">
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" />
+    <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" />
+  </section>
+</article>
+
+</body>
+</html>
