@@ -1,0 +1,171 @@
+<article class="profile-card">
+  <div class="header">
+    <h3>Azra Karakaya</h3>
+    <p class="bio">Jr. DevOps Engineer | Computer Engineer</p>
+  </div>
+
+  <div class="section">
+    <h4>Programming Languages</h4>
+    <div class="container">
+      <span class="badge badge-c">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" />
+        C
+      </span>
+      <span class="badge badge-go">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go" />
+        Go
+      </span>
+      <span class="badge badge-python">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+        Python
+      </span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h4>Tools & Technologies</h4>
+    <div class="container">
+      <div class="icon-wrapper" title="Docker">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
+      </div>
+      <div class="icon-wrapper" title="Kubernetes">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" />
+      </div>
+      <div class="icon-wrapper" title="Helm">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" alt="Helm" />
+      </div>
+      <div class="icon-wrapper" title="GitHub Actions">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" />
+      </div>
+      <div class="icon-wrapper" title="Linux">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" />
+      </div>
+      <div class="icon-wrapper" title="Bash">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" />
+      </div>
+      <div class="icon-wrapper" title="Git">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  .profile-card {
+    font-family: 'Inter', sans-serif;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f0f6fc;
+  }
+
+  .bio {
+    margin: 0.4rem 0 1.2rem 0;
+    color: #8b949e;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .section {
+    margin-top: 1.2rem;
+  }
+
+  .section h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8b949e;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  .badge img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .badge-c {
+    background: rgba(0, 89, 156, 0.15);
+    color: #5c93e6;
+    border-color: rgba(0, 89, 156, 0.3);
+  }
+
+  .badge-go {
+    background: rgba(0, 173, 216, 0.15);
+    color: #00add8;
+    border-color: rgba(0, 173, 216, 0.3);
+  }
+
+  .badge-python {
+    background: rgba(56, 116, 164, 0.15);
+    color: #4b8bbe;
+    border-color: rgba(56, 116, 164, 0.3);
+  }
+
+  .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .icon-wrapper {
+    background: #21262d;
+    border: 1px solid #30363d;
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .icon-wrapper:hover {
+    background: #30363d;
+    border-color: #8b949e;
+    transform: translateY(-3px);
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+</style>
