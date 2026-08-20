@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fermín Rivero — Profile</title>
+<style>
+  :root {
+    --bg-page: #eef0f4;
+    --bg-card: #ffffff;
+    --text: #16181d;
+    --muted: #6b7280;
+    --accent: #6d28d9;
+    --accent-soft: #f2edfc;
+    --border: #e7e7ec;
+    --space: 8px;
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-page);
+    padding: calc(var(--space) * 4);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .card {
+    width: 440px;
+    max-width: 100%;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: calc(var(--space) * 5);
+    box-shadow:
+      0 1px 2px rgba(16, 24, 40, 0.05),
+      0 16px 36px -12px rgba(16, 24, 40, 0.16);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #a78bfa);
+  }
+
+  .card__header {
+    margin-bottom: calc(var(--space) * 4);
+  }
+
+  h1 {
+    margin: 2px 0 6px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .bio {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .block {
+    margin-top: calc(var(--space) * 3.5);
+  }
+
+  .label {
+    margin: 0 0 calc(var(--space) * 1.75);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--space) * 1.25);
+  }
+
+  .badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 8px;
+  }
+
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+    gap: calc(var(--space) * 1.25);
+  }
+
+  .tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 4px 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fbfbfc;
+  }
+
+  .tool img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .tool span {
+    font-size: 10.5px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .links {
+    display: flex;
+    gap: calc(var(--space) * 1.5);
+  }
+
+  .links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fbfbfc;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: border-color 0.15s ease;
+  }
+
+  .links a:hover {
+    border-color: var(--accent);
+  }
+
+  .links img {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 420px) {
+    .card { padding: calc(var(--space) * 3.5); }
+  }
+</style>
+</head>
+<body>
+  <article class="card">
+    <header class="card__header">
+      <h1>Fermín Rivero</h1>
+      <p class="bio">
+        I am an aspiring computational scientist focused on artificial intelligence research.
+        Today, machines coexist with us, seeing and hearing what we say and do, but they are not
+        yet capable of feeling. However, I believe that world is not far off. I would like to
+        experience it, how about you?
+      </p>
+    </header>
+
+    <section class="block">
+      <h2 class="label">Languages I use</h2>
+      <div class="badges">
+        <span class="badge" style="background:#3776AB;">Python</span>
+        <span class="badge" style="background:#276DC3;">R</span>
+        <span class="badge" style="background:#4479A1;">SQL</span>
+        <span class="badge" style="background:#00599C;">C++</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="label">Tools I use</h2>
+      <div class="tools">
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" />
+          <span>VS Code</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+          <span>Git</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" />
+          <span>GitHub</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
+          <span>PyTorch</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
+          <span>TensorFlow</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="scikit-learn" />
+          <span>scikit-learn</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" />
+          <span>Bash</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" />
+          <span>Matplotlib</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" />
+          <span>Pandas</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" />
+          <span>NumPy</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" />
+          <span>OpenCV</span>
+        </div>
+        <div class="tool">
+          <img src="https://cdn.simpleicons.org/ffmpeg/007808" alt="FFmpeg" />
+          <span>FFmpeg</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="label">Find me online</h2>
+      <div class="links">
+        <a href="https://github.com/ferminriv20" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" />
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ferminrivero/" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+          LinkedIn
+        </a>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
