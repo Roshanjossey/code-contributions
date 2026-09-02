@@ -1,4 +1,4 @@
-const contributorFiles = [
+const contributorFiles = [ "Jawadnoori1718.html",
   "roshanjossey.html",
   "gokultp.html",
 ];
