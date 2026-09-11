@@ -1,108 +1,99 @@
 <article class="profile">
-  <header>
-    <p class="label">DEVELOPER PROFILE</p>
-    <h3>Yukinko267</h3>
-    <h4>Hello, World! <span class="cursor">_</span></h4>
-  </header>
+  <p class="label">DEVELOPER PROFILE</p>
 
-  <section>
-    <p class="section-title">Tech Stack</p>
+  <h3>Yukinko267</h3>
+  <p class="hello">Hello, World! <span>_</span></p>
 
-    <div class="container">
-      <div class="badge python">Python</div>
-      <div class="badge javascript">JavaScript</div>
-      <div class="badge langchain">LangChain</div>
-    </div>
-  </section>
+  <p class="section-title">TECH STACK</p>
+  <div class="container">
+    <div class="badge python">Python</div>
+    <div class="badge javascript">JavaScript</div>
+    <div class="badge langchain">LangChain</div>
+  </div>
 
-  <section>
-    <p class="section-title">Tools</p>
-
-    <div class="container tools">
-      <img
-        class="icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
-        alt="Bash"
-      />
-      <img
-        class="icon"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-        alt="Linux"
-      />
-    </div>
-  </section>
+  <p class="section-title">TOOLS</p>
+  <div class="container">
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
+      alt="Bash"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+      alt="Linux"
+    />
+  </div>
 </article>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
-    padding: 3rem;
+    padding: 16px;
     background: #0d1117;
     color: #e6edf3;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
   }
 
   .profile {
-    max-width: 600px;
-    padding: 2rem;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 24px;
+    background: #161b22;
     border: 1px solid #30363d;
     border-radius: 16px;
-    background: #161b22;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   }
 
   .label {
-    margin: 0;
-    color: #7d8590;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-  }
-
-  h3 {
-    margin: 0.4rem 0 0;
-    font-size: 2rem;
-  }
-
-  h4 {
-    margin-top: 0.4rem;
+    margin: 0 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
     color: #8b949e;
-    font-family: monospace;
-    font-weight: 400;
   }
 
-  .cursor {
+  h1 {
+    margin: 0;
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.1;
+    word-break: break-word;
+  }
+
+  .hello {
+    margin-top: 10px;
+    font-family: monospace;
+    color: #8b949e;
+  }
+
+  .hello span {
     color: #3fb950;
   }
 
-  section {
-    margin-top: 2rem;
-  }
-
   .section-title {
-    margin-bottom: 0.8rem;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
     color: #8b949e;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
   }
 
   .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.7rem;
+    gap: 8px;
   }
 
   .badge {
-    padding: 0.45rem 0.8rem;
+    padding: 8px 12px;
     border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: transform 0.2s ease;
-  }
-
-  .badge:hover {
-    transform: translateY(-2px);
+    font-size: 13px;
+    font-weight: bold;
   }
 
   .python {
@@ -120,21 +111,11 @@
     color: #111;
   }
 
-  .tools {
-    align-items: center;
-  }
-
   .icon {
-    width: 2.2rem;
-    height: 2.2rem;
-    padding: 0.5rem;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    background: #21262d;
     border-radius: 10px;
-    background: white;
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-
-  .icon:hover {
-    transform: translateY(-3px);
-    background: #30363d;
   }
 </style>
