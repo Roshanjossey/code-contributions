@@ -1,0 +1,121 @@
+<article class="profile">
+  <p class="label">DEVELOPER PROFILE</p>
+
+  <h3>Yukinko267</h3>
+  <p class="hello">Hello, World! <span>_</span></p>
+
+  <p class="section-title">TECH STACK</p>
+  <div class="container">
+    <div class="badge python">Python</div>
+    <div class="badge javascript">JavaScript</div>
+    <div class="badge langchain">LangChain</div>
+  </div>
+
+  <p class="section-title">TOOLS</p>
+  <div class="container">
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
+      alt="Bash"
+    />
+    <img
+      class="icon"
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+      alt="Linux"
+    />
+  </div>
+</article>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 16px;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  .profile {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 24px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+  }
+
+  .label {
+    margin: 0 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #8b949e;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.1;
+    word-break: break-word;
+  }
+
+  .hello {
+    margin-top: 10px;
+    font-family: monospace;
+    color: #8b949e;
+  }
+
+  .hello span {
+    color: #3fb950;
+  }
+
+  .section-title {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    color: #8b949e;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .badge {
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .python {
+    background: #3874a4;
+    color: white;
+  }
+
+  .javascript {
+    background: #f7df1e;
+    color: #111;
+  }
+
+  .langchain {
+    background: #42dfa0;
+    color: #111;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    background: #21262d;
+    border-radius: 10px;
+  }
+</style>
