@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f7f4" />
+  <meta name="description" content="Aditya Pujari — B.Tech student in Robotics & Automation, curious about computers, code, and creative work." />
+  <title>Aditya Pujari — Curious by Design</title>
+  <style>
+    :root {
+      --paper: #f7f7f4;
+      --ink: #171916;
+      --muted: #666b64;
+      --line: #dedfd8;
+      --green: #baff6a;
+      --card: #fff;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+    .topbar {
+      min-height: 74px; display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--line); gap: 20px;
+    }
+    .brand { font-weight: 800; letter-spacing: -0.05em; font-size: 18px; }
+    .brand span { color: #73796f; font-weight: 500; }
+    .nav { display: flex; gap: 22px; font-size: 13px; color: var(--muted); }
+    .nav a:hover { color: var(--ink); }
+    .hero { padding: 78px 0 64px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; font: 12px var(--mono);
+      text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #67a83b; box-shadow: 0 0 0 4px #67a83b1c; }
+    h1 {
+      font-size: clamp(48px, 9vw, 100px); line-height: .96; letter-spacing: -.085em;
+      max-width: 850px; margin: 24px 0 24px; font-weight: 800;
+    }
+    h1 .highlight { position: relative; display: inline-block; z-index: 0; white-space: nowrap; }
+    h1 .highlight::after {
+      content: ""; position: absolute; left: 2px; right: -4px; bottom: 7px; height: 23%;
+      background: var(--green); z-index: -1; transform: rotate(-1.4deg);
+    }
+    .intro { max-width: 630px; font-size: clamp(16px, 2vw, 19px); line-height: 1.75; color: #555a53; }
+    .hero-bottom { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .pill-link {
+      display: inline-flex; align-items: center; gap: 9px; padding: 12px 16px;
+      border: 1px solid var(--ink); border-radius: 999px; font-size: 13px; font-weight: 650;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .pill-link.primary { background: var(--ink); color: white; }
+    .pill-link:hover { transform: translateY(-2px); }
+    .section { border-top: 1px solid var(--line); padding: 35px 0 42px; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+    h2 { margin: 0; font-size: 19px; letter-spacing: -.04em; }
+    .section-note { font: 11px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .skills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .skill {
+      padding: 10px 15px; border-radius: 7px; font-size: 14px; font-weight: 650;
+      border: 1px solid #d9dbd2; background: #fff; transition: transform .18s ease, border-color .18s ease;
+    }
+    .skill:hover { transform: translateY(-3px); border-color: #858b7c; }
+    .skill.c { background: #e9efff; border-color: #d4defc; }
+    .skill.python { background: #fff0c5; border-color: #f1df9e; }
+    .skill.rust { background: #fbe4d8; border-color: #f1d0be; }
+    .skill.robotics { background: #e7f4df; border-color: #d0e6c3; }
+    .tool-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .tool {
+      min-height: 94px; display: flex; align-items: center; gap: 12px; padding: 16px;
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    }
+    .tool-icon {
+      width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center;
+      border-radius: 9px; background: #f0f1eb; font-size: 20px;
+    }
+    .tool strong { display: block; font-size: 13px; }
+    .tool small { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+    .interests { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .interest {
+      border: 1px solid var(--line); background: #fff; border-radius: 12px; padding: 20px;
+      min-height: 150px;
+    }
+    .interest .number { font: 11px var(--mono); color: #73796f; }
+    .interest h3 { margin: 25px 0 8px; font-size: 17px; letter-spacing: -.04em; }
+    .interest p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 13px; }
+    .now {
+      background: var(--ink); color: white; border-radius: 14px; padding: 25px 26px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .now p { margin: 8px 0 0; color: #c1c5bc; font-size: 14px; line-height: 1.6; }
+    .now-label { font: 11px var(--mono); color: var(--green); text-transform: uppercase; letter-spacing: .1em; }
+    .arrow { font-size: 28px; color: var(--green); }
+    footer {
+      border-top: 1px solid var(--line); padding: 23px 0 35px; display: flex;
+      justify-content: space-between; align-items: center; gap: 16px; color: var(--muted); font-size: 12px;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--ink); border-bottom: 1px solid #b7bbb0; padding-bottom: 2px; }
+    .footer-links a:hover { border-color: var(--ink); }
+    @media (max-width: 680px) {
+      .page { padding: 0 18px; }
+      .topbar { min-height: 65px; }
+      .nav { gap: 12px; font-size: 12px; }
+      .hero { padding: 60px 0 48px; }
+      .tool-grid { grid-template-columns: repeat(2, 1fr); }
+      .interests { grid-template-columns: 1fr; }
+      .interest { min-height: auto; }
+      .interest h3 { margin-top: 18px; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 7px; }
+      footer { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .nav { gap: 9px; }
+      .brand { font-size: 16px; }
+      .tool { padding: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#home">aditya<span>.pujari</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#stack">Stack</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="eyebrow"><span class="dot"></span> Student · Builder · Curious human</div>
+        <h1>Learning how<br>the world <span class="highlight">works.</span></h1>
+        <p class="intro">
+          Hey, I'm <strong>Aditya Pujari</strong> — a B.Tech student in Robotics &amp; Automation.
+          A polymath in progress, curious about computers, fascinated by how things work,
+          and happiest when I'm building something or making something creative.
+        </p>
+        <div class="hero-bottom">
+          <a class="pill-link primary" href="#stack">Explore my world <span aria-hidden="true">↘</span></a>
+          <a class="pill-link" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="section" id="stack">
+        <div class="section-head">
+          <h2>Languages I use</h2>
+          <span class="section-note">01 / Code</span>
+        </div>
+        <div class="skills" aria-label="Programming languages">
+          <span class="skill c">C</span>
+          <span class="skill python">Python</span>
+          <span class="skill rust">Rust</span>
+          <span class="skill robotics">Arduino</span>
+          <span class="skill">HTML &amp; CSS</span>
+          <span class="skill">Learning by building</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Tools on my workbench</h2>
+          <span class="section-note">02 / Make things</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool"><div class="tool-icon">⌘</div><div><strong>VS Code</strong><small>Writing code</small></div></div>
+          <div class="tool"><div class="tool-icon">⌥</div><div><strong>Git &amp; GitHub</strong><small>Version control</small></div></div>
+          <div class="tool"><div class="tool-icon">⚙</div><div><strong>Arduino IDE</strong><small>Robotics experiments</small></div></div>
+          <div class="tool"><div class="tool-icon">🐧</div><div><strong>Linux</strong><small>Exploring systems</small></div></div>
+          <div class="tool"><div class="tool-icon">✂</div><div><strong>DaVinci Resolve</strong><small>Video editing</small></div></div>
+          <div class="tool"><div class="tool-icon">✎</div><div><strong>Drawing tools</strong><small>Sketching ideas</small></div></div>
+          <div class="tool"><div class="tool-icon">◉</div><div><strong>Blender</strong><small>3D &amp; visual ideas</small></div></div>
+          <div class="tool"><div class="tool-icon">⌬</div><div><strong>MATLAB</strong><small>Math &amp; simulation</small></div></div>
+        </div>
+      </section>
+
+      <section class="section" id="interests">
+        <div class="section-head">
+          <h2>Things I keep coming back to</h2>
+          <span class="section-note">03 / Curiosity</span>
+        </div>
+        <div class="interests">
+          <article class="interest">
+            <span class="number">01 — ENGINEERING</span>
+            <h3>Robotics &amp; computers</h3>
+            <p>Understanding the layers beneath the surface — from circuits and mechanics to code and intelligent systems.</p>
+          </article>
+          <article class="interest">
+            <span class="number">02 — CREATIVE WORK</span>
+            <h3>Editing &amp; storytelling</h3>
+            <p>Turning ordinary moments and ideas into videos with rhythm, atmosphere, and a point of view.</p>
+          </article>
+          <article class="interest">
+            <span class="number">03 — ON PAPER</span>
+            <h3>Drawing &amp; observation</h3>
+            <p>Slowing down, noticing details, and learning to see familiar things in a different way.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="now">
+          <div>
+            <div class="now-label">Currently in progress</div>
+            <h2 style="font-size:22px; margin-top:10px;">Learning by taking things apart.</h2>
+            <p>Exploring programming, electronics, robotics, and the art of making useful things from scratch.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">↗</div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div>© <span id="year"></span> Aditya Pujari · Built with curiosity.</div>
+      <div class="footer-links">
+        <!-- Replace the # links below with your real profile URLs. -->
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="mailto:hello@example.com">Email ↗</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
