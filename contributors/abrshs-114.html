@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>abrshs-114</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(17, 24, 39, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-1: #6366f1;
+      --accent-2: #06b6d4;
+      --accent-3: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient background glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: 10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+      filter: blur(50px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -10%;
+      right: 10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, transparent 70%);
+      filter: blur(50px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    article.profile-card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 380px;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.35s ease,
+                  box-shadow 0.35s ease;
+    }
+
+    article.profile-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 24px 48px -12px rgba(99, 102, 241, 0.25),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Header Profile section */
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: #ffffff;
+      box-shadow: 0 8px 16px -4px rgba(99, 102, 241, 0.4);
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent-3);
+      border-radius: 50%;
+      border: 2.5px solid #111827;
+      box-shadow: 0 0 8px var(--accent-3);
+    }
+
+    .user-info {
+      overflow: hidden;
+    }
+
+    .user-info h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .handle-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent-2);
+      font-weight: 500;
+      margin-top: 0.15rem;
+    }
+
+    .bio {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .bio strong {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    /* Section Headings */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      margin-bottom: 0.65rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Languages Container & Badges */
+    .languages-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .lang-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.6rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+
+    .lang-badge:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .dot-js { background: #f7df1e; box-shadow: 0 0 6px rgba(247, 223, 30, 0.5); }
+    .dot-ts { background: #3178c6; box-shadow: 0 0 6px rgba(49, 120, 198, 0.5); }
+    .dot-py { background: #3874a4; box-shadow: 0 0 6px rgba(56, 116, 164, 0.5); }
+    .dot-html { background: #e34f26; box-shadow: 0 0 6px rgba(227, 79, 38, 0.5); }
+    .dot-css { background: #264de4; box-shadow: 0 0 6px rgba(38, 77, 228, 0.5); }
+
+    /* Tools Container & Icons */
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tool-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .tool-link:hover {
+      transform: translateY(-3px) scale(1.08);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-1);
+      box-shadow: 0 6px 16px -2px rgba(99, 102, 241, 0.3);
+    }
+
+    .tool-icon {
+      width: 1.3rem;
+      height: 1.3rem;
+      transition: transform 0.2s ease;
+    }
+
+    .tool-link:hover .tool-icon {
+      transform: scale(1.1);
+    }
+
+    /* Footer meta */
+    .card-footer {
+      margin-top: 1.25rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: #64748b;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge-open-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--accent-3);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <article class="profile-card">
+    <div class="card-header">
+      <div class="avatar-wrapper">
+        <div class="avatar">AS</div>
+        <div class="status-dot" title="Active Contributor"></div>
+      </div>
+      <div class="user-info">
+        <h3>Abrsh S.</h3>
+        <span class="handle-tag">@abrshs-114</span>
+      </div>
+    </div>
+
+    <p class="bio">
+      Passionate developer crafting <strong>clean, modern web experiences</strong> & exploring the open-source universe. 🚀
+    </p>
+
+    <div class="section-title">Languages</div>
+    <section class="languages-grid">
+      <div class="lang-badge"><span class="dot dot-ts"></span>TypeScript</div>
+      <div class="lang-badge"><span class="dot dot-js"></span>JavaScript</div>
+      <div class="lang-badge"><span class="dot dot-py"></span>Python</div>
+      <div class="lang-badge"><span class="dot dot-html"></span>HTML5</div>
+      <div class="lang-badge"><span class="dot dot-css"></span>CSS3</div>
+    </section>
+
+    <div class="section-title">Tools & Ecosystem</div>
+    <section class="tools-grid">
+      <a href="https://react.dev/" class="tool-link" target="_blank" rel="noopener noreferrer" title="React">
+        <img class="tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+      </a>
+      <a href="https://nodejs.org/" class="tool-link" target="_blank" rel="noopener noreferrer" title="Node.js">
+        <img class="tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+      </a>
+      <a href="https://git-scm.com/" class="tool-link" target="_blank" rel="noopener noreferrer" title="Git">
+        <img class="tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+      </a>
+      <a href="https://github.com/" class="tool-link" target="_blank" rel="noopener noreferrer" title="GitHub">
+        <img class="tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" style="filter: invert(1);" />
+      </a>
+      <a href="https://code.visualstudio.com/" class="tool-link" target="_blank" rel="noopener noreferrer" title="VS Code">
+        <img class="tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" />
+      </a>
+      <a href="https://www.linux.org/" class="tool-link" target="_blank" rel="noopener noreferrer" title="Linux">
+        <img class="tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" />
+      </a>
+      <a href="https://www.docker.com/" class="tool-link" target="_blank" rel="noopener noreferrer" title="Docker">
+        <img class="tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg" alt="Docker" />
+      </a>
+    </section>
+
+    <div class="card-footer">
+      <span class="badge-open-source">● contributor</span>
+      <span>code-contributions</span>
+    </div>
+  </article>
+
+</body>
+</html>
