@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vansh Chaudhary | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d0d0d;
+            background-image: linear-gradient(135deg, #0d0d0d 0%, #1c1c1c 100%);
+            background-attachment: fixed;
+        }
+
+        /* Scroll reveal animation styles */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .scroll-reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1c1c1c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff6600;
+            border-radius: 4px;
+        }
+
+        /* Hero text animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #hero .text-center h1 {
+            animation: fadeInDown 1s ease-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+        #hero .text-center p:first-child {
+            animation: fadeInDown 1s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+        #hero .text-center p:last-child {
+            animation: fadeInDown 1s ease-out forwards;
+            animation-delay: 0.8s;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-70 backdrop-blur-lg shadow-lg">
+        <nav class="container mx-auto p-4 flex justify-center items-center relative">
+            <a href="#hero" class="text-3xl md:text-4xl font-bold text-orange-500 hover:text-orange-400 transition-all transform hover:scale-110 z-20">Portfolio</a>
+            <ul class="absolute right-4 md:right-8 flex space-x-6 z-10">
+                <li><a href="#about" class="hover:text-orange-500 transition-all transform hover:scale-110">About</a></li>
+                <li><a href="#skills" class="hover:text-orange-500 transition-all transform hover:scale-110">Skills</a></li>
+                <li><a href="#education" class="hover:text-orange-500 transition-all transform hover:scale-110">Education</a></li>
+                <li><a href="#contact" class="hover:text-orange-500 transition-all transform hover:scale-110">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section id="hero" class="min-h-screen flex items-center justify-center p-8 bg-cover bg-center"
+                 style="background-image: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)), url('https://placehold.co/1920x1080/0d0d0d/e0e0e0?text=Developer+Background');">
+            <div class="text-center scroll-reveal">
+                <p class="text-orange-500 text-lg font-semibold">Hello, I'm</p>
+                <h1 class="text-5xl md:text-7xl font-bold mt-2 leading-tight">Vansh Chaudhary</h1>
+                <p class="text-xl md:text-2xl mt-4 max-w-2xl mx-auto text-gray-300">
+                    I am currently pursuing a Bachelor of Technology (BTech) degree in Computer Science from Dr. APJ Abdul Kalam Technical University. My academic focus primarily centers around programming languages such as C, C++ and problem solving and I am currently learning about Data Structures and Algorithms (DSA) as well as Web Development.
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-gray-900 border-t border-gray-800">
+            <div class="container mx-auto px-8 max-w-4xl scroll-reveal">
+                <h2 class="text-4xl font-bold text-center text-orange-500 mb-10">About Me</h2>
+                <div class="text-lg leading-relaxed text-gray-300">
+                    <p class="mb-4">
+                        I am a passionate and dedicated B.Tech student with a strong foundation in computer science principles. My journey in technology has been driven by a curiosity for how things work and a desire to build solutions that matter. I am constantly expanding my knowledge base, whether it's by tackling complex problems with DSA or by creating beautiful, functional web applications.
+                    </p>
+                    <p>
+                        My commitment to continuous learning fuels my goal of becoming a proficient software developer. I am eager to contribute to innovative projects and collaborate with like-minded individuals to solve real-world challenges.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-8 max-w-4xl scroll-reveal">
+                <h2 class="text-4xl font-bold text-center text-orange-500 mb-10">Skills</h2>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <span class="bg-gray-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-orange-500 transition-all transform hover:scale-105">C/C++ Programming</span>
+                    <span class="bg-gray-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-orange-500 transition-all transform hover:scale-105">Data Structures and Algorithms</span>
+                    <span class="bg-gray-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-orange-500 transition-all transform hover:scale-105">Git & GitHub Basics</span>
+                    <span class="bg-gray-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-orange-500 transition-all transform hover:scale-105">Web Development</span>
+                    <span class="bg-gray-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-orange-500 transition-all transform hover:scale-105">Problem Solving</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-20 bg-gray-900 border-t border-gray-800">
+            <div class="container mx-auto px-8 max-w-4xl scroll-reveal">
+                <h2 class="text-4xl font-bold text-center text-orange-500 mb-10">Education & Learning</h2>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl transition-all transform hover:scale-105">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold">Bachelor of Technology (B.Tech)</h3>
+                        <p class="text-lg text-gray-400">Computer Science and Engineering</p>
+                        <p class="text-lg text-gray-400 mt-1">SRMCEM Lucknow, affiliated with APJ Abdul Kalam Technical University</p>
+                        <p class="text-gray-500 mt-2">Currently Enrolled</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold">Currently Learning</h3>
+                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-300">
+                            <li>Data Structures & Algorithms (DSA)</li>
+                            <li>Web Development (HTML, CSS, JavaScript)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-8 max-w-2xl scroll-reveal">
+                <h2 class="text-4xl font-bold text-center text-orange-500 mb-10">Get in Touch</h2>
+                <div class="text-center text-lg text-gray-300 mb-8">
+                    <p>I am always open to new opportunities and collaborations. Feel free to reach out!</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 mb-12">
+                    <div class="flex items-center space-x-3 transition-all transform hover:scale-110">
+                        <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                        
+                    </div>
+                    <div class="flex items-center space-x-3 transition-all transform hover:scale-110">
+                        <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.08 11.08 0 003.882 3.882l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.163 18 3 13.837 3 8V6a1 1 0 011-1z"></path>
+                        </svg>
+                        <span class="text-gray-300">7XX-XXX-X16</span>
+                    </div>
+                    <div class="flex items-center space-x-3 transition-all transform hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-orange-500">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.304.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.607.8.571 4.757-1.594 8.196-6.091 8.196-11.387 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <a href="https://github.com/vanshchaudharyx" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-orange-500 transition-colors">GitHub Profile</a>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Your Name" required
+                           class="bg-gray-700 p-3 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors md:col-span-1">
+                    <input type="email" name="email" placeholder="Your Email" required
+                           class="bg-gray-700 p-3 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors md:col-span-1">
+                    <textarea name="message" rows="5" placeholder="Your Message" required
+                              class="bg-gray-700 p-3 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors md:col-span-2"></textarea>
+                    <button type="submit"
+                            class="md:col-span-2 bg-orange-600 text-white font-bold p-3 rounded-lg shadow-lg hover:bg-orange-500 transition-all transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+
+                <div id="messageBox" class="fixed inset-0 bg-gray-900 bg-opacity-70 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-2xl max-w-sm w-full text-center border-t-4 border-orange-500 transform scale-90 opacity-0 transition-all duration-300 ease-in-out">
+                        <h3 class="text-2xl font-bold mb-4">Message Sent!</h3>
+                        <p class="text-gray-300 mb-6">Thank you for reaching out. I'll get back to you shortly.</p>
+                        <button id="closeMessageBox" class="bg-orange-600 text-white font-bold p-3 rounded-lg hover:bg-orange-500 transition-colors">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12 transition-all transform hover:scale-105">
+                    <p class="text-lg text-gray-400">Connect with me on LinkedIn:</p>
+                    <a href="https://www.linkedin.com/in/vansh-chaudhary-81b0b7244?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BvXyXK2TmRPigcOmVkqahZA%3D%3D"
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-block mt-4 bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-500 transition-colors shadow-lg">
+                        LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 bg-opacity-70 backdrop-blur-lg text-gray-400 py-6 text-center">
+        <p>&copy; 2025 Vansh Chaudhary. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Contact Form Handler with Custom Message Box
+        const contactForm = document.getElementById('contactForm');
+        const messageBox = document.getElementById('messageBox');
+        const messageBoxContent = messageBox.querySelector('div');
+        const closeMessageBoxButton = document.getElementById('closeMessageBox');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show the custom message box
+            messageBox.classList.remove('hidden');
+            messageBox.classList.add('flex');
+            
+            // Animate the message box content
+            setTimeout(() => {
+                messageBoxContent.classList.remove('scale-90', 'opacity-0');
+                messageBoxContent.classList.add('scale-100', 'opacity-100');
+            }, 50);
+
+            // You can add logic here to actually send the form data,
+            // for now, we just simulate the submission.
+            console.log('Form Submitted with data:', new FormData(contactForm));
+            contactForm.reset();
+        });
+
+        closeMessageBoxButton.addEventListener('click', () => {
+            // Animate the message box closing
+            messageBoxContent.classList.remove('scale-100', 'opacity-100');
+            messageBoxContent.classList.add('scale-90', 'opacity-0');
+            
+            // Hide the message box after the animation
+            setTimeout(() => {
+                messageBox.classList.remove('flex');
+                messageBox.classList.add('hidden');
+            }, 300);
+        });
+
+    </script>
+</body>
+</html>
