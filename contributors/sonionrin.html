@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Market | Online Shopping</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f6fa;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+        header {
+            background: #ffffff;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2874f0;
+        }
+
+        .search-box {
+            display: flex;
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            border: none;
+            background: #2874f0;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2874f0;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin: 25px 6%;
+            min-height: 300px;
+            background: linear-gradient(120deg, #2874f0, #6c63ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            border-radius: 12px;
+        }
+
+        .hero-content h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero-content button {
+            background: #ffcc00;
+            color: #222;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero-content button:hover {
+            background: #f0b900;
+        }
+
+        .hero-image {
+            font-size: 110px;
+        }
+
+        /* SECTION COMMON STYLING */
+        section {
+            margin: 35px 6%;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 22px;
+            color: #222;
+        }
+
+        /* CATEGORIES */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .category-card {
+            background: white;
+            padding: 25px 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .category-card .icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 180px;
+            background: #eef1f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            color: #f5a623;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #2874f0;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .old-price {
+            color: #888;
+            text-decoration: line-through;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .add-btn {
+            width: 100%;
+            background: #2874f0;
+            color: white;
+            border: none;
+            padding: 11px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .add-btn:hover {
+            background: #1558c0;
+        }
+
+        /* SPECIAL OFFER */
+        .offer {
+            background: #fff0d9;
+            padding: 35px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .offer h2 {
+            font-size: 30px;
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        .offer p {
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .offer button {
+            background: #e67e22;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* NEWSLETTER */
+        .newsletter {
+            background: #e8f0ff;
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 10px;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .newsletter button {
+            padding: 12px 20px;
+            border: none;
+            background: #2874f0;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #172337;
+            color: white;
+            padding: 40px 6%;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+
+        footer p, footer a {
+            display: block;
+            margin-bottom: 10px;
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            margin-top: 25px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            header {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 4%;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: space-between;
+                gap: 10px;
+            }
+
+            .hero {
+                margin: 15px 4%;
+                padding: 25px;
+            }
+
+            .hero-content h1 {
+                font-size: 27px;
+            }
+
+            .hero-image {
+                font-size: 55px;
+            }
+
+            section {
+                margin: 25px 4%;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .newsletter input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">E-Market</div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput"
+                   placeholder="Search for products...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#cart">🛒 Cart (<span id="cartCount">0</span>)</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to E-Market!</h1>
+            <p>Discover amazing products at unbeatable prices.</p>
+            <button onclick="document.getElementById('products')
+                .scrollIntoView({behavior:'smooth'})">
+                Shop Now
+            </button>
+        </div>
+
+        <div class="hero-image">🛍️</div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section id="categories">
+        <h2 class="section-title">Shop By Category</h2>
+
+        <div class="categories">
+            <div class="category-card" onclick="filterCategory('Electronics')">
+                <div class="icon">💻</div>
+                <h3>Electronics</h3>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Fashion')">
+                <div class="icon">👕</div>
+                <h3>Fashion</h3>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Footwear')">
+                <div class="icon">👟</div>
+                <h3>Footwear</h3>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Home')">
+                <div class="icon">🏠</div>
+                <h3>Home & Living</h3>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('Accessories')">
+                <div class="icon">⌚</div>
+                <h3>Accessories</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+        <h2 class="section-title">Featured Products</h2>
+
+        <div class="products" id="productList">
+
+            <div class="product-card" data-category="Electronics">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=Headphones"
+                         alt="Wireless Headphones">
+                </div>
+                <div class="product-info">
+                    <h3>Wireless Headphones</h3>
+                    <div class="rating">★★★★★</div>
+                    <div class="price">₹1,499
+                        <span class="old-price">₹2,499</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Wireless Headphones',1499)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Electronics">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=Smartphone"
+                         alt="Smartphone">
+                </div>
+                <div class="product-info">
+                    <h3>Smartphone</h3>
+                    <div class="rating">★★★★☆</div>
+                    <div class="price">₹14,999
+                        <span class="old-price">₹18,999</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Smartphone',14999)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Fashion">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=T-Shirt"
+                         alt="Cotton T-Shirt">
+                </div>
+                <div class="product-info">
+                    <h3>Cotton T-Shirt</h3>
+                    <div class="rating">★★★★★</div>
+                    <div class="price">₹499
+                        <span class="old-price">₹799</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Cotton T-Shirt',499)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Footwear">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=Sneakers"
+                         alt="Running Shoes">
+                </div>
+                <div class="product-info">
+                    <h3>Running Shoes</h3>
+                    <div class="rating">★★★★☆</div>
+                    <div class="price">₹1,999
+                        <span class="old-price">₹2,999</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Running Shoes',1999)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Accessories">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=Watch"
+                         alt="Smart Watch">
+                </div>
+                <div class="product-info">
+                    <h3>Smart Watch</h3>
+                    <div class="rating">★★★★★</div>
+                    <div class="price">₹2,499
+                        <span class="old-price">₹3,499</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Smart Watch',2499)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Home">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=Lamp"
+                         alt="Table Lamp">
+                </div>
+                <div class="product-info">
+                    <h3>Table Lamp</h3>
+                    <div class="rating">★★★★☆</div>
+                    <div class="price">₹899
+                        <span class="old-price">₹1,299</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Table Lamp',899)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Electronics">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=Laptop"
+                         alt="Laptop">
+                </div>
+                <div class="product-info">
+                    <h3>Personal Laptop</h3>
+                    <div class="rating">★★★★★</div>
+                    <div class="price">₹45,999
+                        <span class="old-price">₹52,999</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Personal Laptop',45999)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Accessories">
+                <div class="product-image">
+                    <img src="https://placehold.co/300x200?text=Bag"
+                         alt="Backpack">
+                </div>
+                <div class="product-info">
+                    <h3>Travel Backpack</h3>
+                    <div class="rating">★★★★☆</div>
+                    <div class="price">₹1,199
+                        <span class="old-price">₹1,699</span>
+                    </div>
+                    <button class="add-btn"
+                        onclick="addToCart('Travel Backpack',1199)">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CART -->
+    <section id="cart">
+        <h2 class="section-title">Shopping Cart</h2>
+
+        <div id="cartItems">
+            Your cart is currently empty.
+        </div>
+
+        <h3 style="margin-top:20px">
+            Total: ₹<span id="cartTotal">0</span>
+        </h3>
+
+        <button class="add-btn"
+                style="width:auto;margin-top:15px"
+                onclick="checkout()">
+            Proceed to Checkout
+        </button>
+    </section>
+
+    <!-- SPECIAL OFFER -->
+    <section>
+        <div class="offer">
+            <h2>Special Shopping Festival!</h2>
+            <p>Get up to 50% OFF on selected products.</p>
+            <button onclick="document.getElementById('products')
+                .scrollIntoView({behavior:'smooth'})">
+                Explore Offers
+            </button>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section>
+        <div class="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates, offers and exclusive deals.</p>
+
+            <input type="email" id="email"
+                   placeholder="Enter your email address">
+
+            <button onclick="subscribe()">Subscribe</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <h3>E-Market</h3>
+                <p>Your one-stop destination for online shopping.</p>
+                <p>Quality products at affordable prices.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Products</a>
+                <a href="#cart">Shopping Cart</a>
+            </div>
+
+            <div>
+                <h3>Customer Support</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQs</a>
+                <a href="#">Return Policy</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div>
+                <h3>Contact Information</h3>
+                <p>Email: support@emarket.com</p>
+                <p>Phone: +91 9876543210</p>
+                <p>Location: India</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 E-Market. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // SHOPPING CART DATA
+        let cart = [];
+
+        // ADD PRODUCT TO CART
+        function addToCart(name, price) {
+
+            let existingProduct = cart.find(
+                item => item.name === name
+            );
+
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+
+            updateCart();
+
+            alert(name + " added to your cart!");
+        }
+
+        // UPDATE CART DISPLAY
+        function updateCart() {
+
+            let cartItems = document.getElementById("cartItems");
+            let cartCount = document.getElementById("cartCount");
+            let cartTotal = document.getElementById("cartTotal");
+
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = "Your cart is currently empty.";
+            } else {
+
+                cartItems.innerHTML = "";
+
+                cart.forEach((item, index) => {
+
+                    let itemTotal = item.price * item.quantity;
+
+                    total += itemTotal;
+                    count += item.quantity;
+
+                    cartItems.innerHTML += `
+                        <div style="padding:12px;
+                            background:white;
+                            margin-bottom:10px;
+                            border-radius:5px;">
+
+                            <strong>${item.name}</strong>
+                            <p>Price: ₹${item.price}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                            <p>Subtotal: ₹${itemTotal}</p>
+
+                            <button onclick="removeFromCart(${index})">
+                                Remove
+                            </button>
+
+                        </div>
+                    `;
+                });
+            }
+
+            cartCount.innerText = count;
+            cartTotal.innerText = total.toLocaleString("en-IN");
+        }
+
+        // REMOVE PRODUCT FROM CART
+        function removeFromCart(index) {
+
+            if (cart[index].quantity > 1) {
+                cart[index].quantity--;
+            } else {
+                cart.splice(index, 1);
+            }
+
+            updateCart();
+        }
+
+        // SEARCH PRODUCTS
+        function searchProducts() {
+
+            let input = document.getElementById("searchInput")
+                .value.toLowerCase();
+
+            let products = document.querySelectorAll(".product-card");
+
+            products.forEach(product => {
+
+                let name = product.querySelector("h3")
+                    .innerText.toLowerCase();
+
+                product.style.display =
+                    name.includes(input) ? "block" : "none";
+            });
+        }
+
+        // FILTER PRODUCTS BY CATEGORY
+        function filterCategory(category) {
+
+            let products = document.querySelectorAll(".product-card");
+
+            products.forEach(product => {
+
+                let productCategory =
+                    product.getAttribute("data-category");
+
+                product.style.display =
+                    productCategory === category ? "block" : "none";
+            });
+
+            document.getElementById("products")
+                .scrollIntoView({behavior:"smooth"});
+        }
+
+        // CHECKOUT
+        function checkout() {
+
+            if (cart.length === 0) {
+                alert("Your cart is empty. Add products first!");
+                return;
+            }
+
+            alert("Thank you for shopping with E-Market! " +
+                  "This is a demo checkout.");
+
+        }
+
+        // NEWSLETTER SUBSCRIPTION
+        function subscribe() {
+
+            let email = document.getElementById("email").value;
+
+            if (email === "" || !email.includes("@")) {
+                alert("Please enter a valid email address.");
+            } else {
+                alert("Thank you for subscribing!");
+                document.getElementById("email").value = "";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
