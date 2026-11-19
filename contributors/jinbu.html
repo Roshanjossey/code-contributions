@@ -1,0 +1,123 @@
+<article class="profile-card">
+  <div class="profile-card__glow"></div>
+
+  <div class="profile-card__header">
+    <span class="profile-card__badge">OPEN SOURCE</span>
+    <span class="profile-card__spark">✦</span>
+  </div>
+
+  <h3>Open-source learner</h3>
+  <p class="profile-card__intro">
+    Exploring, learning, and contributing one pull request at a time.
+  </p>
+
+  <h4>Currently exploring</h4>
+  <section class="profile-card__tags">
+    <span class="tag tag--blue">HTML</span>
+    <span class="tag tag--purple">CSS</span>
+    <span class="tag tag--yellow">JavaScript</span>
+  </section>
+
+  <h4>Interests</h4>
+  <section class="profile-card__tags">
+    <span class="tag tag--green">Web</span>
+    <span class="tag tag--pink">UI</span>
+    <span class="tag tag--orange">Learning</span>
+  </section>
+</article>
+
+<style>
+  .profile-card {
+    position: relative;
+    overflow: hidden;
+    max-width: 360px;
+    padding: 28px;
+    border: 1px solid #dbeafe;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #ffffff 0%, #f5f9ff 100%);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+    color: #1e293b;
+    font-family: Arial, sans-serif;
+  }
+
+  .profile-card__glow {
+    position: absolute;
+    top: -65px;
+    right: -55px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #bfdbfe;
+    filter: blur(8px);
+    opacity: 0.55;
+  }
+
+  .profile-card__header,
+  .profile-card h3,
+  .profile-card h4,
+  .profile-card__intro,
+  .profile-card__tags {
+    position: relative;
+  }
+
+  .profile-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .profile-card__badge {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .profile-card__spark {
+    color: #2563eb;
+    font-size: 24px;
+  }
+
+  .profile-card h3 {
+    margin: 20px 0 8px;
+    color: #0f172a;
+    font-size: 25px;
+  }
+
+  .profile-card__intro {
+    margin: 0;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  .profile-card h4 {
+    margin: 24px 0 10px;
+    color: #334155;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .profile-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    padding: 7px 11px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .tag--blue { background: #dbeafe; color: #1d4ed8; }
+  .tag--purple { background: #ede9fe; color: #6d28d9; }
+  .tag--yellow { background: #fef3c7; color: #a16207; }
+  .tag--green { background: #dcfce7; color: #15803d; }
+  .tag--pink { background: #fce7f3; color: #be185d; }
+  .tag--orange { background: #ffedd5; color: #c2410c; }
+</style>
