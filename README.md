@@ -4,7 +4,7 @@ This is a project for you to practice contributing to open source projects with 
 
 We're assuming that you've already finished the tutorial at [first contributions](https://github.com/firstcontributions/first-contributions)
 
-Head over to [contribution guide](https://github.com/Roshanjossey/code-contributions/blob/main/docs/CONTRIBUTING.md) to start.
+Head over to [contribution guide](docs/CONTRIBUTING.md) to start.
 
 #### _Read this in [other languages](docs/translations/Translations.md)._
 
