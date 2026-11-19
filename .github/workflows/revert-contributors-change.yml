@@ -16,6 +16,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
+          allow-unsafe-pr-checkout: true
 
       - name: Revert changes to contributors.js
         run: |
