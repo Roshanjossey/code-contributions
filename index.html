@@ -1,24 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code contributions</title>
-    <meta name="description" content="Learn how to contribute to open source projects with code">
-    <link rel="stylesheet" href="https://unpkg.com/chota@0.9.2/dist/chota.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="scripts/contributors.js"> </script>
-</head>
-<body>
-    <header>
-        <h1>Contribute to open source projects with <span> &lt;code&gt; </span></h1>
-        <a href="https://github.com/roshanjossey/code-contributions" class="button primary text-uppercase">Let's go! </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Contributions</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/chota@0.9.2/dist/chota.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="scripts/contributors.js"></script>
+    <script defer src="scripts/load-cards.js"></script>
+  </head>
+
+  <body>
+    <header class="container">
+      <h1>
+        Contribute to Open Source Projects with
+        <span>&lt;code&gt;</span>
+      </h1>
+
+      <p>
+        Looking for a way to start contributing to open source? This project can
+        help you make your first contribution.
+      </p>
+
+      <a
+        href="https://github.com/roshanjossey/code-contributions"
+        class="button primary"
+      >
+        View Repository
+      </a>
     </header>
 
-    <main id="contributor-cards" class="container">
-        <h2>Contributors</h2>
+    <main class="container">
+      <section id="contributor-cards">
+        <h2>Why Contribute?</h2>
+
+        <ul>
+          <li>🚀 Improve coding skills</li>
+          <li>🤝 Collaborate with developers</li>
+          <li>📂 Build a stronger GitHub profile</li>
+          <li>🌎 Contribute to real-world projects</li>
+        </ul>
+      <!-- </section>
+
+      <section> -->
+        <h2>How It Works</h2>
+
+        <ol>
+          <li>Fork the repository</li>
+          <li>Clone your forked repository</li>
+          <li>Create a new branch for your contribution</li>
+          <li>Make your changes and commit them</li>
+          <li>Push your changes to your forked repository</li>
+          <li>Create a pull request to the original repository</li>
+        </ol>
+      </section>
     </main>
 
-    <script async src="scripts/load-cards.js"> </script>
-</body>
+    <footer class="container">
+      <hr />
+    </footer>
+  </body>
 </html>
