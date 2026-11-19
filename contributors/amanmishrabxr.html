@@ -1,0 +1,29 @@
+<article class="card">
+  <header>
+    <img src="https://github.com/amanmishrabxr.png" alt="Aman Kumar Mishra" />
+    <h1>Aman Kumar Mishra</h1>
+  </header>
+  <div class="content">
+    <p>Bubble Sort in C++</p>
+    <pre>
+      <code>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+void bubbleSort(std::vector&lt;int&gt;&amp; arr) {
+    int n = arr.size();
+    for (int i = 0; i &lt; n - 1; i++) {
+        for (int j = 0; j &lt; n - i - 1; j++) {
+            if (arr[j] &gt; arr[j + 1]) {
+                std::swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+}
+      </code>
+    </pre>
+  </div>
+  <footer>
+    <a href="https://github.com/amanmishrabxr">GitHub Profile</a>
+  </footer>
+</article>
