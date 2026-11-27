@@ -1,0 +1,56 @@
+<div class="card">
+    <header class="header">
+        <h2>Majidulla SK</h2>
+        <p>DevOps & Cloud Engineer</p>
+        <a href="https://github.com/Majidullask04" target="_blank">
+            <img src="https://github.com/Majidullask04.png" alt="GitHub Avatar" class="avatar" style="width:80px;height:80px;border-radius:50%;">
+        </a>
+        <nav class="social">
+            <a href="https://www.linkedin.com/in/majidulla-sk-1190a2286/" target="_blank"><img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"/></a>
+            <a href="https://x.com/majidulla_sk" target="_blank"><img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter"/></a>
+            <a href="mailto:majidullask04@gmail.com"><img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email"/></a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="badge" style="background-color: #3874a4; color: white">Python</div>
+        <div class="badge" style="background-color: #f7df1e; color: black;">JavaScript</div>
+    </section>
+
+    <h4>Tools I use</h4>
+    <section class="container tools">
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash"/>
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"/>
+        <img class="icon" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000000' d='M19.36 10.04A7 7 0 0 0 5 9a5 5 0 0 0 .11 10h14.25A4.64 4.64 0 0 0 19.36 10.04z'/></svg>" alt="AWS"/>
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="GCP"/>
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform"/>
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"/>
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible"/>
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"/>
+        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"/>
+    </section>
+
+</div>
+
+<style>
+:root { --bg-light: #f0f4f8; --bg-dark: #111; --card-bg: rgba(255,255,255,0.07); }
+[data-theme="dark"] { --bg: var(--bg-dark); color: #e0e0e0; }
+[data-theme="light"] { --bg: var(--bg-light); color: #222; }
+html { background: linear-gradient(135deg, #6dd5fa, #2980b9); background-attachment: fixed; }
+body { margin:0; font-family: 'Inter', sans-serif; }
+.card { max-width:720px; margin:auto; padding:2rem; background: var(--card-bg); backdrop-filter: blur(12px); border-radius:1rem; box-shadow:0 4px 30px rgba(0,0,0,0.2); }
+.badge { display:inline-block; margin:0.3rem; padding:0.3rem 0.6rem; border-radius:999px; background:#fff; color:#333; }
+.badge:hover { transform:scale(1.05); transition:transform 0.2s; }
+.container { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+.icon { width:2rem; height:2rem; }
+.social a { margin-right:0.5rem; }
+.avatar { display:block; margin:0.5rem 0; }
+</style>
+
+<script>
+const toggle=document.createElement('button');
+toggle.textContent='🌙';
+toggle.style.position='fixed'; toggle.style.top='1rem'; toggle.style.right='1rem'; toggle.style.zIndex='1000';
+document.body.appendChild(toggle);
+toggle.onclick=()=>{document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';};
+</script>
