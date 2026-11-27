@@ -87,20 +87,6 @@ You can add your card as an HTML file in contributors directory. Create a file w
   }
 </style>
 
-```
-## Add your card to contributors list
-
-Add the name of the file you created to `scripts/contributors.js` file.
-
-`scripts/contributors.js`
-```js
-const contributorFiles = [
-  "<your-github-id>.html", // add your file name here
-  "roshanjossey.html",
-  "gokultp.html",
-];
-```
-
 ## View your changes in a web browser
 
 You can see your changes by opening `index.html` in a web browser. You should be able to see the new card you added in the previous steps.
