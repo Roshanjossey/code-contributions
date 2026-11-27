@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Developer Card</title>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+   
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    >
+
+    <style>
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            background: #050a13;
+
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        .card {
+            width: 680px;
+            max-width: 100%;
+
+            padding: 20px;
+
+            background: #0b1220;
+
+            border: 1px solid #172438;
+
+            border-radius: 10px;
+
+            color: #d7deea;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+
+   
+
+        .window-title {
+            color: #72809a;
+
+            font-size: 14px;
+
+            margin-bottom: 32px;
+        }
+
+
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+
+
+
+        .command {
+            color: #f4a62a;
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+        }
+
+        .command span {
+            color: #25e6c8;
+        }
+
+
+        h1 {
+            font-size: 29px;
+
+            color: #f05aa9;
+
+            font-weight: 700;
+        }
+
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+        }
+
+
+        .tag {
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 8px 14px;
+
+            background: #111c2d;
+
+            border: 1px solid #213149;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+
+            color: #dbe4f2;
+
+            transition: 0.2s;
+        }
+
+
+        .tag:hover {
+            background: #16243a;
+
+            border-color: #3a5272;
+
+            transform: translateY(-2px);
+        }
+
+
+
+
+        .tag i {
+            font-size: 18px;
+        }
+
+
+
+
+        .divider {
+            border-top: 1px dashed #263247;
+
+            margin: 25px 0 28px;
+        }
+
+
+    
+        .contact {
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 0 15px;
+
+            margin-bottom: 14px;
+
+            background: #111c2d;
+
+            border: 1px solid #213149;
+
+            border-radius: 9px;
+
+            color: #dbe4f2;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+
+        .contact:hover {
+            background: #142136;
+
+            border-color: #3a5272;
+        }
+
+
+
+        .contact-icon {
+            font-size: 18px;
+        }
+
+        .copy {
+            margin-left: auto;
+
+            color: #7d8da5;
+
+            font-size: 18px;
+        }
+
+
+    
+
+        .github {
+            margin-bottom: 25px;
+        }
+
+        .github-icon {
+            font-size: 17px;
+        }
+
+
+
+        .message {
+            color: #8392aa;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        .message span {
+            color: #25e6c8;
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 16px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            .tag {
+                font-size: 12px;
+
+                padding: 7px 10px;
+            }
+
+            .contact {
+                font-size: 12px;
+            }
+
+            .message {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <div class="card">
+
+
+        
+
+        <div class="window-title">
+            Developer card
+        </div>
+
+
+       
+
+        <div class="section">
+
+            <div class="command">
+                <span>$</span> whoami
+            </div>
+
+            <h1>gsambikag-star</h1>
+
+        </div>
+
+
+        
+
+        <div class="section">
+
+            <div class="command">
+                <span>$</span> languages
+            </div>
+
+            <div class="tags">
+
+                <div class="tag">
+                    <i class="devicon-javascript-plain colored"></i>
+                    JavaScript
+                </div>
+
+
+
+                <div class="tag">
+                    <i class="devicon-python-plain colored"></i>
+                    Python
+                </div>
+
+                <div class="tag">
+                    <i class="devicon-java-plain colored"></i>
+                    Java
+                </div>
+
+            </div>
+
+        </div>
+
+
+      
+
+        <div class="divider"></div>
+
+
+     
+
+        <a
+            href="mailto:your@email.com"
+            class="contact"
+        >
+
+            <span class="contact-icon">
+                ✉
+            </span>
+
+            <span>
+               gsambikag@gmail.com
+            </span>
+
+            <span class="copy">
+                ▣
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="https://github.com/YOUR_USERNAME"
+            target="_blank"
+            class="contact github"
+        >
+
+            <span class="github-icon">
+                ●
+            </span>
+
+            <span>
+                https://github.com/gsambikag-star
+            </span>
+
+        </a>
+
+
+        <!-- MESSAGE -->
+
+        <p class="message">
+
+            <span>$</span>
+            It is an honor for me to work with you.
+        
+
+        </p>
+
+
+    </div>
+
+
+</body>
+
+</html>
