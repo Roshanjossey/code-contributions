@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jyotiprakash Panigrahi · About me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@property --a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+:root {
+  color-scheme: dark;
+  --moss: #556b2f; --moss-deep: #1c2412; --card: #232d15; --card-2: #2d3a1b;
+  --amber: #ffb300; --amber-soft: #ffd466; --cream: #f4f1e4; --mute: #b9c4a4; --line: rgba(190,205,150,.22);
+  --font: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { height: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100%; font-family: var(--font); color: var(--cream);
+  background: linear-gradient(135deg, var(--moss), #3b441f); overflow-x: hidden;
+}
+
+/* intro: dark circle swells up from the bottom */
+.puff {
+  position: fixed; left: 50%; top: 100%; width: 300vmax; height: 300vmax; margin: -150vmax;
+  border-radius: 50%; background: radial-gradient(circle at 50% 100%, #2a3519, var(--moss-deep) 60%);
+  transform: scale(0); z-index: 0; pointer-events: none;
+  animation: puff .8s 1.7s cubic-bezier(.55,.06,.68,.19) both;
+}
+@keyframes puff { to { transform: scale(1); } }
+
+/* drifting symbols: code + physics */
+.glyphs span {
+  position: fixed; font-size: var(--s); color: var(--amber); opacity: 0; left: var(--x); top: var(--y);
+  z-index: 0; user-select: none; pointer-events: none;
+  animation: drift 9s var(--d) ease-in-out infinite alternate, glyphIn 1s 3.2s forwards;
+}
+@keyframes glyphIn { to { opacity: .13; } }
+@keyframes drift { to { transform: translate(24px, -34px) rotate(14deg); } }
+
+.stage { position: relative; z-index: 1; min-height: 100svh; display: grid; place-items: center; padding: 28px 16px 56px; }
+.mover { animation: journey 2.5s .2s both; }
+@keyframes journey {
+  0%, 16% { translate: 0 0; animation-timing-function: ease-out; }
+  30% { translate: 0 -5vh; animation-timing-function: cubic-bezier(.6,-.28,.735,.045); }
+  58% { translate: 0 40vh; animation-timing-function: cubic-bezier(.175,.885,.32,1.275); }
+  100% { translate: 0 0; }
+}
+
+.card {
+  position: relative; width: min(400px, 100%); border-radius: 28px; padding: 30px 26px 26px;
+  background: var(--card); text-align: center;
+  clip-path: inset(0 round 28px);
+  animation: dotIn .5s .2s cubic-bezier(.55,.06,.68,.19) both, materia .9s 2.6s cubic-bezier(.86,0,.07,1) both;
+}
+@keyframes dotIn { from { scale: 0; } to { scale: 1; } }
+@keyframes materia {
+  0% { background: var(--amber); clip-path: inset(calc(50% - 28px) calc(50% - 28px) round 50%); }
+  45% { background: var(--amber-soft); clip-path: inset(calc(50% - 28px) calc(50% - 28px) round 50%); }
+  100% { background: var(--card); clip-path: inset(0 round 28px); }
+}
+/* travelling amber light around the edge */
+.card::before {
+  content: ""; position: absolute; inset: 0; padding: 1.5px; border-radius: inherit; pointer-events: none;
+  background: conic-gradient(from var(--a), transparent 0 55%, var(--amber) 80%, var(--amber-soft) 90%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: spinA 5s linear infinite, fade .6s 3.4s both;
+}
+@keyframes spinA { to { --a: 360deg; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+/* spotlight follows the pointer */
+.card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(255,179,0,.14), transparent 70%);
+}
+
+.item { animation: rise .7s calc(3.2s + var(--i) * .09s) cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rise { from { opacity: 0; translate: 0 16px; } to { opacity: 1; translate: 0 0; } }
+
+/* avatar as an atom */
+.avatar { position: relative; width: 108px; height: 108px; margin: 4px auto 18px; display: grid; place-items: center; }
+.core {
+  width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 30% 25%, var(--amber-soft), var(--amber) 55%, #b97c00);
+  color: #2a2000; font-weight: 700; font-size: 26px; letter-spacing: .02em;
+  box-shadow: 0 0 0 6px rgba(255,179,0,.14), 0 0 34px rgba(255,179,0,.45);
+}
+.ring { position: absolute; inset: -6px; border: 1px solid var(--line); border-radius: 50%; transform: rotate(var(--r)) scaleY(.4); }
+.spin { position: absolute; inset: 0; animation: spin var(--t) linear infinite; }
+.spin i { position: absolute; top: -4px; left: 50%; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: var(--amber-soft); box-shadow: 0 0 10px var(--amber); }
+@keyframes spin { to { rotate: 360deg; } }
+
+h1 { margin: 0; font-size: 1.65rem; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; }
+.handle { margin: 4px 0 0; color: var(--amber-soft); font-size: .95rem; }
+.role { margin: 14px 0 0; min-height: 1.6em; font-size: 1.02rem; color: var(--cream); }
+.role::after { content: ""; display: inline-block; width: 2px; height: 1.05em; margin-left: 3px; vertical-align: -.15em; background: var(--amber); animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.bio { margin: 12px auto 0; max-width: 34ch; color: var(--mute); font-size: .95rem; line-height: 1.55; }
+
+.group { margin-top: 22px; text-align: left; }
+.group h2 { margin: 0 0 10px; font-size: .9rem; font-weight: 500; color: var(--mute); padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 10px;
+  background: var(--card-2); border: 1px solid var(--line); font-size: .88rem; font-weight: 500;
+  transition: translate .2s, border-color .2s, background .2s;
+}
+.chip:hover { translate: 0 -3px; border-color: var(--amber); background: #38481f; }
+.chip b { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); }
+.chip.field { background: transparent; border-color: var(--amber); color: var(--amber-soft); }
+
+.actions { display: grid; gap: 10px; margin-top: 26px; }
+.btn {
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 18px; border-radius: 14px; font: 700 1rem var(--font); text-decoration: none; cursor: pointer;
+  transition: translate .2s, box-shadow .2s;
+}
+.btn:focus-visible, .replay:focus-visible { outline: 3px solid var(--cream); outline-offset: 3px; }
+.btn.main { background: var(--amber); color: #2a2000; box-shadow: 0 8px 26px rgba(255,179,0,.35); animation: pulse 2.4s 4.5s infinite; }
+.btn.main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); translate: -120% 0; animation: shine 3.2s 4.5s infinite; }
+.btn.main:hover { translate: 0 -3px; box-shadow: 0 12px 34px rgba(255,179,0,.5); }
+.btn.main .arrow { display: inline-block; transition: translate .2s; }
+.btn.main:hover .arrow { translate: 5px 0; }
+.btn.alt { background: transparent; color: var(--cream); border: 1px solid var(--line); font-weight: 500; }
+.btn.alt:hover { border-color: var(--amber); translate: 0 -2px; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 8px 26px rgba(255,179,0,.3), 0 0 0 0 rgba(255,179,0,.45); } 50% { box-shadow: 0 8px 26px rgba(255,179,0,.3), 0 0 0 12px rgba(255,179,0,0); } }
+@keyframes shine { 0%, 55% { translate: -120% 0; } 100% { translate: 120% 0; } }
+
+.replay { position: fixed; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 3; background: transparent; color: var(--mute); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font: 500 .8rem var(--font); cursor: pointer; }
+.replay:hover { color: var(--cream); border-color: var(--amber); }
+
+.profile-social-links { display: flex; justify-content: center; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
+.profile-social-links a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: var(--cream); background: var(--card-2); border: 1px solid var(--line); transition: translate .2s, background .2s, color .2s, border-color .2s; }
+.profile-social-links a:hover { translate: 0 -4px; background: var(--amber); color: #2a2000; border-color: var(--amber); }
+.profile-social-links a:focus-visible { outline: 3px solid var(--cream); outline-offset: 3px; }
+.profile-social-links svg { width: 20px; height: 20px; }
+@media (max-width: 380px) { .card { padding: 26px 18px 22px; } h1 { font-size: 1.4rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .puff, .glyphs span, .mover, .card, .item, .card::before, .spin, .role::after, .btn.main, .btn.main::after { animation: none !important; }
+  .puff { transform: scale(1); }
+  .glyphs span { opacity: .12; }
+}
+</style>
+</head>
+<body>
+<div class="puff" aria-hidden="true"></div>
+<div class="glyphs" aria-hidden="true">
+  <span style="--x:8%;--y:14%;--s:34px;--d:0s">{ }</span>
+  <span style="--x:82%;--y:10%;--s:28px;--d:-2s">ψ</span>
+  <span style="--x:12%;--y:74%;--s:30px;--d:-4s">&lt;/&gt;</span>
+  <span style="--x:86%;--y:70%;--s:36px;--d:-1s">∇</span>
+  <span style="--x:46%;--y:4%;--s:24px;--d:-3s">$_</span>
+  <span style="--x:70%;--y:88%;--s:26px;--d:-5s">ħ</span>
+  <span style="--x:3%;--y:44%;--s:24px;--d:-6s">01</span>
+</div>
+
+<main class="stage">
+  <div class="mover">
+    <article class="card" id="card" aria-label="About Jyotiprakash Panigrahi">
+      <div class="item" style="--i:0">
+        <div class="avatar" aria-hidden="true">
+          <div class="ring" style="--r:0deg"><div class="spin" style="--t:5s"><i></i></div></div>
+          <div class="ring" style="--r:60deg"><div class="spin" style="--t:7s"><i></i></div></div>
+          <div class="ring" style="--r:120deg"><div class="spin" style="--t:9s"><i></i></div></div>
+          <div class="core">JP</div>
+        </div>
+      </div>
+      <h1 class="item" style="--i:1">Jyotiprakash Panigrahi</h1>
+      <p class="handle item" style="--i:2">@Jyotiprakash07</p>
+      <p class="role item" style="--i:3" id="role">Developer</p>
+      <p class="bio item" style="--i:4">Passionate about development, systems security, and the physical sciences. I build things and take them apart to see how they work.</p>
+
+      <section class="group item" style="--i:5">
+        <h2>Languages I code in</h2>
+        <div class="chips">
+          <span class="chip"><b style="--c:#9aa7b4"></b>C</span>
+          <span class="chip"><b style="--c:#a179dc"></b>C#</span>
+          <span class="chip"><b style="--c:#e76f51"></b>Java</span>
+          <span class="chip"><b style="--c:#4b8bbe"></b>Python</span>
+          <span class="chip"><b style="--c:#f7df1e"></b>JavaScript</span>
+        </div>
+      </section>
+
+      <section class="group item" style="--i:6">
+        <h2>Tools I work with</h2>
+        <div class="chips">
+          <span class="chip"><b style="--c:#f05133"></b>Git</span>
+          <span class="chip"><b style="--c:#f4f1e4"></b>GitHub</span>
+          <span class="chip"><b style="--c:#fcc624"></b>Linux</span>
+          <span class="chip"><b style="--c:#6fdc8c"></b>Bash</span>
+        </div>
+      </section>
+
+      <section class="group item" style="--i:7">
+        <h2>What pulls me in</h2>
+        <div class="chips">
+          <span class="chip field">Cybersecurity</span>
+          <span class="chip field">Physics</span>
+        </div>
+      </section>
+
+      <div class="actions item" style="--i:8">
+        <a class="btn main" href="https://my-portfolio-sand-eight-86.vercel.app" target="_blank" rel="noopener">See my work <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn alt" href="https://github.com/Jyotiprakash07" target="_blank" rel="noopener">Follow on GitHub</a>
+      </div>
+
+      <ul class="profile-social-links item" style="--i:9">
+        <li>
+          <a target="_blank" rel="noopener" href="https://github.com/Jyotiprakash07" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener" href="https://my-portfolio-sand-eight-86.vercel.app" aria-label="Portfolio website" title="Portfolio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16.5 0 19M12 2.5c-3 3-3 16.5 0 19"/></svg>
+          </a>
+        </li>
+      </ul>
+    </article>
+  </div>
+</main>
+<button class="replay" id="replay" type="button">Replay intro</button>
+
+<script>
+(function () {
+  var card = document.getElementById("card");
+  // pointer spotlight + gentle tilt
+  card.addEventListener("pointermove", function (e) {
+    var r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    card.style.setProperty("--mx", (x * 100) + "%");
+    card.style.setProperty("--my", (y * 100) + "%");
+    card.style.transform = "perspective(900px) rotateX(" + ((.5 - y) * 5) + "deg) rotateY(" + ((x - .5) * 6) + "deg)";
+  });
+  card.addEventListener("pointerleave", function () { card.style.transform = ""; });
+
+  // typewriter role line
+  var roles = ["Developer", "Systems security explorer", "Physics enthusiast", "MCA student at OUAT"];
+  var el = document.getElementById("role"), ri = 0, ci = 0, del = false;
+  function tick() {
+    var word = roles[ri];
+    ci += del ? -1 : 1;
+    el.textContent = word.slice(0, ci);
+    var wait = del ? 35 : 80;
+    if (!del && ci === word.length) { del = true; wait = 1600; }
+    else if (del && ci === 0) { del = false; ri = (ri + 1) % roles.length; wait = 350; }
+    setTimeout(tick, wait);
+  }
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce) setTimeout(function () { ci = el.textContent.length; del = true; tick(); }, 5200);
+
+  // replay intro
+  document.getElementById("replay").addEventListener("click", function () {
+    var els = document.querySelectorAll(".puff,.glyphs span,.mover,.card,.item,.card::before");
+    els.forEach(function (n) { n.style.animation = "none"; });
+    void document.body.offsetWidth;
+    els.forEach(function (n) { n.style.animation = ""; });
+    window.scrollTo(0, 0);
+  });
+})();
+</script>
+</body>
+</html>
