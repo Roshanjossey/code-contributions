@@ -88,18 +88,17 @@ You can add your card as an HTML file in contributors directory. Create a file w
 </style>
 
 ```
-## Add your card to contributors list
+## Generate contributors list
 
-Add the name of the file you created to `scripts/contributors.js` file.
+Your card will be added to the contributors list automatically. You only need to create your HTML file inside the `contributors` directory.
 
-`scripts/contributors.js`
-```js
-const contributorFiles = [
-  "<your-github-id>.html", // add your file name here
-  "roshanjossey.html",
-  "gokultp.html",
-];
+To view your card locally, generate the contributors list by running:
+
+```bash
+bash scripts/generate-cards.sh
 ```
+
+This creates `scripts/contributors.js`. This file is generated, so do not edit or commit it.
 
 ## View your changes in a web browser
 
